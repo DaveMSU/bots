@@ -1,4 +1,4 @@
-import sys; sys.path.append("/home/david_tyuman/telegram/bots")
+import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")
 import datetime
 import logging
 import re

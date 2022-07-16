@@ -1470,3 +1470,5 @@
 2022-07-16 18:08:51,752 - ChatLogger - DEBUG - is_answer_right=True - word_to_ask='отсутствовать' - word_to_answer='absent' - user_answer='Absent' - error_message=''
 2022-07-16 18:48:44,817 - ChatLogger - DEBUG - is_answer_right=True - word_to_ask='coil' - word_to_answer='извиваться' - user_answer='извиваться' - error_message=''
 2022-07-16 18:48:52,428 - ChatLogger - DEBUG - is_answer_right=True - word_to_ask='слабо' - word_to_answer='loosely' - user_answer='loosely!' - error_message=''
+2022-07-16 20:29:59,906 - ChatLogger - DEBUG - is_answer_right=True - word_to_ask='rip' - word_to_answer='разрывать' - user_answer='разрывать' - error_message=''
+2022-07-16 20:30:18,951 - ChatLogger - DEBUG - is_answer_right=True - word_to_ask='несвежий' - word_to_answer='stale' - user_answer='stale' - error_message=''

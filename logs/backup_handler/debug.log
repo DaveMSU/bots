@@ -1,0 +1,14 @@
+2022-07-23 22:46:23,004 - BackupHandler - WARNING - /home/david_tyuman/telegram_server/bots/backup_dir dir do not exists, so it was creared.
+2022-07-23 22:46:23,004 - BackupHandler - WARNING - /home/david_tyuman/telegram_server/bots/backup_dir/content dir do not exists, so it was creared.
+2022-07-23 22:46:23,004 - BackupHandler - WARNING - /home/david_tyuman/telegram_server/bots/backup_dir/content/GeorgeTeacherBot dir do not exists, so it was creared.
+2022-07-23 22:46:23,004 - BackupHandler - WARNING - /home/david_tyuman/telegram_server/bots/backup_dir/content/GeorgeTeacherBot/words_base dir do not exists, so it was creared.
+2022-07-23 22:46:23,005 - BackupHandler - DEBUG - File '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/.words_base.txt' copied to '/home/david_tyuman/telegram_server/bots/backup_dir/content/GeorgeTeacherBot/words_base/words_base_2022-07-23T22:46:23.txt' path.
+2022-07-23 22:46:23,005 - BackupHandler - WARNING - /home/david_tyuman/telegram_server/bots/backup_dir/logs dir do not exists, so it was creared.
+2022-07-23 22:46:23,005 - BackupHandler - WARNING - /home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot dir do not exists, so it was creared.
+2022-07-23 22:46:23,005 - BackupHandler - WARNING - /home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot/chat dir do not exists, so it was creared.
+2022-07-23 22:46:23,006 - BackupHandler - DEBUG - File '/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/chat.log' copied to '/home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot/chat/chat_2022-07-23T22:46:23.log' path.
+2022-07-23 22:46:23,006 - BackupHandler - WARNING - File '/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/logs/learning.log' do not exists!
+2022-07-23 22:46:58,028 - BackupHandler - DEBUG - File '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/.words_base.txt' copied to '/home/david_tyuman/telegram_server/bots/backup_dir/content/GeorgeTeacherBot/words_base/words_base_2022-07-23T22:46:58.txt' path.
+2022-07-23 22:46:58,029 - BackupHandler - DEBUG - File '/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/chat.log' copied to '/home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot/chat/chat_2022-07-23T22:46:58.log' path.
+2022-07-23 22:46:58,030 - BackupHandler - WARNING - /home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot/learning dir do not exists, so it was creared.
+2022-07-23 22:46:58,040 - BackupHandler - DEBUG - File '/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/learning.log' copied to '/home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot/learning/learning_2022-07-23T22:46:58.log' path.

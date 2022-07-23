@@ -94,10 +94,7 @@ class GeorgeBot(TelegramBot):
                     parsed_words_base.update({line_parts[i]: triplet})
         self._base = parsed_words_base
         
-    def update_base(
-            self, 
-            path: tp.Optional[str] = None
-        ) -> tp.List[tp.Dict[str, str]]:
+    def update_base(self) -> tp.List[tp.Dict[str, str]]:
         self.load_words()
         self._agent.change_state_to_legal_actions(
             {MAIN_STATE: set(self._base)}
@@ -239,11 +236,6 @@ class GeorgeBot(TelegramBot):
                         'error_message': line_parts[7].split("=")[1].replace("'", "")
                 }
                 parsed_log.append(parsed_line)
-                # assert parsed_line["is_answer_right"] == \
-                #     self._check_words_similarity(
-                #         parsed_line["word_to_answer"],
-                #         parsed_line["user_answer"]
-                #     )
         return parsed_log
 
     def pretrain(self, log_path: str) -> None:

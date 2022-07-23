@@ -1,0 +1,14 @@
+{
+    "logging_file": "/home/david_tyuman/telegram_server/bots/backup_handler/debag.log",
+    "backup_period": 3600,
+    "matching": [
+        {
+            "original": "/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/chat.log",
+            "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot/chat.log"
+        },
+        {
+            "original": "/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/learning.log",
+            "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot/learning.log"
+        }
+    ]
+}

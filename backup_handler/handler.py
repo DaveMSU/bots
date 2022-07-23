@@ -13,7 +13,11 @@ class BackupHandler:
     def __init__(self, config):
         self._period: int = config["backup_period"]
         self._matching: tp.List[tp.Dict[str, str]] = config["matching"]
-        self._logger = make_logger("BackupHandler", config["logging_file"])
+        self._logger = make_logger(
+            logger_name="BackupHandler", 
+            logging_file=config["logging_params"]["logging_file"],
+            stdout=config["logging_params"]["stdout"]
+        )
 
     def _add_date_as_postfix(self, path: pathlib.Path) -> pathlib.Path:
         date = datetime.datetime.now()
@@ -55,4 +59,4 @@ class BackupHandler:
                 " without using KeyboardInterrupt. "
                 f"Next exception occured: {str(err)}."
             )
-                    
+

@@ -2,7 +2,7 @@ maze - лабиринт  # There's a maze of lanes all round the village.
 span - промежуток  # A good life is not measured by any biblical span.
 sanity - вменяемость  # It protects her sanity.
 evict - выселять  # They've turned up to evict him and he's not there.
-pivot - опорный  # Pivot table (SQL).
+pivot - поворачиваться  # Now pivot as you deliver the stroke. Put all your weight behind it.
 derive - выводить  # Using coiled springs, he derived the law of elasticity known today as Hooke's law.
 recyclable - перерабатываемый  # We use recyclable clothes now.
 absent - отсутствовать  # John looked about to notice who else was absent.
@@ -65,11 +65,11 @@ rip - разрывать  # I am going to rip you apart.
 continuation - продолжение  # It's some sort of continuation of Dostoevsky.
 flare - сигнальная ракета  # This is a Mark 58 flare.
 ram - таранить  # They're gonna ram us.
-indentation. - углубление  # Then she rammed the flare into the indentation.
+indentation - углубление  # Then she rammed the flare into the indentation.
 outdented - выступ  # Continuation line missing indentation or outdented.
 cursory - поверхностный  # I'm wondering if we can do a cursory medical exam on Peggy.
 preserve - хранить  # "God preserve you till to - morrow!"
-composure - спокойствие  # Except the Prince and the President, he was the only person in the room who preserved the composure of ordinary life.
+composure - уравновешенность  # Except the Prince and the President, he was the only person in the room who preserved the composure of ordinary life.
 serene - безмятежный  # She sat looking at him, her face serene.
 valiantly - мужественно  # Now, I once fought valiantly for your dream.
 retain - сохранять  # Berenice strove valiantly to retain a serene interest.
@@ -122,6 +122,7 @@ alongside - рядом  # Alongside our camp is the big Russian prison camp.
 valiant - доблестный  # A bastard boy with nothing to inherit, off to join the ancient order of the Night's Watch, alongside his valiant brothers-in-arms.
 hound - охотничья собака  # Does the hound frighten you?
 belly - живот  # Everything's better with some wine in the belly.
+tender - нежный  # He must not think that anything but tender feelings were driving her.
 a shame - жаль  # A shame you didn't say a prayer for the butcher's son.
 chewy - жевательный  # It's as chewy as bubblegum.
 roam - бродить  # Lions and tigers are let loose to roam the surrounding areas.
@@ -130,4 +131,51 @@ collar - ошейник  # I bent down to Jasper, putting my hand on his collar,
 pickpocket - карманник  # - Is this a pickpocket gang?
 thieve - воровать  # We can't thieve forever.
 plump - толстеть  # I swear, I'm gonna get plump.
+spot - место  # The flare marking the spot where they had been attacked had all but disappeared in the distance.
 whether - будь то  # Now the epsilon parameter is responsible for whether the choice of action is due to agent distribution or random distribution.
+courtesy - вежливость  # Then you might learn a lord's courtesy.
+saddle - седло  # With the right horse and saddle even a cripple can ride.
+rejoice - ликовать  № My father will rejoice to hear it.
+mill - лесопилка  # You will then go to where you can observe the saw mill and note if there are any changes in the post there.
+provide - обеспечивать  # Give that to your saddler. He'll provide the rest.
+reins - вожжи  # ... and teach it to respond to the reins and to the boy's voice.
+have a tender spot - питать слабость  # I have a tender spot in my heart for cripples, bastards and broken things.
+spare - избавлять  # Spare me your false courtesies, Lord Stark.
+courtesy - любезность #  I have simply called as a courtesy.
+brothel - бордель  # There is a brothel outside your walls.
+touching - трогательный  # It was wonderful, passionate, and touching.
+squeal - визжать  # Squeal like a pig.
+captor - похититель  # As far as we can tell, he killed his captor and escaped.
+loyalty - преданнасть  # Your loyalty to your captors is touching.
+fleet - флот  # I still remember seeing my father's fleet burn in Lannisport.
+rebellion - бунт  # - We were outnumbered 10 to one\n- A stupid rebellion then.
+lackey - прихвостень  # If he could see his only surviving son has turned lackey?
+yield - уступать  # "Have you been here long?" I asked, determined not to yield an inch of the fire.
+ought to be - должно быть  # You two. Three of you ought to be sufficiant. to make lady piggy squeal.
+pile - куча  # "Mr. Wilkes could make a pile of money out of the mills some day," said Rhett.
+mud - грязь  # A pile of mud. Mud and shit and twigs.
+twing - ветка  # Both men kept their eyes on the little twig on the water's edge.
+march - марш  # Khal Drogo is marching the wrong way with my army.
+ponderous - увесистый  # A ponderous tome.
+investment - инвестирование  # Well, what level of investment are you thinking about?
+noble - благородный  # Great mans, noble ladies and their children.
+council - совет  # Either way, I'll probably rip you, and half the council will too.
+nippy - прохладный  # It's a bit nippy out here.
+fly - муха  # You will die like flies.
+hawl - выть  # The only music the northerners know is the howling of wolves!
+dine - обед  # You can manage food, I trust? Yoren, dine with me.
+worn - носил  # He had never worn this armor before. (wear)
+draw - жеребьевка  # Who determines the draw?
+straw - соломинка  # All the knights draw straws, Lord Stark.
+modest - скромный  # You are too modest.
+joust - рыцарский турнир  # - I hear the king wants to joust today.
+mourn - оплакивать  # And who would mourn poor Varys then?
+doom - гибель  # Your friend doomed unless you save him.
+dungeon - подземелье  # In the dungeons, near the dragon skulls.
+urgent - срочный  # An urgent press conference?
+tremble - дрожать  # King I was knew didn't tremble at the shadow of an unborn child.
+weary - утомленный  # My seaster's guest is weary. Take him down below so he can rest.
+sink - тонуть  # Brothels make a much better investment than ships, whores rarely sink.
+confess - признаваться  # Tell her I wish to confess my crimes.
+vail - гнусный  # I'm a vile man, I confess it.
+vicious - порочный  # Should we not, then, stop preaching dangerous and vicious nonsense?

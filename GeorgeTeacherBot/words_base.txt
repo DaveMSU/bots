@@ -2,7 +2,7 @@ maze - лабиринт  # There's a maze of lanes all round the village.
 span - промежуток  # A good life is not measured by any biblical span.
 sanity - вменяемость  # It protects her sanity.
 evict - выселять  # They've turned up to evict him and he's not there.
-pivot - опорный  # Pivot table (SQL).
+pivot - поворачиваться  # Now pivot as you deliver the stroke. Put all your weight behind it.
 derive - выводить  # Using coiled springs, he derived the law of elasticity known today as Hooke's law.
 recyclable - перерабатываемый  # We use recyclable clothes now.
 absent - отсутствовать  # John looked about to notice who else was absent.
@@ -65,5 +65,26 @@ rip - разрывать  # I am going to rip you apart.
 continuation - продолжение  # It's some sort of continuation of Dostoevsky.
 flare - сигнальная ракета  # This is a Mark 58 flare.
 ram - таранить  # They're gonna ram us.
-indentation. - углубление  # Then she rammed the flare into the indentation.
+indentation - углубление  # Then she rammed the flare into the indentation.
 outdented - выступ  # Continuation line missing indentation or outdented.
+cursory - поверхностный  # I'm wondering if we can do a cursory medical exam on Peggy.
+preserve - хранить  # "God preserve you till to - morrow!"
+composure - уравновешенность  # Except the Prince and the President, he was the only person in the room who preserved the composure of ordinary life.
+serene - безмятежный  # She sat looking at him, her face serene.
+valiantly - мужественно  # Now, I once fought valiantly for your dream.
+retain - сохранять  # Berenice strove valiantly to retain a serene interest.
+acquire - приобретать  # Now in retrospect it became clear that he had an extraordinary ability to acquire and retain knowledge drawn from cursory reading.
+slight - незначительный  # I look about for any confirmation, however slight, of my idea - and I find it.
+remorse - раскаяние  # But not a one of you has shown the slightest sign of remorse.
+postal code - почтовый индекс  # Why do you need my postal code now?
+particularly - особенно  # Particularly when she first meets the Duc de Nemours.
+inactive - неактивный  # - You're sure the Stargate's been inactive?
+asset - имущество  # It was recently listed as an asset in one of her divorce cases.
+sigil - символ  # The direwolf is a sigil of your house.
+to be meant - быть предназначенным  # They were meant to have them.
+litter - помет  # He was the one little grey cub of the litter.
+runt - карлик  # The runt of the litter.
+oath - клятва  # I am ready to swear your oath.
+flee - убегать  # She has fled the capital.
+conspire - сговориться  # If ir is true, and Lannisters conspire against the throne, ...
+stalk - стебель  # It's a bean stalk.

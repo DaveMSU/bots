@@ -86,5 +86,8 @@ litter - помет  # He was the one little grey cub of the litter.
 runt - карлик  # The runt of the litter.
 oath - клятва  # I am ready to swear your oath.
 flee - убегать  # She has fled the capital.
-conspire - сговориться  # If ir is true, and Lannisters conspire against the throne, ...
+conspire - сговориться  # If it is true, and Lannisters conspire against the throne, ...
 stalk - стебель  # It's a bean stalk.
+pale - бледный  # "Are you all right? You look pale."
+glow - светиться  # ... with stalks as pale as milt that glow in the night.
+hospitality - гостеприимство  # Ivan extended his hospitality.

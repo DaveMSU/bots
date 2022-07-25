@@ -86,7 +86,7 @@ litter - помет  # He was the one little grey cub of the litter.
 runt - карлик  # The runt of the litter.
 oath - клятва  # I am ready to swear your oath.
 flee - убегать  # She has fled the capital.
-conspire - сговориться  # If ir is true, and Lannisters conspire against the throne, ...
+conspire - сговориться  # If it is true, and Lannisters conspire against the throne, ...
 stalk - стебель  # It's a bean stalk.
 pale - бледный  # "Are you all right? You look pale."
 glow - светиться  # ... with stalks as pale as milt that glow in the night.
@@ -102,7 +102,7 @@ brutish - жестокий  # Well, Mormont, as brutish as this life is, ...
 preferable - предпочтительный  # That would be preferable to being hanged for murder.
 behead - обезглавить  # Of course they will behead you as a deserter, if I don't catch you first.
 poach - браконьерствовать  # Anyway, that'll teach them not to poach on our preserve.
-царствовать - царствовать  # Under my reign, you won't be punished for such nonsense.
+reign - царствовать  # Under my reign, you won't be punished for such nonsense.
 absence - отсутствие  # Your absence has already been noted.
 wail - плачь  # And I can’t stand the wailing of women.
 mug - кружка  # And a mug of dark beer to wash it down.
@@ -129,6 +129,7 @@ roam - бродить  # Lions and tigers are let loose to roam the surrounding 
 surround - окружать  # I am free, no matter what rules surround me.
 collar - ошейник  # I bent down to Jasper, putting my hand on his collar, and looked round the edge of the door.
 pickpocket - карманник  # - Is this a pickpocket gang?
+wildlings - одичалые  # Wildlings and White Walkers and whatnot.
 thieve - воровать  # We can't thieve forever.
 plump - толстеть  # I swear, I'm gonna get plump.
 spot - место  # The flare marking the spot where they had been attacked had all but disappeared in the distance.
@@ -166,16 +167,48 @@ hawl - выть  # The only music the northerners know is the howling of wolves!
 dine - обед  # You can manage food, I trust? Yoren, dine with me.
 worn - носил  # He had never worn this armor before. (wear)
 draw - жеребьевка  # Who determines the draw?
+spit - плевать  # Lord Snow here grew up in a castle spitting down on the likes of you.
 straw - соломинка  # All the knights draw straws, Lord Stark.
 modest - скромный  # You are too modest.
 joust - рыцарский турнир  # - I hear the king wants to joust today.
 mourn - оплакивать  # And who would mourn poor Varys then?
+wench - девка  # As to the wench, I order you never to mention her name to me. 
 doom - гибель  # Your friend doomed unless you save him.
 dungeon - подземелье  # In the dungeons, near the dragon skulls.
 urgent - срочный  # An urgent press conference?
 tremble - дрожать  # King I was knew didn't tremble at the shadow of an unborn child.
 weary - утомленный  # My seaster's guest is weary. Take him down below so he can rest.
+drain - слив  # And she said that it went down the drain.
+mutual - взаимный  # So you should be serious and mutually support each other.
 sink - тонуть  # Brothels make a much better investment than ships, whores rarely sink.
 confess - признаваться  # Tell her I wish to confess my crimes.
+wit - остроумие  # Mm, that old caffrey wit.
 vail - гнусный  # I'm a vile man, I confess it.
 vicious - порочный  # Should we not, then, stop preaching dangerous and vicious nonsense?
+shed - лить  # They can't shed blood in their sacred city.
+sacred - священной  # In the sacred darkness below.
+impudent - обнаглевший  # You're an impudent little wench, aren't you? ... It means rude, disrespectful.
+exclusive - исключающий  # Are the two mutually exclusive in your experience?
+chew - жевать  # The city chews him up and spits him out.
+pour - наливать  # I get to go pour coffee for people I don't know.
+pity - жаль  # Such a pity.
+lad - парень  # The lad meant no harm.
+acorn - желудь  # The acorn doesn't fall far from the tree.
+persuade - убеждать  # You don't need to persuade me.
+mock - насмехаться  # I'm not mocking you, but i've seen men pray to every god there is, ...
+he lit - он поджег  # I lit a candle and I prayed for you. (to light)
+cruel - жестокий  # Wildlings serve crueler gods than you and I.
+court - двор  # Save your lies for court. You're going to need a lot of them.
+belly - чрево  # And the best way to stop them is to put your baby in my belly.
+flavor - вкус  # You don't drink it for the flavor, to be honest.
+fang - клык  # White Fang is a novel by American author Jack London.
+claw - коготь  # If the bull had fangs and claws, I would choose him.
+flay - свежевать  # In my family, we say, "A naked man has few secrets. A flayed man none."
+cloak - плащь  # Careful, now. We don't want to get blood all over your pretty white cloak.
+half-wit - придурок  # Punish for what? She did not fight her brother's battle, you half-wit.
+threaten - угрожать  # No one threatens His Grace in the presence of the Kingsguard.
+engagement - помолвка  # Tell me the truth. Do you want an end to this engagement?
+clog - забивать  # Yeah, you buy the cheap ones that float off in the tub and clog the drain!
+spoil - портить  # Your Grace, too much pain will spoil the pleasure.
+chambers - покои  # You bring her to his chambers when you're finished.
+bidding - повеление  # Now you do the Lannisters' bidding is that it?

@@ -17,7 +17,7 @@ def process(bot: GeorgeBot, process_config: tp.Dict[str, tp.Any]) -> None:
         bot.process_the_message()
         bot.send_result()
         bot.log_session()
-        bot.wait(1.0)
+        bot.wait(0.0)
     waiting_time = np.random.randint(*process_config["bounds"])
     bot.wait(waiting_time)
 

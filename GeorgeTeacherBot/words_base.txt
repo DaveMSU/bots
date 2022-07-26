@@ -91,3 +91,6 @@ stalk - стебель  # It's a bean stalk.
 pale - бледный  # "Are you all right? You look pale."
 glow - светиться  # ... with stalks as pale as milt that glow in the night.
 hospitality - гостеприимство  # Ivan extended his hospitality.
+fulfill - выполнять  # We will not fulfill any order
+bargain - сделка  # I will stay with Drogo until he fulfills his end of the bargain and I have my crown.
+arise - возникать  # Galaxies arise out of the great darkness of the Universe.

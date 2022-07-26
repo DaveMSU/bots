@@ -1,0 +1,11 @@
+2022-07-25 07:52:46,554 - WordsBaseHandler - DEBUG - Handler created!
+2022-07-26 02:53:15,834 - WordsBaseHandler - DEBUG - Handler created!
+2022-07-26 02:53:15,834 - WordsBaseHandler - DEBUG - Next hike time - 2022-07-27 10:00:00.834768.
+2022-07-26 02:53:50,992 - WordsBaseHandler - DEBUG - Handler created!
+2022-07-26 02:53:50,992 - WordsBaseHandler - DEBUG - Next hike time - 2022-07-27 00:00:00.992305.
+2022-07-26 02:56:19,770 - WordsBaseHandler - DEBUG - Handler created!
+2022-07-26 02:56:19,770 - WordsBaseHandler - DEBUG - Next hike time - 2022-07-26 02:57:13.770661.
+2022-07-26 02:57:13,832 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file.
+2022-07-26 02:57:13,833 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-07-27 02:57:13.770661.
+2022-07-26 02:59:35,991 - WordsBaseHandler - DEBUG - Handler created!
+2022-07-26 02:59:35,991 - WordsBaseHandler - DEBUG - Next hike time - 2022-07-27 01:00:00.991033.

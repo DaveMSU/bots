@@ -1,6 +1,6 @@
 {
     "process_params": {
-        "bounds": [600, 1800],
+        "bounds": [600, 1500],
         "number_of_questions": 2
     },
     "agent": {

@@ -94,3 +94,48 @@ hospitality - гостеприимство  # Ivan extended his hospitality.
 fulfill - выполнять  # We will not fulfill any order
 bargain - сделка  # I will stay with Drogo until he fulfills his end of the bargain and I have my crown.
 arise - возникать  # Galaxies arise out of the great darkness of the Universe.
+skiff - лодка  # He seemed to hang in the air above the old man in the skiff.
+insect - насекомое  # Your superhero is an insect?
+bounce - отскочить  # Might even bounce off the tunnel and hit you.
+restore - восстановить  # Daughter of a prince, I restore to you the riches and name of your father."
+brutish - жестокий  # Well, Mormont, as brutish as this life is, ...
+preferable - предпочтительный  # That would be preferable to being hanged for murder.
+behead - обезглавить  # Of course they will behead you as a deserter, if I don't catch you first.
+poach - браконьерствовать  # Anyway, that'll teach them not to poach on our preserve.
+reign - царствовать  # Under my reign, you won't be punished for such nonsense.
+absence - отсутствие  # Your absence has already been noted.
+wail - плачь  # And I can’t stand the wailing of women.
+mug - кружка  # And a mug of dark beer to wash it down.
+filth - грязь  # The children don’t need to hear your filth.
+grotesque - гротескный  # Even if the boy lives, he'll be a cripple, a grotesque.
+bundle - сверток  # Mrs. Talley looked at the tiny bundle she was holding in her arms.
+peril - опасность  # … for guarding us all from the perils beyond the Wall.
+whatnot - всякая всячина  # Well, you know what, Mouse Rat has a lot of influence on some of the local high school bands, mostly 'cause Chang buys 'em beer and whatnot.
+vow - обет  # Have you taken your vows, then?
+fold - складывать  # My things weren't properly folded, she says.
+poke - протыкать  # It can poke him full of holes if you're quick enough.
+sew - шить  # Sansa can keep her sewing needles.
+to man - укомплектовывать людьми  # The Starks have manned the Wall for thousands of years.
+inherit - наследовать  # «It would also inherit her money when she died.»
+ancient - древний  # Some ancient brotherhood killing cardinals?
+alongside - рядом  # Alongside our camp is the big Russian prison camp.
+belly - живот  # Everything's better with some wine in the belly.
+hound - охотничья собака  # Does the hound frighten you?
+tender - нежный  # He must not think that anything but tender feelings were driving her.
+a shame - жаль  # A shame you didn't say a prayer for the butcher's son.
+chewy - жевательный  # It's as chewy as bubblegum.
+roam - бродить  # Lions and tigers are let loose to roam the surrounding areas.
+surround - окружать  # I am free, no matter what rules surround me.
+collar - ошейник  # I bent down to Jasper, putting my hand on his collar, and looked round the edge of the door.
+pickpocket - карманник  # - Is this a pickpocket gang?
+wildlings - одичалые  # Wildlings and White Walkers and whatnot.
+thieve - воровать  # We can't thieve forever.
+plump - толстеть  # I swear, I'm gonna get plump.
+spot - место  # The flare marking the spot where they had been attacked had all but disappeared in the distance.
+whether - будь то  # Now the epsilon parameter is responsible for whether the choice of action is due to agent distribution or random distribution.
+courtesy - вежливость  # Then you might learn a lord's courtesy.
+saddle - седло  # With the right horse and saddle even a cripple can ride.
+rejoice - ликовать  # My father will rejoice to hear it.
+sawmill - лесопилка  # You will then go to where you can observe the sawmill and note if there are any changes in the post there.
+provide - обеспечивать  # Give that to your saddler. He'll provide the rest.
+reins - вожжи  # ... and teach it to respond to the reins and to the boy's voice.

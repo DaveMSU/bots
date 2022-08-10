@@ -64,7 +64,7 @@ class WordsBaseHandler:
         self._logger.debug(
             f"From '{self._queue_path}' file was"
             f" transport first {self._portion_size}"
-            f" lines to '{self._queue_path}' file."
+            f" lines to '{self._base_path}' file."
         )
         
     def _inc_next_hike_time(self):

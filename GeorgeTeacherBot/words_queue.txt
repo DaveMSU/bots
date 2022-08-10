@@ -1,49 +1,3 @@
-skiff - лодка  # He seemed to hang in the air above the old man in the skiff.
-insect - насекомое  # Your superhero is an insect?
-bounce - отскочить  # Might even bounce off the tunnel and hit you.
-restore - восстановить  # Daughter of a prince, I restore to you the riches and name of your father."
-brutish - жестокий  # Well, Mormont, as brutish as this life is, ...
-preferable - предпочтительный  # That would be preferable to being hanged for murder.
-behead - обезглавить  # Of course they will behead you as a deserter, if I don't catch you first.
-poach - браконьерствовать  # Anyway, that'll teach them not to poach on our preserve.
-reign - царствовать  # Under my reign, you won't be punished for such nonsense.
-absence - отсутствие  # Your absence has already been noted.
-wail - плачь  # And I can’t stand the wailing of women.
-mug - кружка  # And a mug of dark beer to wash it down.
-filth - грязь  # The children don’t need to hear your filth.
-grotesque - гротескный  # Even if the boy lives, he'll be a cripple, a grotesque.
-bundle - сверток  # Mrs. Talley looked at the tiny bundle she was holding in her arms.
-peril - опастность  # … for guarding us all from the perils beyond the Wall.
-whatnot - всякая всячина  # Well, you know what, Mouse Rat has a lot of influence on some of the local high school bands, mostly 'cause Chang buys 'em beer and whatnot.
-vow - обет  # Have you taken your vows, then?
-fold - складывать  # My things weren't properly folded, she says.
-poke - протыкать  # It can poke him full of holes if you're quick enough.
-sew - шить  # Sansa can keep her sewing needles.
-to man - укомплектовывать людьми  # The Starks have manned the Wall for thousands of years.
-inherit - наследовать  # «It would also inherit her money when she died.»
-ancient - древний  # Some ancient brotherhood killing cardinals?
-alongside - рядом  # Alongside our camp is the big Russian prison camp.
-valiant - доблестный  # A bastard boy with nothing to inherit, off to join the ancient order of the Night's Watch, alongside his valiant brothers-in-arms.
-hound - охотничья собака  # Does the hound frighten you?
-belly - живот  # Everything's better with some wine in the belly.
-tender - нежный  # He must not think that anything but tender feelings were driving her.
-a shame - жаль  # A shame you didn't say a prayer for the butcher's son.
-chewy - жевательный  # It's as chewy as bubblegum.
-roam - бродить  # Lions and tigers are let loose to roam the surrounding areas.
-surround - окружать  # I am free, no matter what rules surround me.
-collar - ошейник  # I bent down to Jasper, putting my hand on his collar, and looked round the edge of the door.
-pickpocket - карманник  # - Is this a pickpocket gang?
-wildlings - одичалые  # Wildlings and White Walkers and whatnot.
-thieve - воровать  # We can't thieve forever.
-plump - толстеть  # I swear, I'm gonna get plump.
-spot - место  # The flare marking the spot where they had been attacked had all but disappeared in the distance.
-whether - будь то  # Now the epsilon parameter is responsible for whether the choice of action is due to agent distribution or random distribution.
-courtesy - вежливость  # Then you might learn a lord's courtesy.
-saddle - седло  # With the right horse and saddle even a cripple can ride.
-rejoice - ликовать  № My father will rejoice to hear it.
-mill - лесопилка  # You will then go to where you can observe the saw mill and note if there are any changes in the post there.
-provide - обеспечивать  # Give that to your saddler. He'll provide the rest.
-reins - вожжи  # ... and teach it to respond to the reins and to the boy's voice.
 have a tender spot - питать слабость  # I have a tender spot in my heart for cripples, bastards and broken things.
 spare - избавлять  # Spare me your false courtesies, Lord Stark.
 courtesy - любезность #  I have simply called as a courtesy.
@@ -94,6 +48,7 @@ sacred - священной  # In the sacred darkness below.
 impudent - обнаглевший  # You're an impudent little wench, aren't you? ... It means rude, disrespectful.
 exclusive - исключающий  # Are the two mutually exclusive in your experience?
 chew - жевать  # The city chews him up and spits him out.
+charity - благотворительность  # A home, built in charity, for the proof.
 pour - наливать  # I get to go pour coffee for people I don't know.
 pity - жаль  # Such a pity.
 lad - парень  # The lad meant no harm.
@@ -101,6 +56,7 @@ acorn - желудь  # The acorn doesn't fall far from the tree.
 persuade - убеждать  # You don't need to persuade me.
 mock - насмехаться  # I'm not mocking you, but i've seen men pray to every god there is, ...
 he lit - он поджег  # I lit a candle and I prayed for you. (to light)
+manoeuvre - маневрировать  # It's very small, it might be difficult to manoeuvre it.
 cruel - жестокий  # Wildlings serve crueler gods than you and I.
 court - двор  # Save your lies for court. You're going to need a lot of them.
 belly - чрево  # And the best way to stop them is to put your baby in my belly.
@@ -108,11 +64,58 @@ flavor - вкус  # You don't drink it for the flavor, to be honest.
 fang - клык  # White Fang is a novel by American author Jack London.
 claw - коготь  # If the bull had fangs and claws, I would choose him.
 flay - свежевать  # In my family, we say, "A naked man has few secrets. A flayed man none."
+maid - горничная  # "That cursed maid had destroyed everything."
+laterally - в сторону  # You can't stop her going down but you can manoeuvre the sub laterally!
+debt - долг  # He could not pay a debt.
 cloak - плащь  # Careful, now. We don't want to get blood all over your pretty white cloak.
 half-wit - придурок  # Punish for what? She did not fight her brother's battle, you half-wit.
+current - ток  # And as Faraday showed us, electric currents produce magnetic fields.
+shape - формировать  # Thoughts shape reality.
 threaten - угрожать  # No one threatens His Grace in the presence of the Kingsguard.
+roast - поджаривать  # Trump roasts Clinton at Al Smith charity dinner.
 engagement - помолвка  # Tell me the truth. Do you want an end to this engagement?
 clog - забивать  # Yeah, you buy the cheap ones that float off in the tub and clog the drain!
 spoil - портить  # Your Grace, too much pain will spoil the pleasure.
 chambers - покои  # You bring her to his chambers when you're finished.
+leading - передний  # Current travels laterally from the leading edge of the thundercloud through clear air...
 bidding - повеление  # Now you do the Lannisters' bidding is that it?
+detain - задерживать  # "The White House has every right to detain and question them."
+sentinel - страж  # Send a sentinel to the rest chamber immediately.
+verbose - многословный  # To say nothing of your verbose style.
+receipt - чек  # Receipt in the bag?
+involve - втягивать  # "You didn't involve me in anything."
+launch - запуск  # Fly 80 kilometers that they launch have made a significant difference.
+regards - наилучшие пожелания  # If I ever see him, I'll split him in two. And then I'll give him your regards.
+drag - затащить  # He tried to drag me into the back room.
+supply - снабжение  # It harder to supply its combat units.
+sergeant - сержант  # Call your sergeant or your lieutenant, come on.
+taser - электрошокер  # I'm going to taser you.
+bounty - вознаграждение  # There's a bounty on your head, my friend.
+charge - бросаться  # Newly released video footage of a man fatally shot by police in a Lake Forest, after a three-hour standoff shows him charging towards officers while holding a knife.
+populace - простонародье  # The populace, especially in the Middle Ages, is in society what the child is in the family.
+adder - гадюка  # My Lord, wouldn't something like The Black Adder sound better?
+prevail - торжествовать  # Ukrain will prevail.
+bake - запекать  # We're gonna roast it, bake it, fry it.
+trailing - задний  # Test greet that removes leading and trailing spaces from name.
+offense - преступление  # Yes, Your Grace. Lying is a great offense.
+obedience - повиновение  # Instinct and law demanded of him obedience. But growth demanded disobedience.
+royal - королевский  # Just about the time Her Royal Highness arrived.
+owe - быть должным  # I hear you owe that boy a significant debt.
+release - освобождать  # You secured her release when the Queen detained her.
+borrow - одолжить  # "I could make, borrow, beg or steal it."
+clamour - ропот  # But on the other hand, it is deaf deaf as an adder to the clamors of the populace.
+lay siege - осадить  # You haven't heard? Stannis Baratheon laid siege to King's Landing.
+quadruped - четвероногий  # A quadruped wolf-like monster, prowling the Auvergne and south Dordogne areas of France during the year 1764 to 1767.
+fig - инжир  # Are there any figs? Fetch some.
+affair - дело  # It's shaping up to be a very involved affair.
+exile - изгнанник  # You're not Lord Commander here. You're just another exile.
+trial - судебное разбирательство  # I am doing everything possible to keep you from getting dragged into Alison's trial.
+stag - олень  # As nouns the difference between stag and deer is that stag is an adult male deer while deer is (obsolete) a beast, usually a quadruped as opposed to birds, fish, etc.
+generous - щедрый  # Ten silver stags seems a generous bounty.
+wee - крошечный  # If you ever see the wee fucker, give him my regards.
+establishment - заведение  # This is Lord Petyr Baelish's establishment.
+affection - любовь  # My sweet king. Do you have any affection for me at all?
+bear - выносить  # I began to understand why some people could not bear the clamour of the sea.
+grimy - грязный  # I can't bear to think of my brother locked away in some frimy cell.
+criticize - критиковать  # I did. And your wife has every right to criticize.
+deformity - уродство  # I gave you nothing but weakness and deformity.

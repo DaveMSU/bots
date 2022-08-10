@@ -22,3 +22,5 @@
 2022-07-23 22:52:50,453 - BaseLogger - DEBUG - chat_id=746826672. username=DaveMSU. real_name=Давид Харазян. message="Ауф"
 2022-07-25 19:28:18,667 - BaseLogger - DEBUG - chat_id=746826672. username=DaveMSU. real_name=Давид Харазян (В отпуске). message="Привет"
 2022-07-25 19:28:21,419 - BaseLogger - DEBUG - chat_id=746826672. username=DaveMSU. real_name=Давид Харазян (В отпуске). message="Как дела"
+2022-07-26 03:54:33,216 - BaseLogger - DEBUG - chat_id=746826672. username=DaveMSU. real_name=Давид Харазян (В отпуске). message="Эй"
+2022-07-30 19:12:20,612 - BaseLogger - DEBUG - chat_id=746826672. username=DaveMSU. real_name=Давид Харазян (В отпуске). message="Привет"

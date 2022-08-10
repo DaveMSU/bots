@@ -3,8 +3,9 @@ import typing as tp
 
 import numpy as np
 
-from global_vars import TOKEN, make_logger, parse_args, parse_config
+from global_vars import TOKEN
 from GeorgeBot import GeorgeBot
+from tools import make_logger, parse_args, parse_config
 
 CHAT_ID = 746826672
 

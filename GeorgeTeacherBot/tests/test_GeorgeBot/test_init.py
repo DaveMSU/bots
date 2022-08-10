@@ -1,18 +1,29 @@
-import sys; sys.path.append("/home/david_tyuman/telegram/bots/GeorgeTeacherBot")
+import sys
+sys.path.append("/home/david_tyuman/telegram/bots")
+sys.path.append("/home/david_tyuman/telegram/bots/GeorgeTeacherBot")
+
 import typing as tp
 
 import dataclasses
 import pytest
-# import numpy as np
 
-from global_vars import TOKEN, make_logger
-from GeorgeBot import GeorgeBot
+from global_vars import TOKEN
+from GeorgeTeacherBot.GeorgeBot import GeorgeBot
+from tools import make_logger
 
 PATH_TO_WORDS_BASE = "./tests/test_GeorgeBot/test_words_base.txt"
-CHAT_LOGGER = make_logger("ChatLogger", "./tests/test_GeorgeBot/test_logs/chat.log")
-ML_LOGGER = make_logger("QLearningLogger", "./tests/test_GeorgeBot/test_logs/learning.log")
 CHAT_ID = 746826672
 NUMBER_OF_QUESTIONS = 2
+CHAT_LOGGER = make_logger(
+    "ChatLogger", 
+    "./tests/test_GeorgeBot/test_logs/chat.log",
+    False
+)
+ML_LOGGER = make_logger(
+    "QLearningLogger", 
+    "./tests/test_GeorgeBot/test_logs/learning.log",
+    False
+)
 
 
 @dataclasses.dataclass
@@ -46,7 +57,7 @@ BOT_INITS = [
 
 
 @pytest.mark.parametrize("t", BOT_INITS, ids=str)
-def test_bot_creation(t: Case) -> None:
+def test_bot_instance_creation(t: Case) -> None:
     try:
         GeorgeBot(
             TOKEN,

@@ -46,7 +46,17 @@ MESSAGES_WITH_PRAISE = [
     "Cool, right!",
     "Another one right.",
     "Great!\nKeep going at this pace and soon you will have a vocabulary like mine.",
-    "And this... the right answer!"
+    "And this... the right answer!",
+    "You're right!",
+    "You are sooo clever, right answer!",
+    "Yeah! Fantastic!",
+    "Ohh, you guessed it correctly!",
+    "Ohh, you are... Inevitable!",
+    "Best student ever! Yeah, it's right)",
+    "Good!",
+    "Yeah, right!",
+    "Correct!",
+    "You're awesome, dude!"
 ]
 
 MESSAGES_WITH_CONDEMNATION = [

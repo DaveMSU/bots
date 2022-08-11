@@ -52,11 +52,16 @@ MESSAGES_WITH_PRAISE = [
     "Yeah! Fantastic!",
     "Ohh, you guessed it correctly!",
     "Ohh, you are... Inevitable!",
-    "Best student ever! Yeah, it's right)",
+    "Best student ever! Yeah, it's right!",
     "Good!",
     "Yeah, right!",
     "Correct!",
-    "You're awesome, dude!"
+    "You're awesome, dude!",
+    "Yes, correct answer!",
+    "Yes, correct!",
+    "Right!",
+    "You are correct!",
+    "Yes! Right answer!"
 ]
 
 MESSAGES_WITH_CONDEMNATION = [

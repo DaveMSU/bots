@@ -32,7 +32,6 @@ class GeorgeBot(TelegramBot):
             path_to_base: str,
             *,
             chat_logger: logging.Logger,
-            ml_logger: logging.Logger,
             alpha: float,
             epsilon: float,
             discount: float,
@@ -51,7 +50,6 @@ class GeorgeBot(TelegramBot):
         self._messages_to_return: tp.Deque[str] = deque()
         self._loggers: tp.Dict[str, tp.Any] = {
             "chat_logger": chat_logger,
-            "ml_logger": ml_logger
         }
 
         self.load_words()
@@ -278,24 +276,4 @@ class GeorgeBot(TelegramBot):
             f"error_message={repr(self._error_message)}"
         )
         self._loggers["chat_logger"].debug(log_line)
-
-        pre_log_line = [
-            {
-                "state": repr(state),
-                "action": repr(action),
-                "qvalue": self._agent.get_qvalue(state, action)
-            }
-            for state in self._agent._state_to_legal_actions
-                for action in self._agent._state_to_legal_actions[state] 
-        ]
-        pre_log_line = sorted(pre_log_line, key=lambda x: x["qvalue"])
-
-        log_line = " - ".join(
-            [
-                f"Q({line['state']}, {line['action']})={line['qvalue']}"
-                    for line in pre_log_line
-            ]
-        )
-
-        self._loggers["ml_logger"].debug(log_line)
 

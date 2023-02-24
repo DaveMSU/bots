@@ -35,11 +35,6 @@ def main():
             config["chat_logger"]["logging_file"],
             config["chat_logger"]["stdout"]
         ),
-        ml_logger=make_logger(
-            config["ml_logger"]["name"],
-            config["ml_logger"]["logging_file"],
-            config["ml_logger"]["stdout"]
-        ),
         **config["agent"],
     )
     bot.pretrain(config["data_pretrain_path"])

@@ -56,7 +56,7 @@ class WordsBaseHandler:
                     "Variable 'self._portion_size' equal"
                     f" to {self._portion_size}, but file"
                     f" '{self._queue_path}' consists only"
-                    f"from {len(all_queue_lines)} lines."
+                    f" from {len(all_queue_lines)} lines."
                 )
             dist.writelines(all_queue_lines[:self._portion_size])
         with open(self._queue_path, "w") as dist: 

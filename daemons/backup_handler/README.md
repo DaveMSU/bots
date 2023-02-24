@@ -1,6 +1,6 @@
 # Example of a program run command:
 ```
-python backup_handler --config=backup_handler/configs/base.json
+python backup_handler --config=./backup_handler/configs/base.json
 ```
 
 

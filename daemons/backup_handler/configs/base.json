@@ -18,10 +18,6 @@
             "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot/chat/chat.log"
         },
         {
-            "original": "/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/learning.log",
-            "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot/learning/learning.log"
-        },
-        {
             "original": "/home/david_tyuman/telegram_server/bots/logs/LazarusServiceBot/debug.log",
             "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/logs/LazarusServiceBot/debug/debug.log"
         },

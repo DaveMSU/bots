@@ -1,34 +1,9 @@
 import argparse
+import json
 import logging
 import os
+import sys
 import typing as tp
-
-def parse_args() -> tp.Dict[str, bool]:
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--with_delays', action="store_true")
-    parser.add_argument('--do_backups', action="store_true")
-    return parser.parse_args()
-
-
-def make_logger(
-        logger_name: str,
-        logging_file: str
-    ) -> logging.Logger:
-    """
-    :return: a logger into which data could be written.
-    """
-    logger = logging.getLogger(logger_name)
-    logger.setLevel(logging.DEBUG)
-
-    fh = logging.FileHandler(logging_file)
-    fh.setLevel(logging.DEBUG)
-
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    fh.setFormatter(formatter)
-    
-    logger.addHandler(fh)
-   
-    return logger
 
 
 def change_layout(line: str) -> str:
@@ -71,7 +46,22 @@ MESSAGES_WITH_PRAISE = [
     "Cool, right!",
     "Another one right.",
     "Great!\nKeep going at this pace and soon you will have a vocabulary like mine.",
-    "And this... the right answer!"
+    "And this... the right answer!",
+    "You're right!",
+    "You are sooo clever, right answer!",
+    "Yeah! Fantastic!",
+    "Ohh, you guessed it correctly!",
+    "Ohh, you are... Inevitable!",
+    "Best student ever! Yeah, it's right!",
+    "Good!",
+    "Yeah, right!",
+    "Correct!",
+    "You're awesome, dude!",
+    "Yes, correct answer!",
+    "Yes, correct!",
+    "Right!",
+    "You are correct!",
+    "Yes! Right answer!"
 ]
 
 MESSAGES_WITH_CONDEMNATION = [

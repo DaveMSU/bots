@@ -9,7 +9,7 @@ def make_logger() -> logging.Logger:
     logger = logging.getLogger('BaseLogger')
     logger.setLevel(logging.DEBUG)
     
-    fh = logging.FileHandler('debag.log')
+    fh = logging.FileHandler('/home/david_tyuman/telegram_server/bots/logs/LazarusServiceBot/debug.log')
     fh.setLevel(logging.DEBUG)
 
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')

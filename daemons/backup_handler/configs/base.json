@@ -1,0 +1,37 @@
+{
+    "logging_params": {
+        "logging_file": "/home/david_tyuman/telegram_server/bots/logs/daemons/backup_handler/debug.log",
+        "stdout": true
+    },
+    "backup_period": 14400,
+    "matching": [
+        {
+            "original": "/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt",
+            "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/content/GeorgeTeacherBot/words_base/words_base.txt"
+        },
+        {
+            "original": "/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt",
+            "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/content/GeorgeTeacherBot/words_queue/words_queue.txt"
+        },
+        {
+            "original": "/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/chat.log",
+            "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot/chat/chat.log"
+        },
+        {
+            "original": "/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/learning.log",
+            "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/logs/GeorgeTeacherBot/learning/learning.log"
+        },
+        {
+            "original": "/home/david_tyuman/telegram_server/bots/logs/LazarusServiceBot/debug.log",
+            "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/logs/LazarusServiceBot/debug/debug.log"
+        },
+        {
+            "original": "/home/david_tyuman/telegram_server/bots/logs/daemons/backup_handler/debug.log",
+            "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/logs/daemons/backup_handler/debug/debug.log"
+        },
+        {
+            "original": "/home/david_tyuman/telegram_server/bots/logs/daemons/words_base_handler/debug.log",
+            "copy": "/home/david_tyuman/telegram_server/bots/backup_dir/logs/daemons/words_base_handler/debug/debug.log"
+        }
+    ]
+}

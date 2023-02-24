@@ -1,0 +1,10 @@
+{
+    "logging_params": {
+        "logging_file": "/home/david_tyuman/telegram_server/bots/logs/daemons/words_base_handler/debug.log",
+        "stdout": true
+    },
+    "path_to_queue": "/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt",
+    "path_to_base": "/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt",
+    "portion_size": 3,
+    "hike_in_time": "01:00:00"
+}

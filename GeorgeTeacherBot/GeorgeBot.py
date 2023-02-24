@@ -1,4 +1,4 @@
-import sys; sys.path.append("/home/david_tyuman/telegram/bots")
+import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")
 import datetime
 import logging
 import re
@@ -23,7 +23,7 @@ MAIN_STATE = "main_state"
 
 
 class GeorgeBot(TelegramBot):
-    KEYS = ["eng_word", "rus_word", "comment"]
+    # KEYS = ["eng_word", "rus_word", "comment"]
 
     def __init__(
             self,
@@ -87,17 +87,20 @@ class GeorgeBot(TelegramBot):
 #                 )
                 for i in [0, 1]:
                     triplet = {
-                        "word_to_ask": line_parts[i], 
-                        "word_to_answer": line_parts[i ^ 1],
+                        "ask": {
+                            "word": line_parts[i],
+                            "language": LANGUAGES[i]
+                        },
+                        "answer": {
+                            "word": line_parts[i ^ 1],
+                            "language": LANGUAGES[i ^ 1]
+                        },
                         "comment": " - ".join(line_parts[2:]).strip()  # TODO
                     }
                     parsed_words_base.update({line_parts[i]: triplet})
         self._base = parsed_words_base
-        
-    def update_base(
-            self, 
-            path: tp.Optional[str] = None
-        ) -> tp.List[tp.Dict[str, str]]:
+
+    def update_base(self) -> tp.List[tp.Dict[str, str]]:
         self.load_words()
         self._agent.change_state_to_legal_actions(
             {MAIN_STATE: set(self._base)}
@@ -109,7 +112,7 @@ class GeorgeBot(TelegramBot):
     
     def ask_word(self) -> None:
         self._choose_triplet(self._base)
-        self.send_message(self._chat_id, self._triplet["word_to_ask"])
+        self.send_message(self._chat_id, self._triplet["ask"]["word"])
    
     def wait_for_an_message(self) -> None:
         while True:
@@ -145,12 +148,12 @@ class GeorgeBot(TelegramBot):
         return distances_matrix[curr_line_id][-1]
 
     @staticmethod    
-    def _check_words_similarity(s1: str, s2: str) -> bool:
+    def _check_words_similarity(s1: str, s2: str, /, degree: int = 1) -> bool:
         lev_dist = min(
             GeorgeBot._lev_dist(s1.lower(), s2.lower()),
-            GeorgeBot._lev_dist(change_layout(s1.lower()), s2.lower()) + 1
+            GeorgeBot._lev_dist(change_layout(s1.lower()), s2.lower())
         )
-        return lev_dist <= 1
+        return lev_dist <= degree
 
     def process_the_message(self) -> None:
         self._error_message = ""
@@ -173,9 +176,20 @@ class GeorgeBot(TelegramBot):
             return None
             
         self._return_comment = (parts[-1] == 'c')
+
+        if self._triplet["answer"]["language"] == "eng_word":
+            sim_degree = 0
+        elif self._triplet["answer"]["language"] == "rus_word":
+            sim_degree = 1
+        else:
+            raise RuntimeError(
+                f"No such language as triplet['answer']['language']=\"{self._triplet['answer']['language']}\"!"
+            )
+        
         self._is_answer_right = self._check_words_similarity(
-            self._triplet["word_to_answer"],
-            parts[0]
+            self._triplet["answer"]["word"],
+            parts[0],
+            degree=sim_degree
         )
 
         if self._is_answer_right:
@@ -184,15 +198,15 @@ class GeorgeBot(TelegramBot):
         else:
             condemnation_message = np.random.choice(MESSAGES_WITH_CONDEMNATION)
             self._messages_to_return.append(
-                condemnation_message.format(self._triplet["word_to_answer"])
+                condemnation_message.format(self._triplet["answer"]["word"])
             )
 
         if self._return_comment:
-            self._messages_to_return.append(self._triplet["comment"])
+            self._messages_to_return.extend(self._triplet["comment"].split("\\n"))
 
         self._agent.update(
             state=MAIN_STATE,
-            action=self._triplet["word_to_ask"],
+            action=self._triplet["ask"]["word"],
             reward=float(not self._is_answer_right),
             next_state=MAIN_STATE
         )
@@ -239,11 +253,6 @@ class GeorgeBot(TelegramBot):
                         'error_message': line_parts[7].split("=")[1].replace("'", "")
                 }
                 parsed_log.append(parsed_line)
-                # assert parsed_line["is_answer_right"] == \
-                #     self._check_words_similarity(
-                #         parsed_line["word_to_answer"],
-                #         parsed_line["user_answer"]
-                #     )
         return parsed_log
 
     def pretrain(self, log_path: str) -> None:
@@ -263,8 +272,8 @@ class GeorgeBot(TelegramBot):
     def log_session(self) -> None:
         log_line = (
             f"is_answer_right={self._is_answer_right} - "
-            f"word_to_ask={repr(self._triplet['word_to_ask'])} - "
-            f"word_to_answer={repr(self._triplet['word_to_answer'])} - "
+            f"word_to_ask={repr(self._triplet['ask']['word'])} - "
+            f"word_to_answer={repr(self._triplet['answer']['word'])} - "
             f"user_answer={repr(self._user_answer)} - "
             f"error_message={repr(self._error_message)}"
         )

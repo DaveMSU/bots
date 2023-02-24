@@ -10,16 +10,6 @@
         "init_qvalue": 4.0,
         "softmax_t": 0.2
     },
-    "data_pretrain_path": "/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/chat.log",
-    "path_to_words_base": "/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt",
-    "chat_logger": {
-        "name": "ChatLogger",
-        "logging_file": "/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/chat.log",
-        "stdout": true
-    },
-    "ml_logger": {
-        "name": "QLearningLogger",
-        "logging_file": "/home/david_tyuman/telegram_server/bots/logs/GeorgeTeacherBot/learning.log",
-        "stdout": false
-    }
+    "data_pretrain_path": "GTT.ChatLog",
+    "path_to_word_base": "GTT.WordBase"
 }

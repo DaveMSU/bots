@@ -3,9 +3,9 @@ import typing as tp
 
 import numpy as np
 
-from global_vars import TOKEN
+from global_vars import DB_PASSWORD, TOKEN
 from GeorgeBot import GeorgeBot
-from tools import make_logger, parse_args, parse_config
+from tools import parse_args, parse_config
 
 CHAT_ID = 746826672
 
@@ -28,16 +28,13 @@ def main():
     config = parse_config(args.config)
     bot = GeorgeBot(
         TOKEN,
+        DB_PASSWORD,
         CHAT_ID,
-        config["path_to_words_base"],        
-        chat_logger=make_logger(
-            config["chat_logger"]["name"],
-            config["chat_logger"]["logging_file"],
-            config["chat_logger"]["stdout"]
-        ),
+        config["path_to_word_base"],
+        config["data_pretrain_path"],
         **config["agent"],
     )
-    bot.pretrain(config["data_pretrain_path"])
+    bot.pretrain()
 
     while True:
         process(bot, config["process_params"])

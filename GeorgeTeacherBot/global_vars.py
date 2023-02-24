@@ -10,6 +10,7 @@ def change_layout(line: str) -> str:
     return "".join(list(map(lambda c: KEYBOARD_LAYOUT.get(c, c), line)))
 
 
+DB_PASSWORD =  os.environ["MYSQL_ROOT_PASSWORD"]
 TOKEN = os.environ["GEORGE_BOT_TOKEN"]
 
 KEYBOARD_LAYOUT = {

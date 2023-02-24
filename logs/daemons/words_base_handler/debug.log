@@ -49,3 +49,321 @@
 2022-08-09 17:47:58,476 - WordsBaseHandler - DEBUG - Next hike time - 2022-08-10 01:00:00.465094.
 2022-08-10 01:00:00,764 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
 2022-08-10 01:00:00,764 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-11 01:00:00.465094.
+2022-08-11 01:00:01,184 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-11 01:00:01,185 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-12 01:00:00.465094.
+2022-08-12 01:00:01,276 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-12 01:00:01,276 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-13 01:00:00.465094.
+2022-08-13 01:00:00,984 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-13 01:00:00,984 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-14 01:00:00.465094.
+2022-08-14 15:59:51,636 - WordsBaseHandler - DEBUG - Handler created!
+2022-08-14 15:59:51,636 - WordsBaseHandler - DEBUG - Next hike time - 2022-08-15 01:00:00.636685.
+2022-08-15 01:00:01,156 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-15 01:00:01,156 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-16 01:00:00.636685.
+2022-08-16 01:00:01,550 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-16 01:00:01,551 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-17 01:00:00.636685.
+2022-08-17 01:00:01,012 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-17 01:00:01,013 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-18 01:00:00.636685.
+2022-08-18 01:00:01,444 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-18 01:00:01,445 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-19 01:00:00.636685.
+2022-08-19 01:00:00,868 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-19 01:00:00,869 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-20 01:00:00.636685.
+2022-08-20 01:00:01,356 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-20 01:00:01,357 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-21 01:00:00.636685.
+2022-08-21 16:10:36,897 - WordsBaseHandler - DEBUG - Handler created!
+2022-08-21 16:10:36,905 - WordsBaseHandler - DEBUG - Next hike time - 2022-08-22 01:00:00.897653.
+2022-08-22 01:00:01,394 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-22 01:00:01,394 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-23 01:00:00.897653.
+2022-08-23 09:43:57,915 - WordsBaseHandler - DEBUG - Handler created!
+2022-08-23 09:43:57,923 - WordsBaseHandler - DEBUG - Next hike time - 2022-08-24 01:00:00.915258.
+2022-08-24 01:00:01,811 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-24 01:00:01,811 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-25 01:00:00.915258.
+2022-08-25 01:00:01,030 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-25 01:00:01,031 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-26 01:00:00.915258.
+2022-08-26 01:00:01,329 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-26 01:00:01,329 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-27 01:00:00.915258.
+2022-08-27 01:00:01,574 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-27 01:00:01,574 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-28 01:00:00.915258.
+2022-08-28 08:18:21,064 - WordsBaseHandler - DEBUG - Handler created!
+2022-08-28 08:18:21,064 - WordsBaseHandler - DEBUG - Next hike time - 2022-08-29 01:00:00.064602.
+2022-08-29 01:00:00,152 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-29 01:00:00,152 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-30 01:00:00.064602.
+2022-08-30 01:00:01,019 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-30 01:00:01,019 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-08-31 01:00:00.064602.
+2022-08-31 01:00:00,516 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-08-31 01:00:00,516 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-01 01:00:00.064602.
+2022-09-01 01:00:00,298 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-01 01:00:00,299 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-02 01:00:00.064602.
+2022-09-02 01:00:00,144 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-02 01:00:00,144 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-03 01:00:00.064602.
+2022-09-03 01:00:00,221 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-03 01:00:00,221 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-04 01:00:00.064602.
+2022-09-04 01:00:00,196 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-04 01:00:00,197 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-05 01:00:00.064602.
+2022-09-05 01:00:00,126 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-05 01:00:00,126 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-06 01:00:00.064602.
+2022-09-06 01:00:00,921 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-06 01:00:00,922 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-07 01:00:00.064602.
+2022-09-07 01:00:00,772 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-07 01:00:00,772 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-08 01:00:00.064602.
+2022-09-08 01:00:00,772 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-08 01:00:00,773 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-09 01:00:00.064602.
+2022-09-09 01:00:00,753 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-09 01:00:00,754 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-10 01:00:00.064602.
+2022-09-10 01:00:00,979 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-10 01:00:00,979 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-11 01:00:00.064602.
+2022-09-11 01:00:00,070 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-11 01:00:00,071 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-12 01:00:00.064602.
+2022-09-12 01:00:00,223 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-12 01:00:00,223 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-13 01:00:00.064602.
+2022-09-13 01:00:00,396 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-13 01:00:00,397 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-14 01:00:00.064602.
+2022-09-14 01:00:00,535 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-14 01:00:00,535 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-15 01:00:00.064602.
+2022-09-15 01:00:00,640 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-15 01:00:00,640 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-16 01:00:00.064602.
+2022-09-16 01:00:00,729 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-16 01:00:00,729 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-17 01:00:00.064602.
+2022-09-17 01:00:00,738 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-17 01:00:00,738 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-18 01:00:00.064602.
+2022-09-18 01:00:00,810 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-18 01:00:00,811 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-19 01:00:00.064602.
+2022-09-19 01:00:01,050 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-19 01:00:01,051 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-20 01:00:00.064602.
+2022-09-20 01:00:00,251 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-20 01:00:00,252 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-21 01:00:00.064602.
+2022-09-21 01:00:00,683 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-21 01:00:00,683 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-22 01:00:00.064602.
+2022-09-22 01:00:00,990 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-22 01:00:00,990 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-23 01:00:00.064602.
+2022-09-23 01:00:00,753 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-23 01:00:00,754 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-24 01:00:00.064602.
+2022-09-24 01:00:00,600 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-24 01:00:00,600 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-25 01:00:00.064602.
+2022-09-25 01:00:00,459 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-25 01:00:00,459 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-26 01:00:00.064602.
+2022-09-26 01:00:00,283 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-09-26 01:00:00,284 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-09-27 01:00:00.064602.
+2022-10-17 10:22:29,878 - WordsBaseHandler - DEBUG - Handler created!
+2022-10-17 10:22:29,896 - WordsBaseHandler - DEBUG - Next hike time - 2022-10-18 01:00:00.878477.
+2022-10-18 01:00:01,443 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-10-18 01:00:01,444 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-10-19 01:00:00.878477.
+2022-10-19 01:00:00,994 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-10-19 01:00:00,994 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-10-20 01:00:00.878477.
+2022-10-20 01:00:01,352 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-10-20 01:00:01,352 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-10-21 01:00:00.878477.
+2022-10-21 01:00:00,951 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-10-21 01:00:00,951 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-10-22 01:00:00.878477.
+2022-10-22 01:00:01,433 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-10-22 01:00:01,434 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-10-23 01:00:00.878477.
+2022-10-23 01:00:00,904 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-10-23 01:00:00,905 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-10-24 01:00:00.878477.
+2022-10-30 16:42:12,305 - WordsBaseHandler - DEBUG - Handler created!
+2022-10-30 16:42:12,322 - WordsBaseHandler - DEBUG - Next hike time - 2022-10-31 01:00:00.304993.
+2022-10-31 01:00:00,319 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-10-31 01:00:00,319 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-01 01:00:00.304993.
+2022-11-01 01:00:01,047 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-01 01:00:01,047 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-02 01:00:00.304993.
+2022-11-02 01:00:01,165 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-02 01:00:01,165 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-03 01:00:00.304993.
+2022-11-03 01:00:00,823 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-03 01:00:00,823 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-04 01:00:00.304993.
+2022-11-04 01:00:01,096 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-04 01:00:01,096 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-05 01:00:00.304993.
+2022-11-05 01:00:00,513 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-05 01:00:00,513 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-06 01:00:00.304993.
+2022-11-06 01:00:01,305 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-06 01:00:01,305 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-07 01:00:00.304993.
+2022-11-07 01:00:00,956 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-07 01:00:00,956 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-08 01:00:00.304993.
+2022-11-08 01:00:01,143 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-08 01:00:01,144 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-09 01:00:00.304993.
+2022-11-09 01:00:00,381 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-09 01:00:00,381 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-10 01:00:00.304993.
+2022-11-10 01:00:00,664 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-10 01:00:00,664 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-11 01:00:00.304993.
+2022-11-11 01:00:00,389 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-11 01:00:00,389 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-12 01:00:00.304993.
+2022-11-12 01:00:01,447 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-12 01:00:01,554 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-13 01:00:00.304993.
+2022-11-12 22:07:05,958 - WordsBaseHandler - DEBUG - Handler created!
+2022-11-12 22:07:05,958 - WordsBaseHandler - DEBUG - Next hike time - 2022-11-13 01:00:00.958726.
+2022-11-13 01:00:01,910 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-13 01:00:01,918 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-14 01:00:00.958726.
+2022-11-14 01:00:01,249 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-14 01:00:01,249 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-15 01:00:00.958726.
+2022-11-15 01:00:01,128 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-15 01:00:01,129 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-16 01:00:00.958726.
+2022-11-16 01:00:01,279 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-16 01:00:01,279 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-17 01:00:00.958726.
+2022-11-17 01:00:01,462 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-17 01:00:01,463 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-18 01:00:00.958726.
+2022-11-18 01:00:01,338 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-18 01:00:01,339 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-19 01:00:00.958726.
+2022-11-19 01:00:00,996 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-19 01:00:00,997 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-20 01:00:00.958726.
+2022-11-20 01:00:01,083 - WordsBaseHandler - ERROR - Exit from while loop in run method without using KeyboardInterrupt. Next exception occured: Variable 'self._portion_size' equal to 3, but file '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' consists onlyfrom 2 lines..
+2022-11-24 18:17:46,553 - WordsBaseHandler - DEBUG - Handler created!
+2022-11-24 18:17:46,553 - WordsBaseHandler - DEBUG - Next hike time - 2022-11-25 01:00:00.553259.
+2022-11-25 01:00:00,687 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-25 01:00:00,687 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-26 01:00:00.553259.
+2022-11-26 01:00:00,597 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-26 01:00:00,597 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-27 01:00:00.553259.
+2022-11-27 16:24:22,175 - WordsBaseHandler - DEBUG - Handler created!
+2022-11-27 16:24:22,175 - WordsBaseHandler - DEBUG - Next hike time - 2022-11-28 01:00:00.175278.
+2022-11-28 01:00:01,000 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-28 01:00:01,000 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-29 01:00:00.175278.
+2022-11-29 01:00:01,081 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-29 01:00:01,180 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-11-30 01:00:00.175278.
+2022-11-30 01:00:00,233 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-11-30 01:00:00,234 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-01 01:00:00.175278.
+2022-12-01 02:34:06,328 - WordsBaseHandler - DEBUG - Handler created!
+2022-12-01 02:34:06,348 - WordsBaseHandler - DEBUG - Next hike time - 2022-12-02 01:00:00.328143.
+2022-12-02 05:15:09,029 - WordsBaseHandler - DEBUG - Handler created!
+2022-12-02 05:15:09,049 - WordsBaseHandler - DEBUG - Next hike time - 2022-12-03 01:00:00.029530.
+2022-12-03 01:00:02,326 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-03 01:00:02,561 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-04 01:00:00.029530.
+2022-12-04 01:00:01,730 - WordsBaseHandler - ERROR - Exit from while loop in run method without using KeyboardInterrupt. Next exception occured: Variable 'self._portion_size' equal to 3, but file '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' consists onlyfrom 1 lines..
+2022-12-05 10:13:52,529 - WordsBaseHandler - DEBUG - Handler created!
+2022-12-05 10:13:52,529 - WordsBaseHandler - DEBUG - Next hike time - 2022-12-06 01:00:00.529621.
+2022-12-06 01:00:00,750 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-06 01:00:00,750 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-07 01:00:00.529621.
+2022-12-06 20:16:29,205 - WordsBaseHandler - DEBUG - Handler created!
+2022-12-06 20:16:29,234 - WordsBaseHandler - DEBUG - Next hike time - 2022-12-07 01:00:00.205593.
+2022-12-07 01:00:00,454 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-07 01:00:00,454 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-08 01:00:00.205593.
+2022-12-08 01:00:00,738 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-08 01:00:00,739 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-09 01:00:00.205593.
+2022-12-09 01:00:01,168 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-09 01:00:01,168 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-10 01:00:00.205593.
+2022-12-10 01:00:00,462 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-10 01:00:00,473 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-11 01:00:00.205593.
+2022-12-12 14:33:42,496 - WordsBaseHandler - DEBUG - Handler created!
+2022-12-12 14:33:42,517 - WordsBaseHandler - DEBUG - Next hike time - 2022-12-13 01:00:00.496773.
+2022-12-13 01:00:01,127 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-13 01:00:01,128 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-14 01:00:00.496773.
+2022-12-14 01:00:01,444 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-14 01:00:01,445 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-15 01:00:00.496773.
+2022-12-15 01:00:00,751 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-15 01:00:00,751 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-16 01:00:00.496773.
+2022-12-16 01:00:01,164 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-16 01:00:01,164 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-17 01:00:00.496773.
+2022-12-17 01:00:01,436 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-17 01:00:01,436 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-18 01:00:00.496773.
+2022-12-18 01:00:00,604 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-18 01:00:00,604 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-19 01:00:00.496773.
+2022-12-19 01:00:00,950 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-19 01:00:00,950 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-20 01:00:00.496773.
+2022-12-20 01:00:01,255 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-20 01:00:01,256 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-21 01:00:00.496773.
+2022-12-21 01:00:00,912 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-21 01:00:00,912 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-22 01:00:00.496773.
+2022-12-22 01:00:01,416 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-22 01:00:01,417 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-23 01:00:00.496773.
+2022-12-23 01:00:00,775 - WordsBaseHandler - ERROR - Exit from while loop in run method without using KeyboardInterrupt. Next exception occured: Variable 'self._portion_size' equal to 3, but file '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' consists onlyfrom 0 lines..
+2022-12-23 15:12:52,195 - WordsBaseHandler - DEBUG - Handler created!
+2022-12-23 15:12:52,196 - WordsBaseHandler - DEBUG - Next hike time - 2022-12-24 01:00:00.195859.
+2022-12-24 01:00:00,880 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-24 01:00:00,880 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-25 01:00:00.195859.
+2022-12-24 12:18:38,477 - WordsBaseHandler - DEBUG - Handler created!
+2022-12-24 12:18:38,477 - WordsBaseHandler - DEBUG - Next hike time - 2022-12-25 01:00:00.477689.
+2022-12-25 01:00:00,964 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-25 01:00:00,964 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-26 01:00:00.477689.
+2022-12-26 01:00:00,489 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-26 01:00:00,489 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-27 01:00:00.477689.
+2022-12-27 01:00:00,892 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2022-12-27 01:00:00,892 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2022-12-28 01:00:00.477689.
+2022-12-28 01:00:01,070 - WordsBaseHandler - ERROR - Exit from while loop in run method without using KeyboardInterrupt. Next exception occured: [Errno 28] No space left on device.
+2023-01-01 19:11:50,719 - WordsBaseHandler - DEBUG - Handler created!
+2023-01-01 19:11:50,719 - WordsBaseHandler - DEBUG - Next hike time - 2023-01-02 01:00:00.719170.
+2023-01-06 15:10:20,689 - WordsBaseHandler - DEBUG - Handler created!
+2023-01-06 15:10:20,689 - WordsBaseHandler - DEBUG - Next hike time - 2023-01-07 01:00:00.689070.
+2023-01-07 01:00:01,517 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-07 01:00:01,518 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-08 01:00:00.689070.
+2023-01-08 01:00:01,442 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-08 01:00:01,528 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-09 01:00:00.689070.
+2023-01-09 01:00:00,989 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-09 01:00:00,990 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-10 01:00:00.689070.
+2023-01-10 01:00:00,963 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-10 01:00:00,963 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-11 01:00:00.689070.
+2023-01-11 01:00:00,805 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-11 01:00:00,805 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-12 01:00:00.689070.
+2023-01-12 01:00:00,994 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-12 01:00:00,994 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-13 01:00:00.689070.
+2023-01-13 01:00:01,231 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-13 01:00:01,231 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-14 01:00:00.689070.
+2023-01-14 01:00:00,723 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-14 01:00:00,723 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-15 01:00:00.689070.
+2023-01-15 01:00:01,420 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-15 01:00:01,421 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-16 01:00:00.689070.
+2023-01-16 01:00:01,552 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-16 01:00:01,552 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-17 01:00:00.689070.
+2023-01-17 01:00:01,690 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-17 01:00:01,690 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-18 01:00:00.689070.
+2023-01-18 01:00:01,696 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-18 01:00:01,696 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-19 01:00:00.689070.
+2023-01-19 01:00:01,023 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-19 01:00:01,023 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-20 01:00:00.689070.
+2023-01-20 01:00:01,220 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-20 01:00:01,220 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-21 01:00:00.689070.
+2023-01-21 01:00:00,872 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-21 01:00:00,872 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-22 01:00:00.689070.
+2023-01-22 01:00:01,601 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-22 01:00:01,602 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-23 01:00:00.689070.
+2023-01-23 01:00:01,268 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-23 01:00:01,268 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-24 01:00:00.689070.
+2023-01-24 01:00:01,592 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-24 01:00:01,592 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-25 01:00:00.689070.
+2023-01-25 01:00:00,972 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-25 01:00:00,973 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-26 01:00:00.689070.
+2023-01-26 01:00:01,422 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-26 01:00:01,423 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-27 01:00:00.689070.
+2023-01-27 01:00:00,885 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-27 01:00:00,885 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-28 01:00:00.689070.
+2023-01-28 01:00:01,091 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-28 01:00:01,091 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-29 01:00:00.689070.
+2023-01-29 01:00:01,322 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-29 01:00:01,322 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-30 01:00:00.689070.
+2023-01-30 01:00:01,182 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-30 01:00:01,201 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-01-31 01:00:00.689070.
+2023-01-31 01:00:01,478 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-01-31 01:00:01,478 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-01 01:00:00.689070.
+2023-01-31 15:59:12,976 - WordsBaseHandler - DEBUG - Handler created!
+2023-01-31 15:59:12,994 - WordsBaseHandler - DEBUG - Next hike time - 2023-02-01 01:00:00.976285.
+2023-02-02 13:28:04,596 - WordsBaseHandler - DEBUG - Handler created!
+2023-02-02 13:28:04,623 - WordsBaseHandler - DEBUG - Next hike time - 2023-02-03 01:00:00.596339.
+2023-02-03 01:00:00,997 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-03 01:00:00,997 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-04 01:00:00.596339.
+2023-02-04 01:00:01,241 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-04 01:00:01,241 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-05 01:00:00.596339.
+2023-02-05 01:00:01,247 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-05 01:00:01,247 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-06 01:00:00.596339.
+2023-02-06 01:00:01,075 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-06 01:00:01,076 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-07 01:00:00.596339.
+2023-02-07 01:00:00,904 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-07 01:00:00,904 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-08 01:00:00.596339.
+2023-02-08 01:00:01,012 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-08 01:00:01,013 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-09 01:00:00.596339.
+2023-02-09 01:00:01,141 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-09 01:00:01,142 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-10 01:00:00.596339.
+2023-02-10 01:00:01,588 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-10 01:00:01,588 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-11 01:00:00.596339.
+2023-02-11 01:00:00,979 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-11 01:00:00,979 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-12 01:00:00.596339.
+2023-02-12 01:00:00,829 - WordsBaseHandler - ERROR - Exit from while loop in run method without using KeyboardInterrupt. Next exception occured: Variable 'self._portion_size' equal to 3, but file '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' consists onlyfrom 2 lines..
+2023-02-13 09:38:50,969 - WordsBaseHandler - DEBUG - Handler created!
+2023-02-13 09:38:50,986 - WordsBaseHandler - DEBUG - Next hike time - 2023-02-14 01:00:00.969008.
+2023-02-14 01:00:01,939 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-14 01:00:01,939 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-15 01:00:00.969008.
+2023-02-15 01:00:01,815 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-15 01:00:01,815 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-16 01:00:00.969008.
+2023-02-16 01:00:01,739 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-16 01:00:01,739 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-17 01:00:00.969008.
+2023-02-17 01:00:01,171 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-17 01:00:01,172 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-18 01:00:00.969008.
+2023-02-18 01:00:01,185 - WordsBaseHandler - ERROR - Exit from while loop in run method without using KeyboardInterrupt. Next exception occured: Variable 'self._portion_size' equal to 3, but file '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' consists onlyfrom 1 lines..
+2023-02-22 15:47:38,170 - WordsBaseHandler - DEBUG - Handler created!
+2023-02-22 15:47:38,184 - WordsBaseHandler - DEBUG - Next hike time - 2023-02-23 01:00:00.170037.
+2023-02-23 01:00:00,382 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-23 01:00:00,383 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-24 01:00:00.170037.
+2023-02-24 01:00:00,835 - WordsBaseHandler - DEBUG - From '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_queue.txt' file was transport first 3 lines to '/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot/words_base.txt' file.
+2023-02-24 01:00:00,841 - WordsBaseHandler - DEBUG - Private variable 'next_hike_time' have been incremented. For now it is 2023-02-25 01:00:00.170037.

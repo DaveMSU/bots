@@ -202,7 +202,7 @@ class GeorgeBot(TelegramBot):
             )
 
         if self._return_comment:
-            self._messages_to_return.append(self._triplet["comment"])
+            self._messages_to_return.extend(self._triplet["comment"].split("\\n"))
 
         self._agent.update(
             state=MAIN_STATE,

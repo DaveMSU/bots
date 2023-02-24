@@ -97,7 +97,7 @@ arise - возникать  # Galaxies arise out of the great darkness of the Un
 skiff - лодка  # He seemed to hang in the air above the old man in the skiff.
 insect - насекомое  # Your superhero is an insect?
 bounce - отскочить  # Might even bounce off the tunnel and hit you.
-restore - восстановить  # Daughter of a prince, I restore to you the riches and name of your father."
+restore - восстановить  # - Daughter of a prince, I restore to you the riches and name of your father.
 brutish - жестокий  # Well, Mormont, as brutish as this life is, ...
 preferable - предпочтительный  # That would be preferable to being hanged for murder.
 behead - обезглавить  # Of course they will behead you as a deserter, if I don't catch you first.
@@ -106,7 +106,7 @@ reign - царствовать  # Under my reign, you won't be punished for such
 absence - отсутствие  # Your absence has already been noted.
 wail - плачь  # And I can’t stand the wailing of women.
 mug - кружка  # And a mug of dark beer to wash it down.
-filth - грязь  # The children don’t need to hear your filth.
+filth - брань  # The children don’t need to hear your filth.
 grotesque - гротескный  # Even if the boy lives, he'll be a cripple, a grotesque.
 bundle - сверток  # Mrs. Talley looked at the tiny bundle she was holding in her arms.
 peril - опасность  # … for guarding us all from the perils beyond the Wall.
@@ -139,3 +139,390 @@ rejoice - ликовать  # My father will rejoice to hear it.
 sawmill - лесопилка  # You will then go to where you can observe the sawmill and note if there are any changes in the post there.
 provide - обеспечивать  # Give that to your saddler. He'll provide the rest.
 reins - вожжи  # ... and teach it to respond to the reins and to the boy's voice.
+have a tender spot - питать слабость  # I have a tender spot in my heart for cripples, bastards and broken things.
+spare - уберечь  # Spare me your false courtesies, Lord Stark.
+brothel - бордель  # There is a brothel outside your walls.
+touching - трогательный  # It was wonderful, passionate, and touching.
+squeal - визжать  # Squeal like a pig.
+captor - похититель  # As far as we can tell, he killed his captor and escaped.
+loyalty - преданность  # Your loyalty to your captors is touching.
+fleet - флот  # I still remember seeing my father's fleet burn in Lannisport.
+rebellion - бунт  # - We were outnumbered 10 to 1.\n- A stupid rebellion then.
+lackey - прихвостень  # If he could see his only surviving son has turned lackey?
+yield - уступать  # "Have you been here long?" I asked, determined not to yield an inch of the fire.
+ought to be - должно быть  # You two. Three of you ought to be sufficiant. To make lady piggy squeal.
+pile - куча  # "Mr. Wilkes could make a pile of money out of the mills some day," said Rhett.
+mud - грязь  # A pile of mud. Mud and shit and twigs.
+twig - ветка  # Both men kept their eyes on the little twig on the water's edge.
+march - марш  # Khal Drogo is marching the wrong way with my army.
+ponderous - увесистый  # A ponderous tome.
+investment - инвестирование  # Well, what level of investment are you thinking about?
+noble - благородный  # Great mans, noble ladies and their children.
+treason - измена  # We're discussing treason.
+council - совет  # Either way, I'll probably rip you, and half the council will too.
+nippy - прохладный  # It's a bit nippy out here.
+fly - муха  # You will die like flies.
+howl - выть  # The only music the northerners know is the howling of wolves!
+dine - обедать  # You can manage food, I trust? Yoren, dine with me.
+worn - носил  # He had never worn this armor before. (wear)
+draw - жеребьевка  # Who determines the draw?
+drawback - изъян  # The main drawbacks of the kNN graph approaches are: ...
+spit - плевать  # Lord Snow here grew up in a castle spitting down on the likes of you.
+straw - соломинка  # All the knights draw straws, Lord Stark.
+pretend - притворяться  # - Oh yes, you mean why do I pretend?
+route - направлять  # Harry, I'm routing maximum power to the transporters.
+modest - скромный  # You are too modest.
+adjacent - смежный  # ... of a current base node and then selects as the next base node the adjacent node that minimizes the distance, while constantly keeping track of the best discovered neighbors.
+nest - вкладывать  # A nested subset of elements of a set of real numbers.
+joust - рыцарский турнир  # - I hear the king wants to joust today.
+hop - перепрыгивать  # ..., which utilized navigable graphs, i.e. graphs with logarithmic scaling of the number of hops during the greedy traversal with the respect of the network size.
+mourn - оплакивать  # And who would mourn poor Varys then?
+convince - убеждать  # When have I ever been able to convince Cersei of anything?
+wench - девка  # As to the wench, I order you never to mention her name to me. 
+doom - гибель  # Your friend doomed unless you save him.
+dungeon - подземелье  # In the dungeons, near the dragon skulls.
+urgent - срочный  # An urgent press conference?
+traverse - проходить  # For a given proximity graph, we start the search at some enter point and iteratively traverse the graph.
+tremble - дрожать  # King I was knew didn't tremble at the shadow of an unborn child.
+innocent - невинный  # Try for every one of the million people in that city, innocent or otherwise.
+vast - обширный  # In the vast majority of studied graph algorithms searching takes a form of greedy routing in kNN graphs.
+proximity - близость  # The proximity of the Brest railway could be felt.
+weary - утомленный  # My seaster's guest is weary. Take him down below so he can rest.
+drain - слив  # And she said that it went down the drain.
+mutual - взаимный  # So you should be serious and mutually support each other.
+sink - тонуть  # Brothels make a much better investment than ships, whores rarely sink.
+confess - признаваться  # Tell her I wish to confess my crimes.
+wit - остроумие  # Mm, that old caffrey wit.
+vail - гнусный  # I'm a vile man, I confess it.
+vicious - порочный  # Should we not, then, stop preaching dangerous and vicious nonsense?
+redundant - избыточный  # The backslash is redundant between brackets.
+shed - лить  # They can't shed blood in their sacred city.
+sacred - священный  # In the sacred darkness below.
+impudent - обнаглевший  # You're an impudent little wench, aren't you? ... It means rude, disrespectful.
+exclusive - исключительный  # Are the two mutually exclusive in your experience?
+coarse - грубый  # ..., which are typically used at the coarse search stage of the most proximity graphs for nested subsets of the stored elements.
+chew - жевать  # The city chews him up and spits him out.
+charity - благотворительность  # A home, built in charity, for the proof.
+pour - наливать  # I get to go pour coffee for people I don't know.
+pity - жаль  # Such a pity.
+lad - парень  # The lad meant no harm.
+acorn - желудь  # The acorn doesn't fall far from the tree.
+persuade - убеждать  # You don't need to persuade me.
+mock - насмехаться  # I'm not mocking you, but I've seen men pray to every god there is, ...
+he lit - он поджег  # I lit a candle and I prayed for you. (to light)
+manoeuvre - маневрировать  # It's very small, it might be difficult to manoeuvre it.
+cruel - безжалостный  # Wildlings serve crueler gods than you and I.
+court - двор  # Save your lies for court. You're going to need a lot of them.
+flavor - вкус  # You don't drink it for the flavor, to be honest.
+fang - клык  # White Fang is a novel by American author Jack London.
+claw - коготь  # If the bull had fangs and claws, I would choose him.
+flay - свежевать  # In my family, we say, "A naked man has few secrets. A flayed man none."
+maid - горничная  # "That cursed maid had destroyed everything."
+laterally - в сторону  # You can't stop her going down but you can manoeuvre the sub laterally!
+debt - долг  # He could not pay a debt.
+cloak - плащ  # Careful, now. We don't want to get blood all over your pretty white cloak.
+half-wit - придурок  # Punish for what? She did not fight her brother's battle, you half-wit.
+current - ток  # And as Faraday showed us, electric currents produce magnetic fields.
+shape - формировать  # Thoughts shape reality.
+remain - оставаться  # "But how long will I have to remain on Mars?"
+threaten - угрожать  # No one threatens His Grace in the presence of the Kingsguard.
+roast - поджаривать  # Trump roasts Clinton at Al Smith charity dinner.
+engagement - помолвка  # Tell me the truth. Do you want an end to this engagement?
+clog - забивать  # Yeah, you buy the cheap ones that float off in the tub and clog the drain!
+spoil - портить  # Your Grace, too much pain will spoil the pleasure.
+chambers - покои  # You bring her to his chambers when you're finished.
+leading - передний  # Current travels laterally from the leading edge of the thundercloud through clear air...
+bidding - повеление  # Now you do the Lannisters' bidding is that it?
+detain - задерживать  # "The White House has every right to detain and question them."
+sentinel - страж  # Send a sentinel to the rest chamber immediately.
+verbose - многословный  # To say nothing of your verbose style.
+sneak - подкрадываться  # It's rude to sneak up on people.
+receipt - чек  # Receipt in the bag?
+involve - втягивать  # "You didn't involve me in anything."
+launch - запуск  # Fly 80 kilometers that they launch have made a significant difference.
+regards - наилучшие пожелания  # If I ever see him, I'll split him in two. And then I'll give him your regards.
+drag - затащить  # He tried to drag me into the back room.
+supply - снабжение  # It harder to supply its combat units.
+sergeant - сержант  # Call your sergeant or your lieutenant, come on.
+taser - электрошокер  # I'm going to taser you.
+extension - расширение  # The Remote - SSH extension lets you use any remote machine with a SSH server as your development environment.
+bounty - вознаграждение  # There's a bounty on your head, my friend.
+charge - бросаться  # Newly released video footage of a man fatally shot by police in a Lake Forest, after a three-hour standoff shows him charging towards officers while holding a knife.
+manually - вручную  # If I control it manually, I can follow you through the network.
+populace - простонародье  # The populace, especially in the Middle Ages, is in society what the child is in the family.
+adder - гадюка  # My Lord, wouldn't something like The Black Adder sound better?
+prevail - торжествовать  # Ukrain will prevail.
+bake - запекать  # We're gonna roast it, bake it, fry it.
+trailing - задний  # Test greet that removes leading and trailing spaces from name.
+prevent - предотвращать  # When he had reached the floor below, he was thinking that he would meet her, that he would meet her soon and that Francon would not be able to prevent it now.
+offense - преступление  # Yes, Your Grace. Lying is a great offense.
+consecutive - последовательный  # Online learning is performed in a sequence of consecutive rounds, where at round ...
+adversarially - враждебно  # The sequence is allowed to be deterministic, stochastic, or even adversarially adaptive to the learner’s own behavior (as in the case of spam email filtering).
+obedience - повиновение  # Instinct and law demanded of him obedience. But growth demanded disobedience.
+appeal - привлекательность  # Online learning is a well established learning paradigm which has both theoretical and practical appeals.
+royal - королевский  # Just about the time Her Royal Highness arrived.
+comprehensive - всеобъемлющий  # As part... of more comprehensive reform, privatization is incredibly effective.
+release - освобождать  # You secured her release when the Queen detained her.
+borrow - одолжить  # "I could make, borrow, beg or steal it."
+clamour - ропот  # But on the other hand, it is deaf deaf as an adder to the clamors of the populace.
+lay siege - осадить  # You haven't heard? Stannis Baratheon laid siege to King's Landing.
+luminance - яркость  # ... we propose the use of the following criterion: edges have much stronger luminance than chrominance components.
+reveal - выявлять  # After predicting an answer, the correct answer, y_t, taken from a target domain Y, is revealed and the learner suffers a loss, l(p_t,y_t), which measures ...
+deduce - дедуктировать  # The learner tries to deduce information from previous rounds so as to improve its predictions on present and future questions.
+distortion - искажение  # Whatever you remember, if you do remember, will be a distortion of reality, not the truth of events.
+restate - переформулируй  # We restate the learner’s goal as having the lowest possible regret relative to H.
+quadruped - четвероногий  # A quadruped wolf-like monster, prowling the Auvergne and south Dordogne areas of France during the year 1764 to 1767.
+emergence - появление  # By preventing the emergence of a second machine.
+imply - подразумевать  # ... by which we mean that RegretT (H) grows sub-linearly with the number of rounds, T, which implies that the difference between the average loss of the learner and ...
+fig - инжир  # Are there any figs? Fetch some.
+affair - дело  # It's shaping up to be a very involved affair.
+employ - использовать  # So remember to employ your...
+exile - изгнанник  # You're not Lord Commander here. You're just another exile.
+tie - ничья  # ... (in case of a tie predict p_t = 1) ...
+precede - предшествовать  # Gods that precede any religion.
+trial - судебное разбирательство  # I am doing everything possible to keep you from getting dragged into Alison's trial.
+stag - олень  # As nouns the difference between stag and deer is that stag is an adult male deer while deer is (obsolete) a beast, usually a quadruped as opposed to birds, fish, etc.
+generous - щедрый  # Ten silver stags seems a generous bounty.
+restrict - ограничивать  # To make non trivial statements we must further restrict the problem. We consider two natural restrictions.
+wee - крошечный  # If you ever see the wee fucker, give him my regards.
+establishment - заведение  # This is Lord Petyr Baelish's establishment.
+rigorous - строгий  # We do not mean to be comprehensive but rather to give a high-level, rigorous yet easy to follow, survey.
+owe - быть должным  # I hear you owe that boy a significant debt.
+affection - любовь  # My sweet king. Do you have any affection for me at all?
+bear - выносить  # I began to understand why some people could not bear the clamour of the sea.
+clause - пункт  # Then why the hell did you sneak this clause to the back of my goddamn contract?
+amplify - усиливать  # ...params of preceding layers, so that small changes to the network parameters amplify as the network becomes deeper.
+grimy - грязный  # I can't bear to think of my brother locked away in some grimy cell.
+adjust - регулировать  # How to adjust learning rate?
+criticize - критиковать  # I did. And your wife has every right to criticize.
+deformity - уродство  # I gave you nothing but weakness and deformity.
+elaborate - замысловатый  # Based on the large-scale training data and the elaborate DCNN architectures, ...
+remains - останки  # His remains are being prepared by the Silent Sisters.
+pending - ожидаемый  # I'll file her under "pending".
+placement - размещение  # It also became of great interest to practitioners due the recent emergence of large scale applications such as online advertisement placement and online web ranking.
+haste - поспешность  # ...would like to make haste in finding Ser Ryam's replacement...
+angular - угловой  # Sphereface introduces the important idea of angular margin, however their loss function requires a series of approximations, which results in an unstable training of the network.
+lens - объектив  # ... of digital cameras, which usually employ careful lens design to effectively perform a small ...
+heir - наследник  # Many suspect, and believe, the rightful heir to the English throne is you, Mary Stuart.
+ape - обезьяна  # Apes together strong.
+plainly - откровенно  # Might I speak plainly, Your Grace?
+cozy - уютный  # Are you cozy right there?
+decent - приличный  # But we might have a decent house.
+vulture - стервятник  # ...you picked through the place like a vulture!
+survey - обзор  # I want a complete survey of our stock of nuclear materials.
+strip - обнажать  #  Yeah, go on, strip it clean.
+gnaw - обгладывать  # Ohh, that's my deer. Look at it. All gnawed on by this ...
+disease - болезнь  # "Any history of heart disease in your family?"
+poxy - паршивый  # His only problem was he was married to the poxy job.
+pond - пруд  # Why don't you take that stupid hat and go back to "On golden pond"?
+venison - оленина  # ...cook us up some venison.
+whim - прихоть  # What I did was not on a whim.
+comply - соблюдать  # In the code you give, you are not putting whitespace around the =, so you are complying with pep8 in respect of operator spacing.
+skew - перекос  # The class distribution is skewed with most of the data falling in 1 of the 3 classes.
+benighted - погруженный во мрак  # In UNIX, /dev/tty* is any device that acts like a "teletype", i.e: a terminal. (Called teletype because that's what we had for terminals in those benighted days.)
+lowpass - низкочастотный  # ... effectively perform a small amount of lowpass filtering to reduce the aliasing due to the Bayer pattern subsampling.
+realizable - реализуемый  # With this restriction on the sequence, which we call the realizable case, the learner should make as few mistakes as possible.
+pressure - давление  # Is he under any kind of pressure?
+fuss - суета  # The days are long, but Aegon came quickly and without fuss.
+inspect - проверять  # Mr Bates and I need to inspect our house, so the timing couldn't be better.
+towel - полотенце  # Couldn't you see he had nothing on but a towel?
+refer - относиться  # But at least he doesn't refer to my children as a mistake.
+mosquito - комар  # Perhaps it's a mosquito has bitten me.
+emphasise - выделять  # We emphasize again that both h and the sequence of questions can be chosen by an adversary.
+paramount - первостепенный  # The paramount mission of the United Nations remains the maintenance of peace, prosperity and security throughout the world.
+elope - сбежать  # You know, I could just give you the ring and we could elope.
+verse - стих  # Yes, how about a verse of "Killing Me Softly"?
+prosthesis - протез  # I engineered a prosthesis for Chips while I was sprinting down the stairwell.
+van - фургон  # ... piano's out of the van, it's on the street, everything's fine.
+mohawk - ирокез  # Hey, remember that time he had a mohawk?
+agent - вещество  # Before World War II, they used to use animal hair in plaster as, as a binding agent or something.
+audition - прослушивание  # But I just got a phone call about a really big audition, so can you go finish it?
+falcon - сокол  # - Raven's blood, falcon hair.
+toner box - картридж для принтера  #  I actually threw a toner box at him once.
+bath - купаться  # I bathed in Artic mountain water while my Latin lover recited verse to me.
+intricate - затейливый  # They won't be able to. We do intricate details back here.
+motto - девиз  # With LIFE's motto on it.
+backward - обратное направление  # Anyway, they say the key is to work backwards.
+clue - зацепка  # The only clue was that the camera seemed to have been placed somewhere dark.
+tournament - турнир  # That's why I say you should organize an international chess tournament in Vasyuki.
+nifty - стильный  # Well, I really liked that nifty mohawk.
+grasp - хватать  # "For I show them swords, which they grasp by the blade..."
+we are prepping - мы готовимся  # We are prepping the wetting agents on that to start the process.
+oblong - продолговатый  # - So, what kind of skateboard does your son have?\n- I have no idea. It's oblong. I don't know.
+accidentally - случайно  # ... it is easy to accidentally end up with two independent instances of the module if that module is again imported within the program.
+invoke - вызывать  # When a module is invoked via Python’s -m option the module is bound to sys.modules['__main__'] and its .__name__ attribute is set to '__main__'.
+presume - предполагать  # However, when the above command line invocation is used it is a natural inference to presume that the module is actually imported under its official name module\.name, ...
+delineation - разграничение  # Sometimes the delineation between the two is a sharp line.
+lid - крышка  # Lupin grasped the lid of the packing case and pulled.
+gossip - сплетня  # "Or it might be some gossip about a mutual friend."
+fraught - чреватый  # It seems that this particular location is fraught with unnecessary peril.
+familiarize yourself - ознакомиться с  # In this task you will familiarize yourself with both these problems while trying to create fake images of sneakers.
+resolution - разрешение  # ... use a simple GAN to generate a bunch of low resolution images from noise, then upscale them using another generative model.
+prohibit - препятствовать  # This allows to be more efficient in memory usage but prohibits the possibility to make a backward pass.
+thus - таким образом  # The output of the discriminator should thus have shape [batch_size, 1], and contain real numbers corresponding to ...
+slope - наклон  # torch.nn.LeakyReLU(negative_slope=0.01)
+intractable - неподатливый  # The subject will be intractable problems that will always lead to other problems just as intractable.
+spatial - пространственный  # It felt like some sort of cross-dimensional spatial transference.
+bride - невеста  # "Bride" is referred to a woman about to be married in a wedding.
+fiancee - избранница  # "Fiancée" refers to a woman who is engaged but not yet married. This term is used before a wedding has taken place while "bride" is used during the wedding
+decline - снижение  # The larger the slope of the decline or growth, the stronger the signal.
+retire - отставка  # I thjought I looked nice in my sweater, but my fiancee said I look like a retired member of the X-Men.
+sole - единственный  # Our sole object in taking these things is to preserve our health.
+reason - размышлять  # However, this network architecture allows no real spatial reasoning.
+perceptual - перцептивный  # In addition, we use a content loss motivated by perceptual similarity instead of similarity in pixel space.
+satellite - спутниковый  # "Storm's still moving in, but my people tell me the satellite link will not be affected."
+internal - внутренний  # An overdose would cause massive internal bleeding and brain ...
+profound - основательный  # Deep learning has launched a profound reformation and even been applied to many real-world tasks, such as image classification, object detection and segmentation.
+adopt - принимать  # Unlike other deep generative models which usually adopt approximation methods for intractable functions or inference, GANs do not require any approximation and can be ...
+simultaneously - одновременно  # The basic idea of GANs is to simultaneously train a discriminator and a generator: ...
+in spite of - несмотря на  # In spite of the great progress for GANs in image generation, the quality of generated images by GANs is still limited for some realistic tasks.
+perceive - воспринимать  # No, but your ability to perceive their existence is conditional on you passing the second and third barriers.
+disentangle - распутать  # These facts are hard to disentangle, and perhaps they shouldn't be.
+manifold - многообразие  # On the other hand, the decision boundary should go across the manifold of real data for a successful GANs learning.
+breakthrough - прорыв  # Despite the breakthroughs in accuracy and speed of single image super-resolution, one central problem remains largely unsolved: how do we recover the ...
+fidelity - достоверность  # They are perceptually unsatisfying in the sense that they fail to match the fidelity expected at the higher resolution.
+coverage - охват  # Sat phone coverage gets kind of flaky in my village sometimes.
+counterpart - аналог  # The highly challenging task of estimating a high resolution (HR) image from its low-resolution (LR) counterpart is referred to as super-resolution (SR).
+equilibrium - равновесие  # Inner-ear pathology can affect the equilibrium and cause disorientation, making it appear to be a neurological disorder.
+substantial - существенный  # SR received substantial attention from within the computer vision research community and has a wide range of applications.
+ill-posed - некорректный  # The ill-posed nature of the underdetermined SR problem is particularly pronounced for high upscaling factors, for which texture detail in ...
+diverge - расходиться  # In this work we propose a ... (SRGAN) for which we employ a deep residual network (ResNet) with skip-connection and diverge from MSE as the sole optimization target.
+velocity - скорость  # ... the velocity of the air at each point defines a vector field ...
+exploit - эксплуатировать  # The authors exploit patch redundancies across scales within the image to drive the SR.
+counteract - противодействовать  # To efficiently train these deeper network architectures, batch normalization is often used to counteract the internal co-variate shift.
+plausible - правдоподобный  # GANs provide a powerful framework for generating plausible-looking natural images with high perceptual quality.
+necessitate - вынуждать  # My methods usually necessitate, no, demand more circuitous routes.
+encourage - стимулировать  # The GAN procedure encourages the reconstructions to move towards regions of the search space with high probability of containing photo-realistic images and thus ...
+lead - приводить  # Recent advances in generative modeling have led to an increased interest in the study of statistical divergences as means of model comparison.
+sensitive - чувствительный  # Commonly used evaluation methods, such as the FID, correlate well with the perceived quality of samples and are sensitive to mode dropping.
+novel - новый  # We propose a novel definition of precision and recall for distributions which disentangles the divergence into two separate dimensions.
+relate to - относить к  # relate (smth) to (smth). (To associate smth with smth else; to establish smth as smth similar or related to smth else.)\n We relate this notion to variation as well as ...
+extensive - широкий  # In an extensive set of experiments we show that the proposed metric is able to disentangle the quality of generated samples from the coverage of the target distribution.
+affect - влиять  # (1) Will your words affect the outcome?\n(2) Doctor, it can affect her whole life.\n(3) Our relationship did affect my judgment.
+vanity - самолюбие  # Vanity isn't a sin!
+rental advertisement - объявление об аренде  # Good morning! I found your rental advertisement. May I ask if you have already rented out your apartment?
+corruption - повреждение  # In particular, FID has been shown to be robust to image corruption, it correlates well with the visual fidelity of the samples, and it can be computed on unlabeled data.
+finite - конечный  # Let there be two spaces, the space of images Omega_X and the space of labels Omega_Y. The space of labels is finite.
+infeasible - невыполнимый  # Generative Adversarial Networks (GANs) excel at creating realistic images with complex models for which maximum likelihood is infeasible.
+mild - легкий  # Using the theory of stochastic approximation, we prove that the TTUR converges under mild assumptions to a stationary local Nash equilibrium.
+characterize - охарактеризовать  # To characterize the convergence properties of training general GANs is still an open challenge.
+prerequisit - предпосылка  # A prerequisit for many convergence proofs is local stability which was shown for GANs by Nagarajan and Kolter for a min-max GAN setting.
+consequently - следовательно  # Consequently, networks with Lipschitz smooth activation functions like ELUs (α = 1) fulfill the assumption but not ReLU net.
+seldom - редко  # This approach necessitates training of a classifier for each model which is seldom practical.
+extractor hood - вытяжка  # Center island with built-in kitchen and two extractor hoods.
+disjoint - непересекающийся  # ... (d) If the supports of P and Q are disjoint, we should have zero precision and recall.
+washing powder - стиральный порошок  # I've also stopped using the washing powder, as you advised, but there's no evidence so far from that...
+fill up - заполнять  # To lose up to 2 kg in one procedure, you can fill the bath with warm water and dissolve in it 0.5 kg of sea salt and 0.3 kg of ordinary drinking soda.
+faucet - водопроводный кран  # And the faucet had to be right in the middle of the sink...
+precious - драгоценный  # Use the precious wood to make a string of beads.
+oven - духовка  # It’s a good advertisement for ovens, though, which have extractor hoods.
+coat - пальто  # It was warm, so I took off my coat.
+manage - справляться  # I was going quite fast, but luckily I managed to stop in time and didn't hit him.
+remote controller - пульт дистанционного управления  # The TV remote control is on the sofa.
+reprimand - выговор  # I have got a reprimand from chief.
+cabbage - капуста  # We don't have enough cabbage for soup. Son, go to the market and buy this.
+plate - тарелка  # Last night I dropped a plate when I was doing the washing-up. Fortunately it didn't break.
+fare - плата за проезд  # Last week the bus fare was 1.8 euro. Now it is 2 euro.
+broadcast - транслировать  # The images being broadcast of the bodies of 83 dead children allegedly killed in the strike we believe to be false, created for propaganda purposes.
+inject - инъецировать  # So she was injected with a virus and bacteria.
+wander - бродить  # Harry is wandering about the house.
+wary - настороженный  # Why is your dog looking across the road so wary?
+dragonfly - стрекоза  # I suspect more honeybee than dragonfly.
+highway - шоссе  # Anthony is driving along the highway.
+steady - устойчивый  # Hold the crown. And hold it steady.
+dragonfly - стрекоза  # I suspect more honeybee than dragonfly.
+highway - шоссе  # Anthony is driving along the highway.
+steady - устойчивый  # Hold the crown. And hold it steady.
+limb - конечность  # Sometimes we even amputate a limb.
+inmate - заключенный  # We got a new inmate today.
+purge - чистка  # There would be no more killing. There will be no more purges. Am I clear, brother?
+spill - проливать  # When the blood of a loved one is spilt in these waters, my desire must be met.
+cannon - артиллерийское орудие  # Would a coward have climbed on the cannon at Gettysburg and rallied the men?
+ambiguity - неоднозначность  # There is no ambiguity, my lord.
+gratitude - благодарность  # He had received no gratitude from Stengel.
+fetch - добыть  # I'll just fetch you some cool water.
+nursery rhyme - детский стишок  # And when she used to put me to sleep as a kid, she used to call me Maggie-Pie from a nursery rhyme about a bird, and I don't know, maybe Cindy had heard that rhyme.
+blanket - одеяло  # He covered her with a blanket and sat at the bedside listening to her breathing.
+conquer - завоевывать  # We are meant to conquer, to rule, to build empires.
+noose - петля  # You might survive today, but the noose has been tied.
+wage - ведение  # NATO is an instrument to build peace as well as to wage war.
+apparently - вероятно  # Apparently you have something to tell me. ("Apparently" is based on things you can see. "Probably" is based on things that you know or reasoned.)
+induce - вызвать  # So you said that you're removing the meds that induce the coma.
+venom - яд  # Is it true that snake venom is sometimes injected for epilepsy?
+fodder - корм  # You can tell him that I've got to pay for my horse's fodder and I've spent the money on drink.
+nauseous - тошнить  # You guys are making me nauseous. Not in a good way.
+intact - невредимый  # And you graduated with your sanity intact?
+woe - горе  # Her name comes from a line from my favorite nursery rhyme, "Wednesday's child is full of woe."
+lend - одалживать  # I have read the book you lent me, so you can have it back now.
+victim - жертва  # Because you and I both know there is a monster out there. And Rowan is his latest victim.
+oat - овсяный  # Video games, cancel culture, oat milk versus soy, it's a wild time.
+play fetch - поиграть в мячик  # I assume your father didn't bring the blood hound to play fetch.
+remittance - денежный перевод  # Remittance fees have been nearly halved.
+proceed - продолжить  # Then he proceeded to use his telekinesis to try and choke me to death.
+sentence - приговаривать  # Like two inmates sentenced to life on the same cell block.
+crumble - раскрошить  # I can't wait to crush Ophelia Hall tomorrow and watch her werewolf roommate crumble.
+riddle - загадка  # I came here originally to solve a riddle.
+alumnus - выпускник  # But we have a lot of wealthy alumni, so Weems looks the other way as long as nobody makes any waves.
+stew - переживать  # Are you still stewing because I rejected your invitation?
+go out on a limb - пойти на риск  # I did go out on a limb for you.
+cannon fodder - пушечное мясо  # Please. I'm just cannon fodder in whatever cold war you're waging with Bianca.
+expel - исключать  # Oh my god. For the last time, Rowan was expelled.
+ancestor - предок  # ... and I believe she's my ancestor from 400 years ago.
+rocky - непростой  # Unfortunately, David's assimilation has been rocky at best.
+wisdom - мудрость  # I thought that might be your reaction, but your parents can see the wisdom in it.
+tag - помечать  # They bag and tag everything, all right?
+dredge up the past - ворошить прошлое  # Tyler, come on. We've been through this. I'm just... I'm not comfortable dredging up the family past with some complete stranger.
+crap - чушь  # Think it's easy for me to sit there and talk about my crap.
+concern - касаться  # Doctor. This does not concern you.
+excavate - откапывать  # If you refuse to tell me the truth, I'll just have to excavate it myself.
+elude - ускользнуть  # My appetite eludes me, Mother. The same way the truth eludes you.
+onion - лук  # Yeah, pickled onions!
+ancestor - предок  # In fact, the group was started by an ancestor of your father's from Mexico.
+oppression - угнетение  # The Nightshades were her secret, but deadly, answer to his oppression.
+jackal - шакал  # I've seen jackals with more self-control than you two.
+potent - сильнодействующий  # You're a Raven. Your visions are more potent, more powerful.
+solitary - одиночный  # The path of a Raven is a solitary one. You end up alone, unable to trust others, only seeing the darkness within them.
+distraction - отвлечение  # I need a distraction.
+violent - жесткий  # Do you know how violently unpredictable a Hyde can be?
+frame - подставить  # You! You framed me.
+suspense - саспенс  # I know the suspense is killing you.
+fellow - собрат  # My fellow guards and I are curious.
+exhibition - выставка  # You know, this exhibition on the Mars-rover photographs are... I mean, the detail really is just supposed to be amazing.
+lung - лёгкое  # Yes. Lung cancer. Inoperable.
+pot - травка  # - He sells me pot.\n- He sells you pot.\n- Marijuana, yeah.
+influence - повлиять  # In recent years, the design of many efficient online learning algorithms has been influenced by convex optimization tools.
+furthermore - кроме того  # Furthermore, it was observed that most previously proposed efficient algorithms can be jointly analyzed based on the following elegant model: ...
+jaw - челюсть  # You tell me to "look for the light" and I'll break your jaw.
+skank - шалава  # I mean, he told her she was a skank, but, yo, I mean, she was a skank.
+beetroot - свекла  # It was always beetroot in our family.
+vehicle - транспортное средство  # I need a complete team to operate this vehicle.
+sour cream - сметана  # It's a four-star restaurant known for borsch with caviar and sour cream, and for refusing service to anyone who doesn't speak Russian.
+raw - сырой  # 'I've eaten raw fish in Norway,' I said.
+injury - травма  # Any injuries?
+twist - закручивать  # Twisted ankle, nothing too bad.
+reimburse - возмещать  # I will, of course, reimburse you for the damage to your vehicles.
+daunt - пугать  # Just the idea of owning a car wash seems so daunting, but I have to ...
+mimic - подражать  # Look at what they need to mimic a fraction of our power.
+crutche - костыль  # With one leg, supporting himself with a crutch.
+solid - цельный  # Told you, Skyler. I warned uou for a solid year.
+consequence - последствие  # You cross me, there will be consequences.
+wind up - кончить  # Wind up (as) (something).
+toe the line - ходить по струнке  # Toe the line or you will wind up just like Hank.
+remarkable - замечательный  # Your uncle must be a remarkable man
+ejector seat - катапультируемое кресло  # Think the feds will let that go because you hit the ejector seat?
+tap - прослушивать  # The internet, the phone, it's all tapped.
+jury - суд присяжных  # Odds are it was recorded. It'll play great for a jury.
+all of a sudden - вдруг  #  All of a sudden, he dropped a ball.
+inspire - внушать  # But there was no one nearby to inspire him with hope.
+courage - мужество  # Your effort is inspiring. Your courage is remarkable.
+incorporate - объединять  # We present a new family of subgradient methods that dynamically incorporate knowledge of the geometry of the data observed in earlier iterations to perform more ...
+apparatus - устройство  # Look, Quinn specifically said he needed a working apparatus to come and pick us up.
+confluence - сочетание  # A particular confluence of forces which allows a doorway to be opened through which we may pass and through which others may pass into our world.
+accomplish - завершать  # Max and I are a great team, and when we set our mind to something, we accomplish it.
+tuesday - вторник  # "Thursday night," she said suddenly.
+in hindsight - задним числом  # ... a learning rate and results in regret guarantees that are probably as good as the best proximal function that can be chosen in hindsight.
+strawberry - клубника  # - Strawberries and cream!
+heel - пятка  # His heel was not protected.
+impediment - препятствие  # "What is the nature of the impediment?" he asked.
+sore - болячка  # Doc, I have this sore on my lip.
+stroke - инсульт  # The angiogram showed that what you had, Mrs. Blackwell, was a small stroke.

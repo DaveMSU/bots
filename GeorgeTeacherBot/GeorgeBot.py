@@ -1,12 +1,15 @@
-import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")
+import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")  # TODO: remove that kinda import.
+
 import datetime
 import logging
 import re
 import time
 import typing as tp
 from collections import deque
+from textwrap import dedent
 
 import numpy as np
+import pymysql
 
 from global_vars import (
     MESSAGES_WITH_PRAISE, 
@@ -16,22 +19,22 @@ from global_vars import (
 from TableQLearningAgent import QLearningAgent
 from telegrambot import TelegramBot
 
-LANGUAGES = ["eng_word", "rus_word"]
+
+LANGUAGES = ["english", "russian"]
 TIME_TO_WAIT = 0.1
 HUMANLIKE_PROSSESING_TIME = 1.0
 MAIN_STATE = "main_state"
 
 
 class GeorgeBot(TelegramBot):
-    # KEYS = ["eng_word", "rus_word", "comment"]
-
     def __init__(
             self,
             token: str, 
+            db_password: str,
             chat_id: int,
             path_to_base: str,
+            path_to_log: str,
             *,
-            chat_logger: logging.Logger,
             alpha: float,
             epsilon: float,
             discount: float,
@@ -39,18 +42,16 @@ class GeorgeBot(TelegramBot):
             softmax_t: float
         ):
         TelegramBot.__init__(self, token)  # TODO: use super().
+        self._db_password = db_password
         self._chat_id: int = chat_id
         self._path_to_base: str = path_to_base
+        self._path_to_log: str = path_to_log
         self._base: tp.Dict[str, tp.Dict[str, str]] = dict()
-        # self._probs: np.array = np.array([1.0])
         self._triplet: tp.Optional[tp.Dict[str, str]] = None
         self._user_answer: str = ""
-        self._return_comment: tp.Optional[bool] = None
+        self._return_context: tp.Optional[bool] = None
         self._error_message: str = ""
         self._messages_to_return: tp.Deque[str] = deque()
-        self._loggers: tp.Dict[str, tp.Any] = {
-            "chat_logger": chat_logger,
-        }
 
         self.load_words()
         state_to_legal_actions = {MAIN_STATE: set(self._base)}
@@ -63,40 +64,45 @@ class GeorgeBot(TelegramBot):
             softmax_t
         )
 
-    def load_words(
-            self, 
-            path: tp.Optional[str] = None
-        ) -> None:
+    def load_words(self) -> None:
         """
-        :param path: path to txt file with base of words.
         Construct self._base atribute that have 
          next type: tp.Dict[str, tp.Dict[str, str]].
         """
-        path = self._path_to_base if path is None else path
-        parsed_words_base: tp.Dict[str, tp.Dict[str, str]] = dict()
-        with open(path, 'r') as f:
-            for line in f:
-                line_parts = list(map(lambda x: x.strip(), re.split(" - | #", line)))
-                if "#" not in line:            
-                    line_parts.append("Sorry, no using example.")
-#                 assert len(line_parts) == 3, (
-#                     f"len(line_parts+ must be = 3, but {len(line_parts)}"
-#                     f" occured!\nline_parts = {line_parts}"
-#                 )
-                for i in [0, 1]:
-                    triplet = {
-                        "ask": {
-                            "word": line_parts[i],
-                            "language": LANGUAGES[i]
-                        },
-                        "answer": {
-                            "word": line_parts[i ^ 1],
-                            "language": LANGUAGES[i ^ 1]
-                        },
-                        "comment": " - ".join(line_parts[2:]).strip()  # TODO
-                    }
-                    parsed_words_base.update({line_parts[i]: triplet})
-        self._base = parsed_words_base
+        database_name, table_name = self._path_to_base.split(".")
+        connection = pymysql.connect(  # TODO: remove hard code.
+            host='localhost',
+            user='root',
+            password=self._db_password,
+            db=database_name,
+            charset='utf8mb4',
+            cursorclass=pymysql.cursors.DictCursor
+        )
+
+        try:
+            with connection.cursor() as cursor:
+                query = dedent(
+                    f"""
+                    SELECT * FROM {table_name};
+                    """
+                )
+                cursor.execute(query)
+                for raw in cursor:
+                    for i in [0, 1]:
+                        triplet = {
+                            "ask": {
+                                "word": raw[LANGUAGES[i]],
+                                "language": LANGUAGES[i]
+                            },
+                            "answer": {
+                                "word": raw[LANGUAGES[i ^ 1]],
+                                "language": LANGUAGES[i ^ 1]
+                            },
+                            "context": raw["context"]  # TODO: remove double copy.
+                        }
+                        self._base.update({raw[LANGUAGES[i]]: triplet})
+        finally:
+            connection.close()        
 
     def update_base(self) -> tp.List[tp.Dict[str, str]]:
         self.load_words()
@@ -173,11 +179,11 @@ class GeorgeBot(TelegramBot):
             self._messages_to_return.append(self._error_message)
             return None
             
-        self._return_comment = (parts[-1] == 'c')
+        self._return_context = (parts[-1] == 'c')
 
-        if self._triplet["answer"]["language"] == "eng_word":
+        if self._triplet["answer"]["language"] == "english":
             sim_degree = 0
-        elif self._triplet["answer"]["language"] == "rus_word":
+        elif self._triplet["answer"]["language"] == "russian":
             sim_degree = 1
         else:
             raise RuntimeError(
@@ -199,8 +205,8 @@ class GeorgeBot(TelegramBot):
                 condemnation_message.format(self._triplet["answer"]["word"])
             )
 
-        if self._return_comment:
-            self._messages_to_return.extend(self._triplet["comment"].split("\\n"))
+        if self._return_context:
+            self._messages_to_return.extend(self._triplet["context"].split("\\n"))
 
         self._agent.update(
             state=MAIN_STATE,
@@ -215,65 +221,70 @@ class GeorgeBot(TelegramBot):
             self.send_message(self._chat_id, message)
             self.wait(HUMANLIKE_PROSSESING_TIME)
 
-    def parse_log(
-            self, 
-            log_path: str
-        ) -> tp.List[tp.Dict[str, tp.Union[str, bool]]]:
-        """
-        :param log_path: path to log of chat.
-        :return: [
-            {
-                'date': datetime.datetime,
-                'timestamp': float,
-                'is_answer_right': bool,
-                'word_to_ask': str,
-                'word_to_answer': str,
-                'user_answer': str,
-                'error_message': str
-            },
-            ...
-        ]
-        """
-        parsed_log: tp.List[tp.Dict[str, tp.Union[str, bool]]] = []
-        with open(log_path, 'r') as f:
-            for line in f:
-                line_parts = line.rstrip().split(' - ')
-                date = datetime.datetime.strptime(
-                    line_parts[0], "%Y-%m-%d %H:%M:%S,%f"
+    def pretrain(self) -> None: 
+        database_name, table_name = self._path_to_log.split(".")
+        connection = pymysql.connect(  # TODO: remove hard code.
+            host='localhost',
+            user='root',
+            password=self._db_password,
+            db=database_name,
+            charset='utf8mb4',
+            cursorclass=pymysql.cursors.DictCursor
+        )
+        try:
+            with connection.cursor() as cursor:
+                query = dedent(
+                    f"""
+                    SELECT * FROM {table_name};
+                    """
                 )
-                parsed_line = {
-                        'date': date,
-                        'timestamp': time.mktime(date.timetuple()),
-                        'is_answer_right': line_parts[3].split("=")[1] == "True",
-                        'word_to_ask': line_parts[4].split("=")[1][1:-1],
-                        'word_to_answer': line_parts[5].split("=")[1][1:-1],
-                        'user_answer': line_parts[6].split("=")[1][1:-1].split("_")[0],
-                        'error_message': line_parts[7].split("=")[1].replace("'", "")
-                }
-                parsed_log.append(parsed_line)
-        return parsed_log
-
-    def pretrain(self, log_path: str) -> None:
-        parsed_log = self.parse_log(log_path)
-        for record in parsed_log:
-            self._agent.update(
-                state=MAIN_STATE,
-                action=record["word_to_ask"],
-                reward=float(not record["is_answer_right"]),
-                next_state=MAIN_STATE
-            )
+                cursor.execute(query)
+                for record in cursor:
+                    self._agent.update(
+                        state=MAIN_STATE,
+                        action=record["word_to_ask"],
+                        reward=float(not bool(record["is_answer_right"])),
+                        next_state=MAIN_STATE
+                    )
+        finally:
+            connection.close()        
 
     @staticmethod
     def wait(seconds: int) -> None:
         time.sleep(seconds)
 
     def log_session(self) -> None:
-        log_line = (
-            f"is_answer_right={self._is_answer_right} - "
-            f"word_to_ask={repr(self._triplet['ask']['word'])} - "
-            f"word_to_answer={repr(self._triplet['answer']['word'])} - "
-            f"user_answer={repr(self._user_answer)} - "
-            f"error_message={repr(self._error_message)}"
+        database_name, table_name = self._path_to_log.split(".")
+        connection = pymysql.connect(  # TODO: remove hard code.
+            host='localhost',
+            user='root',
+            password=self._db_password,
+            db=database_name,
+            charset='utf8mb4',
+            cursorclass=pymysql.cursors.DictCursor
         )
-        self._loggers["chat_logger"].debug(log_line)
+        try:
+            with connection.cursor() as cursor:
+                dicted_line = {
+                    "timestamp": datetime.datetime.now().timestamp(),
+                    "is_answer_right": self._is_answer_right,
+                    "word_to_ask": repr(self._triplet['ask']['word']),
+                    "word_to_answer": repr(self._triplet['answer']['word']),
+                    "user_answer": repr(self._user_answer),
+                    "error_message": repr(self._error_message)
+                }
+                columns, values = zip(*dicted_line.items())
+                query = dedent(
+                    f"""
+                    INSERT {table_name}(
+                        {", ".join(columns)}
+                    ) VALUES (
+                        {", ".join(map(str, values))}
+                    );       
+                    """
+                )
+                cursor.execute(query)
+            connection.commit()
+        finally:
+            connection.close()
 

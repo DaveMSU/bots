@@ -1,4 +1,4 @@
-import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")
+import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")  # TODO: remove that kinda import.
 
 from handler import BackupHandler
 from tools import parse_args, parse_config
@@ -9,6 +9,7 @@ def main():
     config = parse_config(args.config)
     handler = BackupHandler(config)
     handler.run()
+
 
 if __name__ == "__main__":
     main()

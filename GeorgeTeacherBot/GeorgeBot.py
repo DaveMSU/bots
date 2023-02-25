@@ -1,4 +1,4 @@
-import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")
+import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")  # TODO: remove that kinda import.
 
 import datetime
 import logging
@@ -47,7 +47,6 @@ class GeorgeBot(TelegramBot):
         self._path_to_base: str = path_to_base
         self._path_to_log: str = path_to_log
         self._base: tp.Dict[str, tp.Dict[str, str]] = dict()
-        # self._probs: np.array = np.array([1.0])
         self._triplet: tp.Optional[tp.Dict[str, str]] = None
         self._user_answer: str = ""
         self._return_context: tp.Optional[bool] = None
@@ -255,7 +254,6 @@ class GeorgeBot(TelegramBot):
         time.sleep(seconds)
 
     def log_session(self) -> None:
-        # insert row in db.
         database_name, table_name = self._path_to_log.split(".")
         connection = pymysql.connect(  # TODO: remove hard code.
             host='localhost',

@@ -1,4 +1,4 @@
-import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")
+import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")  # TODO: remove that kinda import.
 
 import time
 import typing as tp
@@ -6,6 +6,7 @@ import typing as tp
 from global_vars import TOKEN
 from logging_tools import parse_and_log
 from telegrambot import TelegramBot
+
 
 TIME_TO_WAIT = 0.1  # Seconds.
 

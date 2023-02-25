@@ -1,4 +1,4 @@
-import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")
+import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")  # TODO: remove that kinda import.
 
 import datetime
 import logging
@@ -11,6 +11,7 @@ from textwrap import dedent
 import pymysql
 
 from tools import make_logger
+
 
 DB_PASSWORD =  os.environ["MYSQL_ROOT_PASSWORD"]
 

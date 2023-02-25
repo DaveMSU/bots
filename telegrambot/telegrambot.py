@@ -1,6 +1,7 @@
 import requests
 import typing as tp
 
+
 SERVER_IP: str = "77.242.105.252"
 SERVER_PORT: str = "8443"
 SERVER_PROTOCOL: str = "http"

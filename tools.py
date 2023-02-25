@@ -10,10 +10,12 @@ def parse_args() -> tp.Dict[str, tp.Any]:
     parser.add_argument('--config', required=True)
     return parser.parse_args()
 
+
 def parse_config(config_path: str) -> tp.Dict[str, tp.Union[str, int]]:
     with open(config_path) as f:
         config = json.load(f)
     return config
+
 
 def make_logger(
         logger_name: str,

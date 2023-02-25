@@ -1,4 +1,4 @@
-import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")
+import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")  # TODO: remove that kinda import.
 
 from handler import WordsBaseHandler
 from tools import parse_args, parse_config

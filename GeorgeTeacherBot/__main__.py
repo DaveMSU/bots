@@ -7,6 +7,7 @@ from global_vars import DB_PASSWORD, TOKEN
 from GeorgeBot import GeorgeBot
 from tools import parse_args, parse_config
 
+
 CHAT_ID = 746826672
 
 

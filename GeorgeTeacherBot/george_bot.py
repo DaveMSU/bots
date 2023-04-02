@@ -16,7 +16,7 @@ from global_vars import (
     MESSAGES_WITH_CONDEMNATION,
     change_layout
 )
-from TableQLearningAgent import QLearningAgent
+from lib.tools import create_agent_from_config
 from telegrambot import TelegramBot
 
 
@@ -34,12 +34,7 @@ class GeorgeBot(TelegramBot):
             chat_id: int,
             path_to_base: str,
             path_to_log: str,
-            *,
-            alpha: float,
-            epsilon: float,
-            discount: float,
-            init_qvalue: float,
-            softmax_t: float
+            agent_config: tp.Dict[str, tp.Union[str, tp.Dict[str, float]]]
         ):
         TelegramBot.__init__(self, token)  # TODO: use super().
         self._db_password = db_password
@@ -54,15 +49,11 @@ class GeorgeBot(TelegramBot):
         self._messages_to_return: tp.Deque[str] = deque()
 
         self.load_words()
-        state_to_legal_actions = {MAIN_STATE: set(self._base)}
-        self._agent = QLearningAgent(  # TODO: use super().
-            alpha,
-            epsilon,
-            discount,
-            state_to_legal_actions,
-            init_qvalue,
-            softmax_t
+        agent_config["params"].update(
+            {"state_to_legal_actions": {MAIN_STATE: set(self._base)}}
         )
+        self._agent = create_agent_from_config(**agent_config)  # TODO: use metaclass instead.
+        self._waiting_time: tp.Optional[tp.Union[int, float]] = None
 
     def load_words(self) -> None:
         """
@@ -106,13 +97,14 @@ class GeorgeBot(TelegramBot):
 
     def update_base(self) -> tp.List[tp.Dict[str, str]]:
         self.load_words()
-        self._agent.change_state_to_legal_actions(
+        self._agent.rewrite_states_and_actions(
             {MAIN_STATE: set(self._base)}
         )
 
     def _choose_triplet(self, base: tp.List[tp.Any]) -> tp.Dict[str, str]:
-        word_to_ask = self._agent.get_action(MAIN_STATE)
+        word_to_ask, waiting_time = self._agent.get_action(MAIN_STATE)
         self._triplet = self._base[word_to_ask]
+        self._waiting_time: float = waiting_time
     
     def ask_word(self) -> None:
         self._choose_triplet(self._base)
@@ -120,7 +112,7 @@ class GeorgeBot(TelegramBot):
    
     def wait_for_an_message(self) -> None:
         while True:
-            self.wait(TIME_TO_WAIT)
+            time.sleep(TIME_TO_WAIT)
             message_data = self.look_for_new_message()
             if message_data:
                 break
@@ -219,7 +211,7 @@ class GeorgeBot(TelegramBot):
         while len(self._messages_to_return):
             message = self._messages_to_return.popleft()
             self.send_message(self._chat_id, message)
-            self.wait(HUMANLIKE_PROSSESING_TIME)
+            time.sleep(HUMANLIKE_PROSSESING_TIME)
 
     def pretrain(self) -> None: 
         database_name, table_name = self._path_to_log.split(".")
@@ -249,9 +241,8 @@ class GeorgeBot(TelegramBot):
         finally:
             connection.close()        
 
-    @staticmethod
-    def wait(seconds: int) -> None:
-        time.sleep(seconds)
+    def wait(self) -> None:
+        time.sleep(self._waiting_time)
 
     def log_session(self) -> None:
         database_name, table_name = self._path_to_log.split(".")

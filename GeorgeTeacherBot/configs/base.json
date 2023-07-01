@@ -1,6 +1,6 @@
 {
     "agent": {
-        "name": "TimedTableQLearningAgent",
+        "name": "TableQLearningAgent",
         "params": {
             "alpha": 0.1,
             "epsilon": 0.3,

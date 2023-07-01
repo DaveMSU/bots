@@ -13,7 +13,10 @@ class TableQLearningAgent(BaseTableAgent):
             discount: float,
             state_to_legal_actions: tp.Dict[tp.Hashable, tp.Set[tp.Hashable]],
             init_qvalue: float = 0.0,
-            softmax_t: float = 1.0
+            softmax_t: float = 1.0,
+            waiting_strategy: tp.Tuple[
+                tp.Union[float, tp.Tuple[float, float]], ...
+            ] = (0.5,)
     ):
         """
         Q-Learning Agent
@@ -32,7 +35,8 @@ class TableQLearningAgent(BaseTableAgent):
             state_to_legal_actions=state_to_legal_actions,
             init_qvalue=init_qvalue,
             epsilon=epsilon,
-            softmax_t=softmax_t
+            softmax_t=softmax_t,
+            waiting_strategy=waiting_strategy
         )
         self.alpha: float = alpha
         self._discount: float = discount

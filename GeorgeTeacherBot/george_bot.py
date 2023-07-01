@@ -16,6 +16,7 @@ from global_vars import (
     MESSAGES_WITH_CONDEMNATION,
     change_layout
 )
+from lib.agents import BaseTableAgent
 from lib.tools import create_agent_from_config
 from telegrambot import TelegramBot
 
@@ -52,7 +53,9 @@ class GeorgeBot(TelegramBot):
         agent_config["params"].update(
             {"state_to_legal_actions": {MAIN_STATE: set(self._base)}}
         )
-        self._agent = create_agent_from_config(**agent_config)  # TODO: use metaclass instead.
+        self._agent: BaseTableAgent = create_agent_from_config(
+            **agent_config
+        )  # TODO: use metaclass instead.
         self._waiting_time: tp.Optional[tp.Union[int, float]] = None
 
     def load_words(self) -> None:
@@ -119,7 +122,7 @@ class GeorgeBot(TelegramBot):
         assert isinstance(message_data, dict)
         self._user_answer = message_data["message"]["text"]
 
-    @staticmethod
+    @staticmethod    
     def _lev_dist(s1: str, s2: str) -> int:
         distances_matrix = [
             list(range(len(s2) + 1)),
@@ -134,17 +137,25 @@ class GeorgeBot(TelegramBot):
             else:
                 for j in range(len(s2) + 1):
                     if j == 0:
-                        distances_matrix[curr_line_id][0] = distances_matrix[prev_line_id][0] + 1
+                        distances_matrix[curr_line_id][0] = \
+                            distances_matrix[prev_line_id][0] + 1
                     else:
                         distances_matrix[curr_line_id][j] = min(
                             distances_matrix[curr_line_id][j - 1] + 1,
                             distances_matrix[prev_line_id][j] + 1,
-                            distances_matrix[prev_line_id][j - 1] + (s1[i - 1] != s2[j - 1])
+                            distances_matrix[prev_line_id][j - 1] + (
+                                s1[i - 1] != s2[j - 1]
+                            )
                         )
         return distances_matrix[curr_line_id][-1]
 
     @staticmethod    
-    def _check_words_similarity(s1: str, s2: str, /, degree: int = 1) -> bool:
+    def _check_words_similarity(
+            s1: str, 
+            s2: str,
+            /,
+            degree: int = 1
+    ) -> bool:
         lev_dist = min(
             GeorgeBot._lev_dist(s1.lower(), s2.lower()),
             GeorgeBot._lev_dist(change_layout(s1.lower()), s2.lower())

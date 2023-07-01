@@ -11,7 +11,7 @@ class TableQLearningAgent(BaseTableAgent):
             alpha: float,
             epsilon: float,
             discount: float,
-            state_to_legal_actions: tp.Dict[tp.Hashable, tp.Set[tp.Hashable]],
+            state_to_legal_actions: tp.Dict[str, tp.Set[str]],
             init_qvalue: float = 0.0,
             softmax_t: float = 1.0,
             waiting_strategy: tp.Tuple[
@@ -43,10 +43,10 @@ class TableQLearningAgent(BaseTableAgent):
 
     def update(
             self, 
-            state: tp.Hashable, 
-            action: tp.Hashable, 
+            state: str, 
+            action: str, 
             reward: tp.Union[int, float], 
-            next_state: tp.Hashable
+            next_state: str
         ) -> None:
         """
         You should do your Q-Value update here:

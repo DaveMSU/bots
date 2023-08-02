@@ -211,11 +211,15 @@ class GeorgeBot(TelegramBot):
         if self._return_context:
             self._messages_to_return.extend(self._triplet["context"].split("\\n"))
 
-        self._agent.update(
+        self._agent.update(  # TODO: improve timestamp in extra_params.
             state=MAIN_STATE,
             action=self._triplet["ask"]["word"],
             reward=float(not self._is_answer_right),
-            next_state=MAIN_STATE
+            next_state=MAIN_STATE,
+            extra_params={
+                "timestamp": datetime.datetime.now().timestamp(),
+                "is_it_pretrain_step": False
+            }
         )
 
     def send_result(self) -> None:
@@ -247,7 +251,11 @@ class GeorgeBot(TelegramBot):
                         state=MAIN_STATE,
                         action=record["word_to_ask"],
                         reward=float(not bool(record["is_answer_right"])),
-                        next_state=MAIN_STATE
+                        next_state=MAIN_STATE,
+                        extra_params={
+                            "timestamp": int(record["timestamp"]),
+                            "is_it_pretrain_step": True
+                        }
                     )
         finally:
             connection.close()        

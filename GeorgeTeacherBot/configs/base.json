@@ -1,13 +1,12 @@
 {
     "agent": {
-        "name": "TableQLearningAgent",
+        "name": "ProbabilisticQLearningAgent",
         "params": {
-            "alpha": 0.1,
-            "epsilon": 0.3,
-            "discount": 0.5,
-            "init_qvalue": 4.0,
-            "softmax_t": 0.2,
-            "waiting_strategy": [0.5, [375.0, 1175.0]]
+            "training_frequency": 50,
+            "max_vector_len": 30,
+            "init_qvalue": 0.01,
+            "softmax_t": 0.1,
+            "waiting_strategy": [0.5, [3.750, 11.750]]
         }
     },
     "data_pretrain_path": "GTT.ChatLog",

@@ -47,7 +47,7 @@ class TableQLearningAgent(BaseTableAgent):
             action: str, 
             reward: tp.Union[int, float], 
             next_state: str
-        ) -> None:
+    ) -> None:
         """
         You should do your Q-Value update here:
            Q(s,a) := (1 - alpha) * Q(s,a) + alpha * (r + gamma * V(s'))

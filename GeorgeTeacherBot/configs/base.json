@@ -1,13 +1,19 @@
 {
     "agent": {
-        "name": "TableQLearningAgent",
+        "name": "ProbabilisticQLearningWordAgent",
         "params": {
-            "alpha": 0.1,
-            "epsilon": 0.3,
-            "discount": 0.5,
-            "init_qvalue": 4.0,
-            "softmax_t": 0.2,
-            "waiting_strategy": [0.5, [375.0, 1175.0]]
+            "core_parameters": {
+                "model_type": "RandomForestClassifier",
+                "params": {
+                    "n_estimators": 100,
+                    "criterion": "entropy"
+                }
+            },
+            "knowledge_threshold": 0.54,
+            "epsilon": 0.1,
+            "max_vector_len": 50,
+            "init_qvalue": 0.01,
+            "softmax_t": 0.01
         }
     },
     "data_pretrain_path": "GTT.ChatLog",

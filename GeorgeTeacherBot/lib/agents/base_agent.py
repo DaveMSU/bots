@@ -122,11 +122,17 @@ class BaseTableAgent:
             state: str,
             action: str, 
             reward: tp.Union[int, float], 
-            next_state: str
+            next_state: str,
+            extra_params: tp.Optional[tp.Dict[str, tp.Any]] = None
     ) -> None:
         raise NotImplementedError
+    
+    def _get_how_long_to_wait(self) -> float:
+        raise NotImplementedError
 
-    def get_action(self, state: str) -> tp.Tuple[str, float]:
+    def get_action(
+            self, state: str
+    ) -> tp.Tuple[str, float, tp.Dict[str, tp.Union[bool, int, float, str]]]:
         """
         Compute the action, which will be made in the current state
              (includes exploration).
@@ -143,31 +149,30 @@ class BaseTableAgent:
         if len(possible_actions) == 0:
             return None
 
-        unnormed_probs = np.array(
+        q_values = np.array(
             [   
                 self._get_qvalue(state, action) 
                     for action in possible_actions
             ]
         )
-        unnormed_probs = np.exp(unnormed_probs / self._softmax_t)
+        unnormed_probs = np.exp(q_values / self._softmax_t)
         probs = unnormed_probs / sum(unnormed_probs)
 
-        if self._epsilon > np.random.rand():
-            chosen_action = np.random.choice(possible_actions)
-        else:
-            chosen_action = np.random.choice(possible_actions, p=probs)
-
-        waiting_bounds = self._waiting_strategy[0]
-        if isinstance(waiting_bounds, float):
-            waiting_time = self._waiting_strategy[0]
-        elif isinstance(waiting_bounds, tuple):
-            waiting_time = np.random.randint(*waiting_bounds)
-        else:
-            raise RuntimeError(
-                "Bad type of waiting_strategy element!"
+        epsilon_flag: bool = self._epsilon > np.random.rand()
+        if epsilon_flag:
+            chosen_action_index = np.random.choice(
+                range(len(possible_actions))
             )
-        self._waiting_strategy = (
-            *self._waiting_strategy[1:], self._waiting_strategy[0]
-        )
-        return chosen_action, float(waiting_time)
+        else:
+            chosen_action_index = np.random.choice(
+                range(len(possible_actions)),
+                p=probs
+            )
+        chosen_action = possible_actions[chosen_action_index]
+        waiting_time = self._get_how_long_to_wait()
+        debug_info = {
+            "epsilon": epsilon_flag,
+            "q_value": str(q_values[chosen_action_index])
+        }
+        return chosen_action, waiting_time, debug_info
 

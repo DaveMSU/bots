@@ -48,6 +48,7 @@ class GeorgeBot(TelegramBot):
         self._return_context: tp.Optional[bool] = None
         self._error_message: str = ""
         self._messages_to_return: tp.Deque[str] = deque()
+        self._keywords: tp.Dict[str, tp.Union[bool, int, float, str]] = dict()
 
         self.load_words()
         agent_config["params"].update(
@@ -98,16 +99,27 @@ class GeorgeBot(TelegramBot):
         finally:
             connection.close()        
 
-    def update_base(self) -> tp.List[tp.Dict[str, str]]:
+    def update(self) -> tp.List[tp.Dict[str, str]]:
+        self._agent.update(  # TODO: improve timestamp in extra_params.
+            state=MAIN_STATE,
+            action=self._triplet["ask"]["word"],
+            reward=float(not self._is_answer_right),
+            next_state=MAIN_STATE,
+            extra_params={
+                "timestamp": datetime.datetime.now().timestamp(),
+                "is_it_pretrain_step": False
+            }
+        )
         self.load_words()
         self._agent.rewrite_states_and_actions(
             {MAIN_STATE: set(self._base)}
         )
 
     def _choose_triplet(self, base: tp.List[tp.Any]) -> tp.Dict[str, str]:
-        word_to_ask, waiting_time = self._agent.get_action(MAIN_STATE)
+        word_to_ask, waiting_time, debug_info = self._agent.get_action(MAIN_STATE)
         self._triplet = self._base[word_to_ask]
         self._waiting_time: float = waiting_time
+        self._keywords.update(debug_info)
     
     def ask_word(self) -> None:
         self._choose_triplet(self._base)
@@ -211,13 +223,6 @@ class GeorgeBot(TelegramBot):
         if self._return_context:
             self._messages_to_return.extend(self._triplet["context"].split("\\n"))
 
-        self._agent.update(
-            state=MAIN_STATE,
-            action=self._triplet["ask"]["word"],
-            reward=float(not self._is_answer_right),
-            next_state=MAIN_STATE
-        )
-
     def send_result(self) -> None:
         while len(self._messages_to_return):
             message = self._messages_to_return.popleft()
@@ -247,7 +252,11 @@ class GeorgeBot(TelegramBot):
                         state=MAIN_STATE,
                         action=record["word_to_ask"],
                         reward=float(not bool(record["is_answer_right"])),
-                        next_state=MAIN_STATE
+                        next_state=MAIN_STATE,
+                        extra_params={
+                            "timestamp": int(record["timestamp"]),
+                            "is_it_pretrain_step": True
+                        }
                     )
         finally:
             connection.close()        
@@ -267,13 +276,26 @@ class GeorgeBot(TelegramBot):
         )
         try:
             with connection.cursor() as cursor:
+                compacted_keywords = ";".join(
+                    [
+                        ",".join(
+                            map(
+                                lambda x: str(
+                                    int(x) if isinstance(x, bool) else x
+                                ),
+                                key_and_value
+                            )
+                        ) for key_and_value in self._keywords.items()
+                    ]
+                )
                 dicted_line = {
                     "timestamp": datetime.datetime.now().timestamp(),
                     "is_answer_right": self._is_answer_right,
                     "word_to_ask": repr(self._triplet['ask']['word']),
                     "word_to_answer": repr(self._triplet['answer']['word']),
                     "user_answer": repr(self._user_answer),
-                    "error_message": repr(self._error_message)
+                    "error_message": repr(self._error_message),
+                    "keywords": repr(compacted_keywords)
                 }
                 columns, values = zip(*dicted_line.items())
                 query = dedent(
@@ -289,4 +311,5 @@ class GeorgeBot(TelegramBot):
             connection.commit()
         finally:
             connection.close()
+        self._keywords = dict()
 

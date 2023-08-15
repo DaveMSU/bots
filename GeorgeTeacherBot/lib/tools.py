@@ -1,6 +1,6 @@
 import typing as tp
 
-from .agents import TableQLearningAgent
+from .agents import *
 
 
 def create_agent_from_config(

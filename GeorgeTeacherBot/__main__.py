@@ -29,8 +29,8 @@ def main():
         bot.wait_for_an_message()
         bot.process_the_message()
         bot.send_result()
+        bot.update()
         bot.log_session()
-        bot.update_base()
         bot.wait()
 
 

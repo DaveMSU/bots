@@ -209,9 +209,6 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
                 for i, word in enumerate(word_to_features):
                     self._set_qvalue(state, word, y_prob[i])  # TODO: check, why here is no 1.0 - p
                     l.append((word, y_prob[i]))
-                for w, p in sorted(l, key=lambda key: key[1]):
-                    print(w, p, end="; ")
-                print()
                 break
             self._next_interaction_timestamp = current_timestamp + wait_for
 

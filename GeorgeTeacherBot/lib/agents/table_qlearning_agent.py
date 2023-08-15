@@ -14,7 +14,7 @@ class TableQLearningAgent(BaseTableAgent):
             state_to_legal_actions: tp.Dict[str, tp.Set[str]],
             init_qvalue: float = 0.0,
             softmax_t: float = 1.0,
-            waiting_strategy: tp.Tuple[
+            waiting_strategy: tp.Tuple[  # TODO: fix typing
                 tp.Union[float, tp.Tuple[float, float]], ...
             ] = (0.5,)
     ):
@@ -36,17 +36,35 @@ class TableQLearningAgent(BaseTableAgent):
             init_qvalue=init_qvalue,
             epsilon=epsilon,
             softmax_t=softmax_t,
-            waiting_strategy=waiting_strategy
         )
         self.alpha: float = alpha
         self._discount: float = discount
+        self._waiting_strategy = waiting_strategy  # TODO: fix typing.
+
+    def _get_how_long_to_wait(self) -> float:
+        waiting_bounds = self._waiting_strategy[0]
+        if isinstance(waiting_bounds, float):
+            waiting_time = self._waiting_strategy[0]
+        elif isinstance(waiting_bounds, list):  # TODO: fix typing
+            waiting_time = np.random.randint(*waiting_bounds)
+        else:
+            raise RuntimeError(
+                "Bad type of 'waiting_strategy' variable!"
+                f" Type `{type(waiting_bounds)}` was found,"
+                " but `float` or `list` were expected."
+            )
+        self._waiting_strategy = (
+            *self._waiting_strategy[1:], self._waiting_strategy[0]
+        )
+        return float(waiting_time)
 
     def update(
             self, 
             state: str, 
             action: str, 
             reward: tp.Union[int, float], 
-            next_state: str
+            next_state: str,
+            extra_params: tp.Optional[tp.Dict[str, tp.Any]] = None
     ) -> None:
         """
         You should do your Q-Value update here:

@@ -9,7 +9,7 @@
                     "criterion": "entropy"
                 }
             },
-            "knowledge_threshold": 0.54,
+            "knowledge_threshold": 0.41,
             "epsilon": 0.1,
             "max_vector_len": 50,
             "init_qvalue": 0.01,

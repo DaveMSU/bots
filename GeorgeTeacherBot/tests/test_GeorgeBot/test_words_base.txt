@@ -1,6 +1,0 @@
-maze - лабиринт  # There's a maze of lanes all round the village.
-span - промежуток  # A good life is not measured by any biblical span.
-sanity - вменяемость  # It protects her sanity.
-evict - выселять  # They've turned up to evict him and he's not there.
-pivot - опорный  # Pivot table (SQL).
-derive - выводить  # Using coiled springs, he derived the law of elasticity known today as Hooke's law.

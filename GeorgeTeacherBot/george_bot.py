@@ -107,7 +107,7 @@ class GeorgeBot(TelegramBot):
             next_state=MAIN_STATE,
             extra_params={
                 "timestamp": datetime.datetime.now().timestamp(),
-                "is_it_pretrain_step": False
+                "is_it_a_pretrain_step": False
             }
         )
         self.load_words()
@@ -255,7 +255,7 @@ class GeorgeBot(TelegramBot):
                         next_state=MAIN_STATE,
                         extra_params={
                             "timestamp": int(record["timestamp"]),
-                            "is_it_pretrain_step": True
+                            "is_it_a_pretrain_step": True
                         }
                     )
         finally:

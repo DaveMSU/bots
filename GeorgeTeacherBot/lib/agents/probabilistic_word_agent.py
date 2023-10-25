@@ -40,13 +40,14 @@ class _WordsHistoryHandler:
             self, 
             word: str
     ) -> tp.List[tp.Dict[str, int]]:
-        blank_elem = {key: VALUE_ABSENCE for key in self._item_temlpate}  # TODO: global
+        blank_elem = {key: VALUE_ABSENCE for key in self._item_temlpate}
         history_list = self._words_history.get(word, [blank_elem])
         if len(history_list) >= self._max_vector_len:
             padded_history = history_list[-self._max_vector_len:]
         else:
             padding = [blank_elem] * (self._max_vector_len - len(history_list))
             padded_history = padding + history_list
+        assert len(padded_history) == self._max_vector_len, "Bad pad length."
         return padded_history
 
     def add(
@@ -134,11 +135,10 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
         if len(self._state_to_legal_actions) > 1:
             raise RuntimeError(
                 "Dict state_to_legal_actions"
-                " has more than 1 key which is denied!"
+                " has more than 1 key what is denied!"
             )
         self._main_state: str = next(iter(self._state_to_legal_actions.keys()))
         
-
     def _get_how_long_to_wait(self) -> int:
         return max(0, self._next_interaction_timestamp - round(time.time()))
 
@@ -152,7 +152,7 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
     ) -> None:
         """
         """
-        is_it_pretrain_step: bool = extra_params["is_it_pretrain_step"]
+        is_it_a_pretrain_step: bool = extra_params["is_it_a_pretrain_step"]
         action_timestamp: int = extra_params["timestamp"]
         assert int(reward) in [0, 1]
         padded_word_history_for_the_current_one = \
@@ -167,7 +167,7 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
             }
         )
 
-        if not is_it_pretrain_step:
+        if not is_it_a_pretrain_step:
             X = np.array(
                 [
                     [feature["value"] for feature in data_line["features"]]
@@ -184,19 +184,23 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
             is_answer_right=int(reward)
         )
 
-        if not is_it_pretrain_step:
+        if not is_it_a_pretrain_step:
             wait_for = 0
+            state_to_legal_actions = sorted(
+                self._state_to_legal_actions[self._main_state]
+            )
             while True:
                 current_timestamp=round(time.time())
                 word_to_features: tp.Dict[str, tp.List[int]] = OrderedDict(
-                    {
-                        word: [
+                    (
+                        word,
+                        [
                             feature["value"] for feature in _compute_features(
                                 padded_history=self._words_handler.get_padded(word),
                                 current_timestamp=current_timestamp + wait_for
                             )
-                        ] for word in self._state_to_legal_actions[self._main_state]
-                    }
+                        ]
+                    ) for word in state_to_legal_actions
                 )
             
                 X = np.array(list(word_to_features.values()))

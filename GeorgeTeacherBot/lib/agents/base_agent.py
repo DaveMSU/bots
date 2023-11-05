@@ -1,12 +1,16 @@
+import sys; sys.path.append("/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot")  # TODO: remove
+
 import typing as tp
 
 import numpy as np
+
+from lib.types import Triplet
 
 
 class BaseTableAgent:
     def __init__(
             self,
-            state_to_legal_actions: tp.Dict[str, tp.Set[str]],
+            state_to_legal_actions: tp.Dict[str, tp.Set[Triplet]],
             epsilon: float,
             init_qvalue: float = 0.0,
             softmax_t: float = 1.0,
@@ -27,9 +31,8 @@ class BaseTableAgent:
         """
         self._softmax_t = softmax_t
         self._init_qvalue = init_qvalue
-        self._state_to_legal_actions: \
-            tp.Dict[str, tp.Set[str]] = state_to_legal_actions
-        self._qvalues: tp.Dict[str, tp.Dict[str, float]] = {
+        self._state_to_legal_actions = state_to_legal_actions
+        self._qvalues: tp.Dict[str, tp.Dict[Triplet, float]] = {
             state: {
                 action: self._init_qvalue 
                 for action in state_to_legal_actions[state]
@@ -47,7 +50,7 @@ class BaseTableAgent:
 
     def rewrite_states_and_actions(
             self,
-            new_state_to_legal_actions: tp.Dict[str, tp.Set[str]]
+            new_state_to_legal_actions: tp.Dict[str, tp.Set[Triplet]]
     ) -> None:
         states_diff_to_del = set(self._state_to_legal_actions) - \
             set(new_state_to_legal_actions)
@@ -75,7 +78,7 @@ class BaseTableAgent:
     def _get_qvalue(
             self,
             state: str,
-            action: str
+            action: Triplet
     ) -> tp.Optional[float]:
         """ Returns Q(state,action) """
         if state in self._qvalues:
@@ -86,7 +89,7 @@ class BaseTableAgent:
     def _set_qvalue(
             self,
             state: str,
-            action: str,
+            action: Triplet,
             value: tp.Optional[float] = None
     ) -> None:
         """ Sets the Qvalue for [state,action] to the given value """
@@ -120,7 +123,7 @@ class BaseTableAgent:
     def update(
             self, 
             state: str,
-            action: str, 
+            action: Triplet,
             reward: tp.Union[int, float], 
             next_state: str,
             extra_params: tp.Optional[tp.Dict[str, tp.Any]] = None
@@ -132,7 +135,11 @@ class BaseTableAgent:
 
     def get_action(
             self, state: str
-    ) -> tp.Tuple[str, float, tp.Dict[str, tp.Union[bool, int, float, str]]]:
+    ) -> tp.Tuple[
+        Triplet,
+        float,
+        tp.Dict[str, tp.Union[bool, int, float, str]]
+    ]:
         """
         Compute the action, which will be made in the current state
              (includes exploration).

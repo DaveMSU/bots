@@ -3,6 +3,7 @@ import typing as tp
 import numpy as np
 
 from .base_agent import BaseTableAgent
+from lib.types import Triplet
 
 
 class TableQLearningAgent(BaseTableAgent):
@@ -11,7 +12,7 @@ class TableQLearningAgent(BaseTableAgent):
             alpha: float,
             epsilon: float,
             discount: float,
-            state_to_legal_actions: tp.Dict[str, tp.Set[str]],
+            state_to_legal_actions: tp.Dict[str, tp.Set[Triplet]],
             init_qvalue: float = 0.0,
             softmax_t: float = 1.0,
             waiting_strategy: tp.Tuple[  # TODO: fix typing
@@ -59,10 +60,10 @@ class TableQLearningAgent(BaseTableAgent):
         return float(waiting_time)
 
     def update(
-            self, 
-            state: str, 
-            action: str, 
-            reward: tp.Union[int, float], 
+            self,
+            state: str,
+            action: Triplet,
+            reward: tp.Union[int, float],
             next_state: str,
             extra_params: tp.Optional[tp.Dict[str, tp.Any]] = None
     ) -> None:
@@ -77,4 +78,3 @@ class TableQLearningAgent(BaseTableAgent):
             action,
             curr_qvalue + self.alpha * (new_qvalue - curr_qvalue)
         )
-

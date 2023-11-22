@@ -1,9 +1,12 @@
+import sys; sys.path.append("/home/david_tyuman/telegram_server/bots/GeorgeTeacherBot")  # TODO: remove
+
 import datetime
 import time
 import typing as tp
 from collections import OrderedDict
 
 import numpy as np
+# TODO: create models.py and move all models there to avoid F401
 from sklearn.ensemble import (
     ExtraTreesClassifier,
     GradientBoostingClassifier,
@@ -12,36 +15,84 @@ from sklearn.ensemble import (
 from sklearn.neural_network import MLPClassifier
 
 from .base_agent import BaseTableAgent
+from lib.types import Triplet
 
 
 TWO_HOURS = 7200
 VALUE_ABSENCE = -1
 
 
-class _WordsHistoryHandler:
+# TODO: think about whether to move it inside ot the _TripletsHistoryHandler
+# TODO: force a blank elem to be a singleton, or something similar.
+class _HistoryElement:
+    def __init__(
+            self,
+            time_interval_to_last: int = VALUE_ABSENCE,
+            absolute_time: int = VALUE_ABSENCE,
+            was_the_users_answer_right: tp.Union[bool, int] = VALUE_ABSENCE
+    ):
+        self._time_interval_to_last = time_interval_to_last
+        self._absolute_time = absolute_time
+        assert int(was_the_users_answer_right) in [VALUE_ABSENCE, 0, 1]
+        self._was_the_users_answer_right = was_the_users_answer_right
+
+    @property
+    def rel(self) -> int:
+        return self._time_interval_to_last
+
+    @property
+    def abs(self) -> int:
+        return self._absolute_time
+
+    @property
+    def is_right(self) -> int:
+        return int(self._was_the_users_answer_right)
+
+    def __hash__(self) -> int:
+        return hash(
+            "".join(
+                [
+                    str(self._time_interval_to_last),
+                    str(self._absolute_time),
+                    str(self._was_the_users_answer_right)
+                ]
+            )
+        )
+
+    def __eq__(self, other: object) -> bool:
+        if isinstance(other, type(self)):
+            return (self._time_interval_to_last == other.rel)\
+                and (self._absolute_time == other.abs)\
+                and (self._was_the_users_answer_right == other.is_right)
+        else:
+            return False
+
+
+class _TripletsHistoryHandler:
     def __init__(
             self,
             max_vector_len: int
     ):
         self._max_vector_len = max_vector_len
-        self._words_history: tp.Dict[str, tp.List[tp.Dict[str, int]]] = dict()
-        self._item_temlpate = {"rel": int, "abs": int, "is_right": int}
-        
+        self._triplets_history: tp.Dict[
+            Triplet, tp.List[_HistoryElement]
+        ] = dict()
+
     def __iter__(self):
-        return iter(self._words_history.keys())
+        return iter(self._triplets_history.keys())
 
     def get(
-            self, 
-            word: str
-    ) -> tp.Dict[str, tp.List[tp.Dict[str, int]]]:
-        return self._words_history[word].copy()
-    
+            self,
+            triplet: Triplet
+    ) -> tp.List[_HistoryElement]:
+        return self._triplets_history[triplet].copy()
+
     def get_padded(
-            self, 
-            word: str
-    ) -> tp.List[tp.Dict[str, int]]:
-        blank_elem = {key: VALUE_ABSENCE for key in self._item_temlpate}
-        history_list = self._words_history.get(word, [blank_elem])
+            self,
+            triplet: Triplet
+    ) -> tp.List[_HistoryElement]:
+        blank_elem = _HistoryElement()
+        history_list = self._triplets_history.get(triplet, [blank_elem])
         if len(history_list) >= self._max_vector_len:
             padded_history = history_list[-self._max_vector_len:]
         else:
@@ -52,51 +103,51 @@ class _WordsHistoryHandler:
 
     def add(
             self,
-            word: str,
+            triplet: Triplet,
             timestamp: int,
             is_answer_right: int
     ) -> None:
-        if word not in self._words_history:
-            self._words_history[word] = [
-                {
-                    "rel": VALUE_ABSENCE,
-                    "abs": timestamp,
-                    "is_right": is_answer_right
-                }
+        if triplet not in self._triplets_history:
+            self._triplets_history[triplet] = [
+                _HistoryElement(
+                    time_interval_to_last=VALUE_ABSENCE,
+                    absolute_time=timestamp,
+                    was_the_users_answer_right=is_answer_right
+                )
             ]
         else:
-            prev_item = self._words_history[word][-1]
-            new_item = {   
-                "rel": timestamp - prev_item["abs"],
-                "abs": timestamp,
-                "is_right": is_answer_right
-            }
-            self._words_history[word].append(new_item)
+            prev_item = self._triplets_history[triplet][-1]
+            new_item = _HistoryElement(
+                time_interval_to_last=timestamp - prev_item.abs,
+                absolute_time=timestamp,
+                was_the_users_answer_right=is_answer_right
+            )
+            self._triplets_history[triplet].append(new_item)
 
 
-def _compute_features(
-        padded_history: tp.List[tp.Dict[str, int]],
+def _compute_features(  # TODO: rewrite this method so as to use more info
+        padded_history: tp.List[_HistoryElement],
         current_timestamp: int
 ) -> tp.List[tp.Dict[str, tp.Union[str, int]]]:
     features = list()
     features.append(
         {
             "name": "seconds_from_the_last_interaction",
-            "value": VALUE_ABSENCE if padded_history[-1]["abs"] == VALUE_ABSENCE
-                else current_timestamp - padded_history[-1]["abs"]
+            "value": VALUE_ABSENCE if padded_history[-1].abs == VALUE_ABSENCE
+            else current_timestamp - padded_history[-1].abs
         }
     )
-    for i, row_feature in enumerate(reversed(padded_history)):
+    for i, raw_feature in enumerate(reversed(padded_history)):
         features.append(
             {
                 "name": f"is_right_{i}",
-                "value": row_feature["is_right"]
+                "value": raw_feature.is_right
             }
         )
         features.append(
             {
                 "name": f"rel_{i}",
-                "value": row_feature["rel"]
+                "value": raw_feature.rel
             }
         )
     return features
@@ -106,7 +157,10 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
     def __init__(
             self,
             core_parameters: tp.Dict[str, tp.Union[str, tp.Dict[str, tp.Any]]],
-            state_to_legal_actions: tp.Dict[tp.Hashable, tp.Set[tp.Hashable]],
+            state_to_legal_actions: tp.Dict[
+                str,
+                tp.Set[Triplet],
+            ],
             knowledge_threshold: float = 0.5,
             epsilon: float = 0.1,
             max_vector_len: int = 5,
@@ -114,6 +168,7 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
             softmax_t: float = 1.0
     ):
         """
+        TODO: write a description.
         """
         super().__init__(
             state_to_legal_actions=state_to_legal_actions,
@@ -127,7 +182,7 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
             **core_parameters["params"]
         )
         self._knowledge_threshold: float = knowledge_threshold
-        self._words_handler = _WordsHistoryHandler(
+        self._triplets_handler = _TripletsHistoryHandler(
             max_vector_len=max_vector_len
         )
         self._data: tp.List[tp.Dict[str, tp.Union[np.ndarray, bool]]] = list()
@@ -138,25 +193,26 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
                 " has more than 1 key what is denied!"
             )
         self._main_state: str = next(iter(self._state_to_legal_actions.keys()))
-        
+
     def _get_how_long_to_wait(self) -> int:
         return max(0, self._next_interaction_timestamp - round(time.time()))
 
     def update(
-            self, 
+            self,
             state: str,
-            action: str,
-            reward: tp.Union[int, float], 
+            action: Triplet,
+            reward: tp.Union[int, float],
             next_state: str,
             extra_params: tp.Optional[tp.Dict[str, tp.Any]] = None
     ) -> None:
         """
+        TODO: write a description.
         """
         is_it_a_pretrain_step: bool = extra_params["is_it_a_pretrain_step"]
         action_timestamp: int = extra_params["timestamp"]
         assert int(reward) in [0, 1]
         padded_word_history_for_the_current_one = \
-            self._words_handler.get_padded(action)
+            self._triplets_handler.get_padded(action)
         self._data.append(
             {
                 "features": _compute_features(
@@ -171,48 +227,47 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
             X = np.array(
                 [
                     [feature["value"] for feature in data_line["features"]]
-                    for data_line in self._data  
+                    for data_line in self._data
                 ]
             )
-            y = np.array([data_line["target"] for data_line in self._data])            
+            y = np.array([data_line["target"] for data_line in self._data])
             self._core_ml_model.fit(X, y)
-            X, y = None, None
+            X, y = None, None  # clearing the RAM
 
-        self._words_handler.add(
-            word=action,
+        self._triplets_handler.add(
+            triplet=action,
             timestamp=action_timestamp,
             is_answer_right=int(reward)
         )
 
         if not is_it_a_pretrain_step:
-            wait_for = 0
-            state_to_legal_actions = sorted(
-                self._state_to_legal_actions[self._main_state]
-            )
+            wait_for: int = 0
+            state_to_legal_actions = self._state_to_legal_actions[
+                self._main_state
+            ]
             while True:
-                current_timestamp=round(time.time())
-                word_to_features: tp.Dict[str, tp.List[int]] = OrderedDict(
+                current_timestamp = round(time.time())
+                triplet_to_features: tp.Dict[str, tp.List[int]] = OrderedDict(
                     (
-                        word,
+                        triplet,
                         [
                             feature["value"] for feature in _compute_features(
-                                padded_history=self._words_handler.get_padded(word),
+                                padded_history=self._triplets_handler.get_padded(triplet),
                                 current_timestamp=current_timestamp + wait_for
                             )
                         ]
-                    ) for word in state_to_legal_actions
+                    ) for triplet in state_to_legal_actions
                 )
-            
-                X = np.array(list(word_to_features.values()))
-                y_prob = self._core_ml_model.predict_proba(X)[:, 1]  # probability of target = 1
-                indexes = np.argsort(y_prob)
-                if np.max(y_prob) < self._knowledge_threshold and wait_for < TWO_HOURS:
+
+                X = np.array(list(triplet_to_features.values()))
+                # y_prob - that the target will be equal to 1.0
+                y_prob = self._core_ml_model.predict_proba(X)[:, 1]
+                if (np.max(y_prob) < self._knowledge_threshold
+                        and wait_for < TWO_HOURS):
                     wait_for = wait_for + np.random.randint(1, 20)
                     continue
-                l = []
-                for i, word in enumerate(word_to_features):
-                    self._set_qvalue(state, word, y_prob[i])  # TODO: check, why here is no 1.0 - p
-                    l.append((word, y_prob[i]))
-                break
+                for i, triplet in enumerate(triplet_to_features):
+                    # TODO: check, why here is no 1.0 - p
+                    self._set_qvalue(state, triplet, y_prob[i])
+                break  # TODO: remove this line
             self._next_interaction_timestamp = current_timestamp + wait_for
-

@@ -1,8 +1,6 @@
 import sys; sys.path.append("/home/david_tyuman/telegram_server/bots")  # TODO: remove that kinda import.
 
 import datetime
-import logging
-import re
 import time
 import typing as tp
 from collections import deque
@@ -12,56 +10,58 @@ import numpy as np
 import pymysql
 
 from global_vars import (
-    MESSAGES_WITH_PRAISE, 
+    MESSAGES_WITH_PRAISE,
     MESSAGES_WITH_CONDEMNATION,
     change_layout
 )
 from lib.agents import BaseTableAgent
 from lib.tools import create_agent_from_config
+from lib.types import Triplet
 from telegrambot import TelegramBot
 
 
-LANGUAGES = ["english", "russian"]
-TIME_TO_WAIT = 0.1
-HUMANLIKE_PROSSESING_TIME = 1.0
-MAIN_STATE = "main_state"
+KNOWN_LANGUAGE, TARGET_LANGUAGE = "russian", "english"
+LANGUAGES: tp.Tuple[str, str] = (TARGET_LANGUAGE, KNOWN_LANGUAGE)
+TIME_TO_WAIT: float = 0.1
+HUMANLIKE_PROSSESING_TIME: float = 1.0
+MAIN_STATE: str = "main_state"
 
 
 class GeorgeBot(TelegramBot):
     def __init__(
             self,
-            token: str, 
+            token: str,
             db_password: str,
             chat_id: int,
             path_to_base: str,
             path_to_log: str,
-            agent_config: tp.Dict[str, tp.Union[str, tp.Dict[str, float]]]
-        ):
+            agent_config: tp.Dict[str, tp.Dict[str, tp.Dict[str, tp.Any]]]
+    ):
         TelegramBot.__init__(self, token)  # TODO: use super().
         self._db_password = db_password
         self._chat_id: int = chat_id
         self._path_to_base: str = path_to_base
         self._path_to_log: str = path_to_log
-        self._base: tp.Dict[str, tp.Dict[str, str]] = dict()
-        self._triplet: tp.Optional[tp.Dict[str, str]] = None
+        self._base: tp.Dict[str, Triplet] = dict()  # TODO: to think about rm
+        self._triplet: Triplet = Triplet(),
         self._user_answer: str = ""
         self._return_context: tp.Optional[bool] = None
         self._error_message: str = ""
         self._messages_to_return: tp.Deque[str] = deque()
         self._keywords: tp.Dict[str, tp.Union[bool, int, float, str]] = dict()
-
+        # TODO: make next line shorter
         self.load_words()
-        agent_config["params"].update(
-            {"state_to_legal_actions": {MAIN_STATE: set(self._base)}}
+        agent_config["params"].update(  # TODO: make next line shorter
+            {"state_to_legal_actions": {MAIN_STATE: set(self._base.values())}}
         )
         self._agent: BaseTableAgent = create_agent_from_config(
             **agent_config
         )  # TODO: use metaclass instead.
-        self._waiting_time: tp.Optional[tp.Union[int, float]] = None
+        self._waiting_time: tp.Union[int, float]
 
     def load_words(self) -> None:
         """
-        Construct self._base atribute that have 
+        Construct self._base atribute that have
          next type: tp.Dict[str, tp.Dict[str, str]].
         """
         database_name, table_name = self._path_to_base.split(".")
@@ -82,27 +82,24 @@ class GeorgeBot(TelegramBot):
                     """
                 )
                 cursor.execute(query)
-                for raw in cursor:
+                for row in cursor:
                     for i in [0, 1]:
-                        triplet = {
-                            "ask": {
-                                "word": raw[LANGUAGES[i]],
-                                "language": LANGUAGES[i]
-                            },
-                            "answer": {
-                                "word": raw[LANGUAGES[i ^ 1]],
-                                "language": LANGUAGES[i ^ 1]
-                            },
-                            "context": raw["context"]  # TODO: remove double copy.
-                        }
-                        self._base.update({raw[LANGUAGES[i]]: triplet})
+                        triplet = Triplet(
+                            word_to_ask=row[LANGUAGES[i]],
+                            language_to_ask=LANGUAGES[i],
+                            word_to_answer=row[LANGUAGES[i ^ 1]],
+                            language_to_answer=LANGUAGES[i ^ 1],
+                            context=row["context"]  # TODO: fix duplication
+                        )
+                        # TODO: optimize memory usage
+                        self._base.update({row[LANGUAGES[i]]: triplet})
         finally:
-            connection.close()        
+            connection.close()
 
-    def update(self) -> tp.List[tp.Dict[str, str]]:
+    def update(self) -> None:
         self._agent.update(  # TODO: improve timestamp in extra_params.
             state=MAIN_STATE,
-            action=self._triplet["ask"]["word"],
+            action=self._triplet,
             reward=float(not self._is_answer_right),
             next_state=MAIN_STATE,
             extra_params={
@@ -112,19 +109,19 @@ class GeorgeBot(TelegramBot):
         )
         self.load_words()
         self._agent.rewrite_states_and_actions(
-            {MAIN_STATE: set(self._base)}
+            {MAIN_STATE: set(self._base.values())}
         )
 
-    def _choose_triplet(self, base: tp.List[tp.Any]) -> tp.Dict[str, str]:
-        word_to_ask, waiting_time, debug_info = self._agent.get_action(MAIN_STATE)
-        self._triplet = self._base[word_to_ask]
+    def _choose_triplet(self) -> None:
+        triplet, waiting_time, debug_info = self._agent.get_action(MAIN_STATE)
+        self._triplet = triplet
         self._waiting_time: float = waiting_time
         self._keywords.update(debug_info)
-    
+
     def ask_word(self) -> None:
-        self._choose_triplet(self._base)
-        self.send_message(self._chat_id, self._triplet["ask"]["word"])
-   
+        self._choose_triplet()
+        self.send_message(self._chat_id, self._triplet.word_to_ask)
+
     def wait_for_an_message(self) -> None:
         while True:
             time.sleep(TIME_TO_WAIT)
@@ -134,7 +131,7 @@ class GeorgeBot(TelegramBot):
         assert isinstance(message_data, dict)
         self._user_answer = message_data["message"]["text"]
 
-    @staticmethod    
+    @staticmethod
     def _lev_dist(s1: str, s2: str) -> int:
         distances_matrix = [
             list(range(len(s2) + 1)),
@@ -161,9 +158,9 @@ class GeorgeBot(TelegramBot):
                         )
         return distances_matrix[curr_line_id][-1]
 
-    @staticmethod    
+    @staticmethod
     def _check_words_similarity(
-            s1: str, 
+            s1: str,
             s2: str,
             /,
             degree: int = 1
@@ -179,8 +176,8 @@ class GeorgeBot(TelegramBot):
         parts = list(map(lambda x: x.strip(), self._user_answer.split('_')))
         if len(parts) > 2:
             self._error_message = (
-                "Sorry, but you can enter a maximum of 2 words"
-                f" separated by underscores! But you entered {len(parts)} words!"
+                "Sorry, but you can enter a maximum of 2 words separated by"
+                f" underscores! But you entered {len(parts)} words!"
             )
             self._messages_to_return.append(self._error_message)
             return None
@@ -193,20 +190,17 @@ class GeorgeBot(TelegramBot):
             )
             self._messages_to_return.append(self._error_message)
             return None
-            
+
         self._return_context = (parts[-1] == 'c')
 
-        if self._triplet["answer"]["language"] == "english":
+        assert self._triplet.language_to_answer in LANGUAGES
+        if self._triplet.language_to_answer == TARGET_LANGUAGE:
             sim_degree = 0
-        elif self._triplet["answer"]["language"] == "russian":
+        elif self._triplet.language_to_answer == KNOWN_LANGUAGE:
             sim_degree = 1
-        else:
-            raise RuntimeError(
-                f"No such language as triplet['answer']['language']=\"{self._triplet['answer']['language']}\"!"
-            )
-        
+
         self._is_answer_right = self._check_words_similarity(
-            self._triplet["answer"]["word"],
+            self._triplet.word_to_answer,
             parts[0],
             degree=sim_degree
         )
@@ -217,11 +211,11 @@ class GeorgeBot(TelegramBot):
         else:
             condemnation_message = np.random.choice(MESSAGES_WITH_CONDEMNATION)
             self._messages_to_return.append(
-                condemnation_message.format(self._triplet["answer"]["word"])
+                condemnation_message.format(self._triplet.word_to_answer)
             )
 
         if self._return_context:
-            self._messages_to_return.extend(self._triplet["context"].split("\\n"))
+            self._messages_to_return.extend(self._triplet.context.split("\\n"))
 
     def send_result(self) -> None:
         while len(self._messages_to_return):
@@ -229,7 +223,7 @@ class GeorgeBot(TelegramBot):
             self.send_message(self._chat_id, message)
             time.sleep(HUMANLIKE_PROSSESING_TIME)
 
-    def pretrain(self) -> None: 
+    def pretrain(self) -> None:
         database_name, table_name = self._path_to_log.split(".")
         connection = pymysql.connect(  # TODO: remove hard code.
             host='localhost',
@@ -250,7 +244,7 @@ class GeorgeBot(TelegramBot):
                 for record in cursor:
                     self._agent.update(
                         state=MAIN_STATE,
-                        action=record["word_to_ask"],
+                        action=self._base[record["word_to_ask"]],
                         reward=float(not bool(record["is_answer_right"])),
                         next_state=MAIN_STATE,
                         extra_params={
@@ -259,7 +253,7 @@ class GeorgeBot(TelegramBot):
                         }
                     )
         finally:
-            connection.close()        
+            connection.close()
 
     def wait(self) -> None:
         time.sleep(self._waiting_time)
@@ -291,8 +285,8 @@ class GeorgeBot(TelegramBot):
                 dicted_line = {
                     "timestamp": datetime.datetime.now().timestamp(),
                     "is_answer_right": self._is_answer_right,
-                    "word_to_ask": repr(self._triplet['ask']['word']),
-                    "word_to_answer": repr(self._triplet['answer']['word']),
+                    "word_to_ask": repr(self._triplet.word_to_ask),
+                    "word_to_answer": repr(self._triplet.word_to_answer),
                     "user_answer": repr(self._user_answer),
                     "error_message": repr(self._error_message),
                     "keywords": repr(compacted_keywords)
@@ -304,7 +298,7 @@ class GeorgeBot(TelegramBot):
                         {", ".join(columns)}
                     ) VALUES (
                         {", ".join(map(str, values))}
-                    );       
+                    );
                     """
                 )
                 cursor.execute(query)
@@ -312,4 +306,3 @@ class GeorgeBot(TelegramBot):
         finally:
             connection.close()
         self._keywords = dict()
-

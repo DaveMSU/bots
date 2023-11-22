@@ -59,10 +59,13 @@ class _HistoryElement:
             )
         )
 
-    def __eq__(self, other: '_HistoryElement') -> bool:
-        return (self._time_interval_to_last == other.rel)\
-            and (self._absolute_time == other.abs)\
-            and (self._was_the_users_answer_right == other.is_right)
+    def __eq__(self, other: object) -> bool:
+        if isinstance(other, type(self)):
+            return (self._time_interval_to_last == other.rel)\
+                and (self._absolute_time == other.abs)\
+                and (self._was_the_users_answer_right == other.is_right)
+        else:
+            return False
 
 
 class _TripletsHistoryHandler:

@@ -34,7 +34,7 @@ class BaseTableAgent:
         self._state_to_legal_actions = state_to_legal_actions
         self._qvalues: tp.Dict[str, tp.Dict[Triplet, float]] = {
             state: {
-                action: self._init_qvalue 
+                action: self._init_qvalue
                 for action in state_to_legal_actions[state]
             } for state in state_to_legal_actions
         }
@@ -44,7 +44,7 @@ class BaseTableAgent:
         ] = tuple(
             [
                 tuple(elem) if isinstance(elem, list) else elem
-                    for elem in waiting_strategy
+                for elem in waiting_strategy
             ]
         )
 
@@ -61,7 +61,7 @@ class BaseTableAgent:
         for state in states_diff_to_add:
             for action in new_state_to_legal_actions:
                 self._set_qvalue(state, action)
-            
+
         states_intersection = set(new_state_to_legal_actions) & \
             set(self._state_to_legal_actions)
         for state in states_intersection:
@@ -70,7 +70,7 @@ class BaseTableAgent:
             actions_diff_to_add = new_state_to_legal_actions[state] - \
                 self._state_to_legal_actions[state]
             for action in actions_diff_to_del:
-                del self._qvalues[state][action]            
+                del self._qvalues[state][action]
             for action in actions_diff_to_add:
                 self._set_qvalue(state, action)
         self._state_to_legal_actions = new_state_to_legal_actions
@@ -121,15 +121,15 @@ class BaseTableAgent:
         return value
 
     def update(
-            self, 
+            self,
             state: str,
             action: Triplet,
-            reward: tp.Union[int, float], 
+            reward: tp.Union[int, float],
             next_state: str,
             extra_params: tp.Optional[tp.Dict[str, tp.Any]] = None
     ) -> None:
         raise NotImplementedError
-    
+
     def _get_how_long_to_wait(self) -> float:
         raise NotImplementedError
 
@@ -157,9 +157,9 @@ class BaseTableAgent:
             return None
 
         q_values = np.array(
-            [   
-                self._get_qvalue(state, action) 
-                    for action in possible_actions
+            [
+                self._get_qvalue(state, action)
+                for action in possible_actions
             ]
         )
         unnormed_probs = np.exp(q_values / self._softmax_t)
@@ -182,4 +182,3 @@ class BaseTableAgent:
             "q_value": str(q_values[chosen_action_index])
         }
         return chosen_action, waiting_time, debug_info
-

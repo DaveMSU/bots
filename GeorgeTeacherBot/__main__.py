@@ -1,8 +1,3 @@
-import time
-import typing as tp
-
-import numpy as np
-
 from global_vars import DB_PASSWORD, TOKEN
 from george_bot import GeorgeBot
 from tools import parse_args, parse_config
@@ -36,4 +31,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

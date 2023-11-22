@@ -6,6 +6,7 @@ import typing as tp
 from collections import OrderedDict
 
 import numpy as np
+# TODO: create models.py and move all models there to avoid F401
 from sklearn.ensemble import (
     ExtraTreesClassifier,
     GradientBoostingClassifier,
@@ -21,9 +22,9 @@ TWO_HOURS = 7200
 VALUE_ABSENCE = -1
 
 
-# TODO: think about whether to move it inside _TripletsHistoryHandler
-# TODO: force a blank elem to be a singleton
-class _HistoryElement:  
+# TODO: think about whether to move it inside ot the _TripletsHistoryHandler
+# TODO: force a blank elem to be a singleton, or something similar.
+class _HistoryElement:
     def __init__(
             self,
             time_interval_to_last: int = VALUE_ABSENCE,
@@ -73,7 +74,7 @@ class _TripletsHistoryHandler:
         self._triplets_history: tp.Dict[
             Triplet, tp.List[_HistoryElement]
         ] = dict()
-        
+
     def __iter__(self):
         return iter(self._triplets_history.keys())
 
@@ -82,9 +83,9 @@ class _TripletsHistoryHandler:
             triplet: Triplet
     ) -> tp.List[_HistoryElement]:
         return self._triplets_history[triplet].copy()
-    
+
     def get_padded(
-            self, 
+            self,
             triplet: Triplet
     ) -> tp.List[_HistoryElement]:
         blank_elem = _HistoryElement()
@@ -130,7 +131,7 @@ def _compute_features(  # TODO: rewrite this method so as to use more info
         {
             "name": "seconds_from_the_last_interaction",
             "value": VALUE_ABSENCE if padded_history[-1].abs == VALUE_ABSENCE
-                else current_timestamp - padded_history[-1].abs
+            else current_timestamp - padded_history[-1].abs
         }
     )
     for i, raw_feature in enumerate(reversed(padded_history)):
@@ -164,6 +165,7 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
             softmax_t: float = 1.0
     ):
         """
+        TODO: write a description.
         """
         super().__init__(
             state_to_legal_actions=state_to_legal_actions,
@@ -188,19 +190,20 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
                 " has more than 1 key what is denied!"
             )
         self._main_state: str = next(iter(self._state_to_legal_actions.keys()))
-        
+
     def _get_how_long_to_wait(self) -> int:
         return max(0, self._next_interaction_timestamp - round(time.time()))
 
     def update(
-            self, 
+            self,
             state: str,
             action: Triplet,
-            reward: tp.Union[int, float], 
+            reward: tp.Union[int, float],
             next_state: str,
             extra_params: tp.Optional[tp.Dict[str, tp.Any]] = None
     ) -> None:
         """
+        TODO: write a description.
         """
         is_it_a_pretrain_step: bool = extra_params["is_it_a_pretrain_step"]
         action_timestamp: int = extra_params["timestamp"]
@@ -221,10 +224,10 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
             X = np.array(
                 [
                     [feature["value"] for feature in data_line["features"]]
-                    for data_line in self._data  
+                    for data_line in self._data
                 ]
             )
-            y = np.array([data_line["target"] for data_line in self._data])            
+            y = np.array([data_line["target"] for data_line in self._data])
             self._core_ml_model.fit(X, y)
             X, y = None, None  # clearing the RAM
 
@@ -236,9 +239,11 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
 
         if not is_it_a_pretrain_step:
             wait_for: int = 0
-            state_to_legal_actions = self._state_to_legal_actions[self._main_state]
+            state_to_legal_actions = self._state_to_legal_actions[
+                self._main_state
+            ]
             while True:
-                current_timestamp=round(time.time())
+                current_timestamp = round(time.time())
                 triplet_to_features: tp.Dict[str, tp.List[int]] = OrderedDict(
                     (
                         triplet,
@@ -250,13 +255,12 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
                         ]
                     ) for triplet in state_to_legal_actions
                 )
-            
+
                 X = np.array(list(triplet_to_features.values()))
-                # y_prob - probability of the target being equals to 1.0
-                y_prob = self._core_ml_model.predict_proba(X)[:, 1] 
-                indexes = np.argsort(y_prob)
-                
-                if np.max(y_prob) < self._knowledge_threshold and wait_for < TWO_HOURS:
+                # y_prob - that the target will be equal to 1.0
+                y_prob = self._core_ml_model.predict_proba(X)[:, 1]
+                if (np.max(y_prob) < self._knowledge_threshold
+                        and wait_for < TWO_HOURS):
                     wait_for = wait_for + np.random.randint(1, 20)
                     continue
                 for i, triplet in enumerate(triplet_to_features):
@@ -264,4 +268,3 @@ class ProbabilisticQLearningWordAgent(BaseTableAgent):
                     self._set_qvalue(state, triplet, y_prob[i])
                 break  # TODO: remove this line
             self._next_interaction_timestamp = current_timestamp + wait_for
-

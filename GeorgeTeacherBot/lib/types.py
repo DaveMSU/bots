@@ -14,7 +14,7 @@ class Triplet:
         self._word_to_answer = word_to_answer
         self._language_to_answer = language_to_answer
         self._context = context
-    
+
     @property
     def word_to_ask(self) -> str:
         return self._word_to_ask
@@ -34,7 +34,7 @@ class Triplet:
     @property
     def context(self) -> str:
         return self._context
-    
+
     def __hash__(self) -> int:
         return hash(
             "".join(
@@ -48,10 +48,12 @@ class Triplet:
             )
         )
 
-    def __eq__(self, other: 'Triplet') -> bool:
-        return (self._word_to_ask == other.word_to_ask)\
-            and (self._language_to_ask == other.language_to_ask)\
-            and (self._word_to_answer == other.word_to_answer)\
-            and (self._language_to_answer == other.language_to_answer)\
-            and (self._context == other.context)
-
+    def __eq__(self, other: object) -> bool:
+        if isinstance(other, type(self)):
+            return (self._word_to_ask == other.word_to_ask)\
+                and (self._language_to_ask == other.language_to_ask)\
+                and (self._word_to_answer == other.word_to_answer)\
+                and (self._language_to_answer == other.language_to_answer)\
+                and (self._context == other.context)
+        else:
+            return False

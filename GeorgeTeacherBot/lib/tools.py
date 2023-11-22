@@ -8,4 +8,3 @@ def create_agent_from_config(
         params: tp.Dict[str, float]
 ) -> tp.Any:
     return globals()[name](**params)
-

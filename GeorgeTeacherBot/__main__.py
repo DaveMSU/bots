@@ -13,18 +13,16 @@ def main():
         TOKEN,
         DB_PASSWORD,
         CHAT_ID,
-        config["path_to_word_base"],
-        config["data_pretrain_path"],
-        config["agent"],
+        config["teacher_config"],
+        config["path_to_the_log"],
     )
-    bot.pretrain()
 
     while True:
-        bot.ask_word()
-        bot.wait_for_an_message()
-        bot.process_the_message()
-        bot.send_result()
-        bot.update()
+        asked = bot.ask_word()
+        message: str = bot.wait_for_a_message()  # TODO: create message class
+        results: tp.List[str] = bot.process_the_message(asked, message)
+        bot.send_result(results)
+        bot.update_itself()
         bot.log_session()
         bot.wait()
 

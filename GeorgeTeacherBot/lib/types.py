@@ -3,29 +3,29 @@
 class Triplet:
     def __init__(
             self,
-            word_to_ask: str = "",
+            phrase_to_ask: str = "",
             language_to_ask: str = "",
-            word_to_answer: str = "",
+            phrase_to_answer: str = "",
             language_to_answer: str = "",
             context: str = ""
     ) -> None:
-        self._word_to_ask = word_to_ask
+        self._phrase_to_ask = phrase_to_ask
         self._language_to_ask = language_to_ask
-        self._word_to_answer = word_to_answer
+        self._phrase_to_answer = phrase_to_answer
         self._language_to_answer = language_to_answer
         self._context = context
 
     @property
-    def word_to_ask(self) -> str:
-        return self._word_to_ask
+    def phrase_to_ask(self) -> str:
+        return self._phrase_to_ask
 
     @property
     def language_to_ask(self) -> str:
         return self._language_to_ask
 
     @property
-    def word_to_answer(self) -> str:
-        return self._word_to_answer
+    def phrase_to_answer(self) -> str:
+        return self._phrase_to_answer
 
     @property
     def language_to_answer(self) -> str:
@@ -39,9 +39,9 @@ class Triplet:
         return hash(
             "".join(
                 [
-                    self._word_to_ask,
+                    self._phrase_to_ask,
                     self._language_to_ask,
-                    self._word_to_answer,
+                    self._phrase_to_answer,
                     self._language_to_answer,
                     self._context  # TODO: think about removing this
                 ]
@@ -50,9 +50,9 @@ class Triplet:
 
     def __eq__(self, other: object) -> bool:
         if isinstance(other, type(self)):
-            return (self._word_to_ask == other.word_to_ask)\
+            return (self._phrase_to_ask == other.phrase_to_ask)\
                 and (self._language_to_ask == other.language_to_ask)\
-                and (self._word_to_answer == other.word_to_answer)\
+                and (self._phrase_to_answer == other.phrase_to_answer)\
                 and (self._language_to_answer == other.language_to_answer)\
                 and (self._context == other.context)
         else:

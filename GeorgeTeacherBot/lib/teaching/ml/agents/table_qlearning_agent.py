@@ -61,20 +61,31 @@ class TableQLearningAgent(BaseTableAgent):
 
     def update(
             self,
-            state: str,
-            action: Triplet,
-            reward: tp.Union[int, float],
-            next_state: str,
-            extra_params: tp.Optional[tp.Dict[str, tp.Any]] = None
+            sequence: tp.List[
+                tp.Dict[
+                    str,
+                    tp.Union[
+                        str,
+                        tp.Tuple[Triplet, int],
+                        tp.Union[int, float]
+                    ]
+                ]
+            ],
     ) -> None:
         """
         You should do your Q-Value update here:
            Q(s,a) := (1 - alpha) * Q(s,a) + alpha * (r + gamma * V(s'))
         """
-        curr_qvalue = self._get_qvalue(state, action)
-        new_qvalue = reward + self._discount * self._get_value(next_state)
-        self._set_qvalue(
-            state,
-            action,
-            curr_qvalue + self.alpha * (new_qvalue - curr_qvalue)
-        )
+        for seq_portion in sequence:
+            state: str = seq_portion["state"]
+            action: tp.Tuple[Triplet, int] = seq_portion["action"]
+            reward: tp.Union[int, float] = seq_portion["reward"]
+            next_state: str = seq_portion["next_state"]
+            
+            curr_qvalue = self._get_qvalue(state, action[0])
+            new_qvalue = reward + self._discount * self._get_value(next_state)
+            self._set_qvalue(
+                state,
+                action,
+                curr_qvalue + self.alpha * (new_qvalue - curr_qvalue)
+            )

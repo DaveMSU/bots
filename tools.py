@@ -57,4 +57,3 @@ def make_logger(
         logger.addHandler(h)
 
     return logger
-

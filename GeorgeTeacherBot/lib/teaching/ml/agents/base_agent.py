@@ -122,12 +122,24 @@ class BaseTableAgent:
 
     def update(
             self,
-            state: str,
-            action: Triplet,
-            reward: tp.Union[int, float],
-            next_state: str,
-            extra_params: tp.Optional[tp.Dict[str, tp.Any]] = None
+            sequence: tp.List[
+                tp.Dict[
+                    str,
+                    tp.Union[
+                        str,
+                        tp.Tuple[Triplet, int],
+                        tp.Union[int, float]
+                    ]
+                ]
+            ],
     ) -> None:
+        assert len(sequence) >= 1  # at least one
+        for seq_portion in sequence:
+            assert "state" in seq_portion  # type: str
+            assert "action" in seq_portion  # type: tp.Tuple[Triplet, int]
+            assert "reward" in seq_portion  # type: tp.Union[int, float]
+            assert "next_state" in seq_portion  # type: str
+            assert len(seq_portion.keys()) == 4  # only these 4 variable
         raise NotImplementedError
 
     def _get_how_long_to_wait(self) -> float:

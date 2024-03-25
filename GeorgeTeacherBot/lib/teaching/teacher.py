@@ -13,7 +13,7 @@ from lib.types import Triplet
 
 
 class ForeignLanguageTeacher:
-    _SUPPORTED_LANGUAGES: set = {
+    _SUPPORTED_LANGUAGES: tp.Set[tp.NamedTuple] = {
         LanguagePair(known="russian", target="english"),
     }
 
@@ -23,7 +23,7 @@ class ForeignLanguageTeacher:
                 pathlib.Path,
                 Brain,
                 tp.Dict[str, tp.Any]
-            ]
+            ],
     ]:
         path_to_the_last_brain_dir = pathlib.Path(path)
         with open(path_to_the_last_brain_dir / "last.pckl", "rb") as fb:
@@ -31,7 +31,7 @@ class ForeignLanguageTeacher:
         with open(path_to_the_last_brain_dir / "meta.json", "r") as f:
             additional_brain_information: tp.Dict[str, tp.Any] = json.load(f)
         return {
-            "last_one_dir": path_to_the_dir_of_the_last_brain,
+            "last_one_dir": path_to_the_last_brain_dir,
             "brain_itself": brain,
             "meta": additional_brain_information,
         }
@@ -40,13 +40,13 @@ class ForeignLanguageTeacher:
             self,
             known_language: str,
             target_language: str,
-            last_brain_path: str
+            last_brain_path: str,
     ):
         self._languages: tp.NamedTuple = LanguagePair(
             known=known_language,
-            target=target_language
+            target=target_language,
         )
-        if self._languages not in _SUPPORTED_LANGUAGES:
+        if self._languages not in ForeignLanguageTeacher._SUPPORTED_LANGUAGES:
             raise ValueError(
                 f"Unsuppored pair of languages appered ({pair_of_languages})"
                 ", provide it with one of following pairs: "
@@ -54,43 +54,44 @@ class ForeignLanguageTeacher:
             )
         self._brain_info: tp.Dict[
                 str,
-                tp.Union[pathlib.Path, dict, BaseTableAgent]
+                tp.Union[pathlib.Path, Brain, dict],
         ] = self._create_brain_dict(path=last_brain_path)
        
-    def ask_word(self) -> str:
+    def ask(self) -> tp.Tuple[Triplet, float, tp.Dict[str, tp.Any]]:
         triplet: Triplet
         waiting_time: int
         debug_info: str
         triplet, waiting_time, debug_info = \
             self._brain_info["brain_itself"].generate()
+        return triplet, waiting_time, debug_info
 
     @staticmethod
-    def _check_words_similarity(
+    def _check_the_similarity_of_the_lines(
             line: str,
-            leniency_showed_line: str,
+            weak_line,
             degree: int
     ) -> bool:
         line, weak_line = line.lower(), weak_line.lower()
         lev_dist: int = min(
             levenstein_distance(line, weak_line),
-            levenstein_distance(line, change_layout(leniency_showed_line))
+            levenstein_distance(line, change_layout(weak_line))
         )
         return lev_dist <= degree
 
-    def process_the_answer_and_the_question(
+    def process_a_question_and_the_answer(
             self,
-            asked_question: Triplet,
-            answer: str
+            question: Triplet,
+            answer: str,
     ) -> bool:
-        if asked_question.language_to_answer == self._languages.target:
+        if question.language_to_answer == self._languages.target:
             sim_degree = 0
-        elif asked_question.language_to_answer == self._languages.known:
+        elif question.language_to_answer == self._languages.known:
             sim_degree = 1
 
-        is_the_answer_right: bool = self._check_words_similarity(
-            line=asked_question.word_to_answer,
-            leniency_showed_line=answer,
-            degree=sim_degree
+        is_the_answer_right: bool = self._check_the_similarity_of_the_lines(
+            line=question.phrase_to_answer,
+            weak_line=answer,
+            degree=sim_degree,
         )
         return is_the_answer_right
 

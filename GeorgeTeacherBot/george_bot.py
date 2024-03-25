@@ -13,9 +13,7 @@ from global_vars import (
     MESSAGES_WITH_PRAISE,
     MESSAGES_WITH_CONDEMNATION,
 )
-from lib.agents import BaseTableAgent
-from lib.teacher import ForeignLanguageTeacher
-from lib.tools import create_agent_from_config
+from lib.teaching import ForeignLanguageTeacher
 from lib.types import Triplet
 from telegrambot import TelegramBot
 
@@ -30,32 +28,54 @@ class GeorgeBot(TelegramBot):
             token: str,
             db_password: str,
             chat_id: int,
-            teacher_config: to.Dict[str, tp.Union[str, dict]],
+            teachers_config: tp.Dict[str, tp.Union[str, dict]],
             path_to_the_log_file: str,
     ):
         TelegramBot.__init__(self, token)  # TODO: use super().
         self._db_password = db_password
         self._chat_id: int = chat_id
-        self._teacher = ForeignLanguageTeacher(**teacher_config)
+        self._teacher = ForeignLanguageTeacher(**teachers_config)
         self._log_path: str = path_to_the_log_file
-        self._last_interaction: tp.Dict[str, tp.Any] = {
-            "asked_triplet": None,
-            "aswered_tripled": None,
-            "was_the_answer_right": None,
-            "error_message": None,
-            "time_span_before_the_next_interaction": None,
-            "waiting_time": None,
-            "teachers_debug_info": None,
-        }
+        print(1)
 
-    def update_itself(self) -> None:
-        self._teacher.check_if_a_new_trained_agent_has_appeared_and_load_it()
+    def conduct_one_session_with_a_student(self) -> None:
+        print(2)
+        asked_triplet: Triplet
+        waiting_time: float
+        debug_info: tp.Dict[str, tp.Any]
+        asked_triplet, waiting_time, debug_info = self._ask_a_phrase()
 
-    def ask(self) -> None:
-        triplet = self._teacher.ask()
-        self._last_interaction["asked_triplet"] = triplet
+        print(3)
+        message: str = self._wait_for_a_message()
 
-    def wait_for_a_message(self) -> str:
+        print(4)
+        result: tp.List[str]
+        is_the_answer_right: bool
+        error: str
+        result, is_the_answer_right, error = self._process_the_interaction(
+            teachers_question=asked_triplet,
+            students_answer=message
+        )
+
+        print(5)
+        self._send_a_result_to_the_student(result)
+        self._update_the_teacher()
+        self._log_a_session(
+            asked=asked_triplet,
+            answ=message,
+            right=is_the_answer_right,
+            err=error,
+            debug=debug_info,
+        )
+        print(6)
+        self._wait(waiting_time)
+
+    def _ask_a_phrase(self) -> tp.Tuple[Triplet, float, tp.Dict[str, tp.Any]]:
+        triplet, waiting_time, debug_info = self._teacher.ask()
+        self.send_message(self._chat_id, triplet.phrase_to_ask)
+        return triplet, waiting_time, debug_info
+
+    def _wait_for_a_message(self) -> str:
         while True:
             time.sleep(TIME_TO_WAIT)
             message_data = self.look_for_new_message()
@@ -64,18 +84,22 @@ class GeorgeBot(TelegramBot):
         assert isinstance(message_data, dict)
         return message_data["message"]["text"]
 
-    def process_the_message(self, message: str) -> tp.List[str]:
+    def _process_the_interaction(  # TODO: rewrite this func
+            self,
+            teachers_question: Triplet,
+            students_answer: str,
+    ) -> tp.Tuple[tp.List[str], bool, str]:
         error_message: str = ""
         messages_to_return: tp.List[str] = []
 
         # TODO: create specific class for the message
-        parts = list(map(lambda x: x.strip(), message.split('_')))
+        parts = list(map(lambda x: x.strip(), students_answer.split('_')))
         if len(parts) > 2:
             error_message = (
                 "Sorry, but you can enter a maximum of 2 words separated by"
                 f" underscores! But you entered {len(parts)} words!"
             )
-            messages_to_return.append(self._error_message)
+            messages_to_return.append(error_message)
             return messages_to_return
 
         if len(parts) == 2 and parts[-1] != 'c':
@@ -84,38 +108,45 @@ class GeorgeBot(TelegramBot):
                 "At the moment I can only understand the id \'c\',"
                 f" but \'{parts[-1]}\' has been received!"
             )
-            messages_to_return.append(self._error_message)
+            messages_to_return.append(error_message)
             return messages_to_return
 
         should_the_context_be_returned: bool  = (parts[-1] == 'c')
 
-        is_the_answer_right: bool
-        context: str
-        last_asked_triplet = self._last_interaction["asked_triplet"]
-        right: bool = self.teacher.process_the_answer_and_the_question(
-            received_answer=last_asked_tripletasked,
-            received_answer=parts[0],
+        is_right: bool = self._teacher.process_a_question_and_the_answer(
+            question=teachers_question,
+            answer=parts[0],
         )
-        if right:
+        if is_right:
             praise_message = np.random.choice(MESSAGES_WITH_PRAISE)
             messages_to_return.append(praise_message)
         else:
             condemnation_message = np.random.choice(MESSAGES_WITH_CONDEMNATION)
             messages_to_return.append(
-                condemnation_message.format(self._triplet.word_to_answer)
+                condemnation_message.format(teachers_question.phrase_to_answer)
             )
 
         if should_the_context_be_returned:
             messages_to_return.extend(context.split("\\n"))
-        return messages_to_return
+        return messages_to_return, is_right, error_message
 
-    def send_result(self, messages_to_return) -> None:
+    def _send_a_result_to_the_student(self, messages_to_return: tp.List[str]) -> None:
         while len(messages_to_return):
-            message = messages_to_return.popleft()
+            message: str = messages_to_return.pop()
             self.send_message(self._chat_id, message)
             time.sleep(HUMANLIKE_PROSSESING_TIME)
 
-    def log_session(self) -> None:
+    def _update_the_teacher(self) -> None:
+        self._teacher.check_if_a_new_trained_brain_has_appeared_and_load_it()
+
+    def _log_a_session(
+            self,
+            asked: Triplet,
+            answ: str,
+            right: bool,
+            err: str,
+            debug: dict,
+    ) -> None:
         database_name, table_name = self._log_path.split(".")
         connection = pymysql.connect(  # TODO: remove hard code.
             host='localhost',
@@ -127,8 +158,6 @@ class GeorgeBot(TelegramBot):
         )
         try:
             with connection.cursor() as cursor:
-                asked, answ, right, err, _, debug = self._last_interaction
-                self._last_interaction
                 keywords: str = ";".join(
                     [
                         ",".join(
@@ -144,9 +173,9 @@ class GeorgeBot(TelegramBot):
                 line = {
                     "timestamp": datetime.datetime.now().timestamp(),
                     "is_the_answer_right": right,
-                    "word_to_ask": repr(asked.word_to_ask),
-                    "word_to_answer": repr(asked.word_to_answer),
-                    "user_answer": repr(answ),
+                    "phrase_to_ask": repr(asked.phrase_to_ask),
+                    "phrase_to_answer": repr(asked.phrase_to_answer),
+                    "users_answer": repr(answ),
                     "error_message": repr(err),  # TODO: write something
                     "keywords": repr(keywords)
                 }
@@ -165,7 +194,5 @@ class GeorgeBot(TelegramBot):
         finally:
             connection.close()
 
-    def wait(self) -> None:
-        time.sleep(
-            self._last_interaction["time_span_before_the_next_interaction"]
-        )
+    def _wait(self, seconds: float) -> None:
+        time.sleep(seconds)

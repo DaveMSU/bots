@@ -85,7 +85,6 @@ class Brain:
         }
 
     def _pretrain(self) -> None:
-        print("pretrain has started!")  # TODO: rm
         database_name, table_name = self._path_to_the_log.split(".")
         connection = pymysql.connect(  # TODO: remove hard code.
             host='localhost',
@@ -111,10 +110,8 @@ class Brain:
                 self._prefrontal_cortex.update(whole_sequence)
         finally:
             connection.close()
-        print("pretrain has finished!")  # TODO: rm
 
     def finetune(self, path_to_the_table: tp.Optional[str] = None) -> None:
-        print("finetune has started!")  # TODO: rm
         if path_to_the_table is None:
             path_to_the_table = self._path_to_the_log
         database_name, table_name = path_to_the_table.split(".")
@@ -145,4 +142,3 @@ class Brain:
                     self._last_timestamp = row["timestamp"]
         finally:
             connection.close()
-        print("finetune has finished!")  # TODO: rm

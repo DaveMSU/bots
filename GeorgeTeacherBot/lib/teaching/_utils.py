@@ -34,7 +34,9 @@ def change_layout(line: str, type_of_keyboard: str = "eng-rus") -> str:
         'Я': 'Z', 'Ч': 'X', 'С': 'C', 'М': 'V', 'И': 'B', 'Т': 'N',
         'Ь': 'M', 'Б': '<', 'Ю': '>'
     }
-    return "".join(list(map(lambda c: KEYBOARD_LAYOUT.get(c, c), line)))
+    return "".join(
+        list(map(lambda c: rus_eng_keyboard_layout.get(c, c), line))
+    )
 
 
 def levenstein_distance(s1: str, s2: str, /) -> int:

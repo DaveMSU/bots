@@ -18,8 +18,8 @@ from lib.types import Triplet
 from telegrambot import TelegramBot
 
 
-TIME_TO_WAIT: float = 0.1
-HUMANLIKE_PROSSESING_TIME: float = 1.0
+TIME_TO_WAIT: float = 0.001
+HUMANLIKE_PROSSESING_TIME: float = 0.01
 
 
 class GeorgeBot(TelegramBot):
@@ -38,17 +38,14 @@ class GeorgeBot(TelegramBot):
         self._log_path: str = path_to_the_log_file
         print(1)
 
-    def conduct_one_session_with_a_student(self) -> None:
-        print(2)
+    def conduct_one_session_with_the_student(self) -> None:
         asked_triplet: Triplet
         waiting_time: float
         debug_info: tp.Dict[str, tp.Any]
         asked_triplet, waiting_time, debug_info = self._ask_a_phrase()
 
-        print(3)
         message: str = self._wait_for_a_message()
 
-        print(4)
         result: tp.List[str]
         is_the_answer_right: bool
         error: str
@@ -57,7 +54,6 @@ class GeorgeBot(TelegramBot):
             students_answer=message
         )
 
-        print(5)
         self._send_a_result_to_the_student(result)
         self._update_the_teacher()
         self._log_a_session(
@@ -67,7 +63,6 @@ class GeorgeBot(TelegramBot):
             err=error,
             debug=debug_info,
         )
-        print(6)
         self._wait(waiting_time)
 
     def _ask_a_phrase(self) -> tp.Tuple[Triplet, float, tp.Dict[str, tp.Any]]:
@@ -113,7 +108,7 @@ class GeorgeBot(TelegramBot):
 
         should_the_context_be_returned: bool  = (parts[-1] == 'c')
 
-        is_right: bool = self._teacher.process_a_question_and_the_answer(
+        is_right: bool = self._teacher.process_a_question_and_an_answer(
             question=teachers_question,
             answer=parts[0],
         )
@@ -127,7 +122,7 @@ class GeorgeBot(TelegramBot):
             )
 
         if should_the_context_be_returned:
-            messages_to_return.extend(context.split("\\n"))
+            messages_to_return.extend(teachers_question.context.split("\\n"))
         return messages_to_return, is_right, error_message
 
     def _send_a_result_to_the_student(self, messages_to_return: tp.List[str]) -> None:

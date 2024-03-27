@@ -18,7 +18,7 @@ def main():
     )
 
     while True:
-        bot.conduct_one_session_with_a_student()
+        bot.conduct_one_session_with_the_student()
 
 
 if __name__ == "__main__":

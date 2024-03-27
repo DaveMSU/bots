@@ -1,4 +1,6 @@
+#TODO: fix all flake8 bugs
 import json
+import os
 import pathlib
 import pickle
 import typing as tp
@@ -17,30 +19,30 @@ class ForeignLanguageTeacher:
         LanguagePair(known="russian", target="english"),
     }
 
-    def _create_brain_dict(self, path: str) -> tp.Dict[
-            str,
-            tp.Union[
-                pathlib.Path,
-                Brain,
-                tp.Dict[str, tp.Any]
-            ],
-    ]:
-        path_to_the_last_brain_dir = pathlib.Path(path)
-        with open(path_to_the_last_brain_dir / "last.pckl", "rb") as fb:
-            brain: Brain = pickle.load(fb)
-        with open(path_to_the_last_brain_dir / "meta.json", "r") as f:
-            additional_brain_information: tp.Dict[str, tp.Any] = json.load(f)
-        return {
-            "last_one_dir": path_to_the_last_brain_dir,
-            "brain_itself": brain,
-            "meta": additional_brain_information,
-        }
+    def check_if_a_new_trained_brain_has_appeared_and_load_it(self) -> None:
+        last_resource: pathlib.Path = self._brain_attributes["dir_with_brain_instances"] / max(
+            filter(
+                lambda abs_path: not abs_path.name.startswith("."),
+                pathlib.Path(self._brain_attributes["dir_with_brain_instances"]).glob("*"),
+            ),
+            key=os.path.getctime,
+        )
+        retaining_timestamp: int = self._brain_attributes["meta"]["timestamp"]
+        last_timestamp = int(last_resource.name)
+        assert last_timestamp >= retaining_timestamp, "Timestamp bug!"
+        if last_timestamp > retaining_timestamp:
+            if last_timestamp > retaining_timestamp:
+                with open(last_resource / "last.pckl", "rb") as fb:
+                    self._brain_attributes["brain_itself"] = pickle.load(fb)
+                with open(last_resource / "meta.json", "r") as f:
+                    self._brain_attributes["meta"] = json.load(f)
+                print(f"new brain has been loaded (ts: {last_timestamp})")  # TODO: rm this
 
     def __init__(
             self,
             known_language: str,
             target_language: str,
-            last_brain_path: str,
+            path_to_the_brain_instances: str,
     ):
         self._languages: tp.NamedTuple = LanguagePair(
             known=known_language,
@@ -52,17 +54,24 @@ class ForeignLanguageTeacher:
                 ", provide it with one of following pairs: "
                 ", ".join([str(pair) for pair in SUPPORTED_LANGUAGES]) + "."
             )
-        self._brain_info: tp.Dict[
+        self._brain_attributes: tp.Dict[
                 str,
-                tp.Union[pathlib.Path, Brain, dict],
-        ] = self._create_brain_dict(path=last_brain_path)
+                tp.Optional[tp.Union[pathlib.Path, Brain, dict]],
+        ] = {
+            "dir_with_brain_instances": pathlib.Path(path_to_the_brain_instances),
+            "brain_itself": None,
+            "meta": {
+                "timestamp": -1,
+            }
+        }
+        self.check_if_a_new_trained_brain_has_appeared_and_load_it()
        
     def ask(self) -> tp.Tuple[Triplet, float, tp.Dict[str, tp.Any]]:
         triplet: Triplet
         waiting_time: int
         debug_info: str
         triplet, waiting_time, debug_info = \
-            self._brain_info["brain_itself"].generate()
+            self._brain_attributes["brain_itself"].generate()
         return triplet, waiting_time, debug_info
 
     @staticmethod
@@ -78,7 +87,7 @@ class ForeignLanguageTeacher:
         )
         return lev_dist <= degree
 
-    def process_a_question_and_the_answer(
+    def process_a_question_and_an_answer(
             self,
             question: Triplet,
             answer: str,
@@ -94,14 +103,3 @@ class ForeignLanguageTeacher:
             degree=sim_degree,
         )
         return is_the_answer_right
-
-    def check_if_a_new_trained_brain_has_appeared_and_load_it(self) -> None:
-        with open(self._brain_info["last_one_dir"] / "meta.json", "r") as f:
-            meta_of_the_last_brain: tp.Dict[str, tp.Any] = json.load(f)
-            last_timestamp: int = meta_of_the_last_brain["timestamp"]
-            cur_timestamp: int = self._brain_info["meta"]["timestamp"]
-            assert last_timestamp >= cur_timestamp, "Timestamp bug!"
-            if last_timestamp > cur_timestamp:
-                with open(self._brain_info["last_one_dir"] / "last.pckl", "rb") as fb:
-                    self._brain_info["brain_itself"] = pickle.load(fb)
-                self._brain_info["meta"] = meta_of_the_last_brain

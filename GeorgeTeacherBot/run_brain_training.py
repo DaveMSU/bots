@@ -14,25 +14,11 @@ from tools import parse_args, parse_config
 WAITING_TIME_BEFORE_ANOTHER_FINETUNE_ATTEMPT_IN_SECONDS: float = 10.0
 
 
-def do_backup_of_the_last_resources_and_create_new_ones(
-        dir_path: pathlib.Path
-) -> None:
-    with open(dir_path / "meta.json", "r") as f:
-        timestamp = str(json.load(f)["timestamp"])
-    backup_dir_path: pathlib.Path = dir_path / timestamp
-    backup_dir_path.mkdir(parents=False, exist_ok=False)
-    for file_name in ["meta.json", "last.pckl"]:
-        shutil.move(
-            src=dir_path / file_name,
-            dst=backup_dir_path / file_name,
-        )
-
-
 def main():
     args = parse_args()
     config = parse_config(args.config)
-    path_to_the_last_brain_dir = pathlib.Path(
-        config["path_to_the_last_brain_dir"]
+    path_to_the_instances = pathlib.Path(
+        config["path_to_the_instances"]
     )
     
     brain_instance: Brain = Brain(
@@ -41,18 +27,24 @@ def main():
         agent_config=config["agent"],
     )
     while True:
-        print(time.time())
         brain_instance.finetune()
-        do_backup_of_the_last_resources_and_create_new_ones(
-            dir_path=path_to_the_last_brain_dir
-        )
-        with open(path_to_the_last_brain_dir / "last.pckl", "wb") as f:
+        print("Finetune has finished!")  # TODO: rm this line.
+
+        cur_timestamp: int = round(datetime.datetime.utcnow().timestamp())
+        resource_name = str(cur_timestamp)
+        raw_abs_path = path_to_the_instances / f".{resource_name}"
+        abs_path = path_to_the_instances / f"{resource_name}"
+
+        raw_abs_path.mkdir(parents=False, exist_ok=False)
+        with open(raw_abs_path / "last.pckl", "wb") as f:
             pickle.dump(brain_instance, f)
-        with open(path_to_the_last_brain_dir / "meta.json", "w") as f:
+        with open(raw_abs_path / "meta.json", "w") as f:
             meta: tp.Dict[str, int] = {
-                "timestamp": round(datetime.datetime.utcnow().timestamp()),
+                "timestamp": cur_timestamp,
             }
             json.dump(meta, f)
+        shutil.move(src=raw_abs_path, dst=abs_path)
+
         # TODO: rewrite this to react by a signal, notconst a time span.
         time.sleep(WAITING_TIME_BEFORE_ANOTHER_FINETUNE_ATTEMPT_IN_SECONDS)
         

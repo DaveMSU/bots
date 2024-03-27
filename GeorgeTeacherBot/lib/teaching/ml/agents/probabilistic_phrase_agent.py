@@ -297,9 +297,10 @@ class ProbabilisticQLearningPhraseAgent(BaseTableAgent):
         """
         action - tuple of triplet and timestamp
         """
-        for seq_portion in sequence:
-            self._process_one_action(**seq_portion)
-        else:
-            self._train_on_the_data_and_infer_probabilities(
-                state=seq_portion["state"]
-            )
+        if len(sequence):
+            for seq_portion in sequence:
+                self._process_one_action(**seq_portion)
+            else:
+                self._train_on_the_data_and_infer_probabilities(
+                    state=seq_portion["state"]
+                )

@@ -85,6 +85,7 @@ class Brain:
         }
 
     def _pretrain(self) -> None:
+        print("pretrain in")  # TODO: rm this line
         database_name, table_name = self._path_to_the_log.split(".")
         connection = pymysql.connect(  # TODO: remove hard code.
             host='localhost',
@@ -107,11 +108,15 @@ class Brain:
                 ]
                 assert len(whole_sequence)
                 self._last_timestamp: int = whole_sequence[-1]["action"][1]
+                print("pretrain update in")  # TODO: rm this line
                 self._prefrontal_cortex.update(whole_sequence)
+                print("pretrain update out")  # TODO: rm this line
         finally:
             connection.close()
+        print("pretrain out")  # TODO: rm this line
 
     def finetune(self, path_to_the_table: tp.Optional[str] = None) -> None:
+        print("finetune in")  # TODO: rm this line
         if path_to_the_table is None:
             path_to_the_table = self._path_to_the_log
         database_name, table_name = path_to_the_table.split(".")
@@ -135,10 +140,14 @@ class Brain:
                 )
                 # TODO: to add schema checking
                 cursor.execute(query)
-                for row in cursor:
-                    self._prefrontal_cortex.update(
-                        [self._create_a_sequence_portion(row)]
-                    )
-                    self._last_timestamp = row["timestamp"]
+                whole_sequence: tp.List[tp.Any] = [
+                    self._create_a_sequence_portion(row) for row in cursor
+                ]
+                print("finetune update in")  # TODO: rm this line
+                self._prefrontal_cortex.update(whole_sequence)
+                print("finetune update out")  # TODO: rm this line
+            if len(whole_sequence):
+                self._last_timestamp: int = whole_sequence[-1]["action"][1]
         finally:
             connection.close()
+        print("finetune out")  # TODO: rm this line
